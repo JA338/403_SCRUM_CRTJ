@@ -87,6 +87,19 @@ namespace Fall2020_CSC403_Project {
 
       // update player's picture box
       picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+
+      // check for player death event
+      CheckForDeath();
+     }
+    
+    private bool CheckForDeath()
+    {
+        if (player.Health <= 0)
+        {
+            deathscreen.Visible = true;
+            return true;
+        }
+        else { return false; }
     }
 
     private bool HitAWall(Character c) {
@@ -116,6 +129,8 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
+      //check if the player is dead
+      if (CheckForDeath()){ return; }
       switch (e.KeyCode) {
         case Keys.Left:
           player.GoLeft();
