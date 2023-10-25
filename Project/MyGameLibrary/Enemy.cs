@@ -22,5 +22,34 @@ namespace Fall2020_CSC403_Project.code {
     /// <param name="collider">this is the collider for the enemy</param>
     public Enemy(Vector2 initPos, Collider collider) : base(initPos, collider) {
     }
-  }
+
+    public class LowEnemySubclass : Enemy
+    {
+        public LowEnemySubclass(Vector2 initPos, Collider collider) : base(initPos, collider)
+        {
+            MaxHealth = 10;
+            Health = MaxHealth;
+            strength = 2;
+        }
+    }
+
+    public class MedEnemySubclass : Enemy
+    {
+        public MedEnemySubclass(Vector2 initPos, Collider collider) : base(initPos, collider)
+        {
+            MaxHealth = 20;
+            Health = MaxHealth;
+            strength = 3;
+        }
+    }
+    public class HighEnemySubclass : Enemy
+    {
+        public HighEnemySubclass(Vector2 initPos, Collider collider) : base(initPos, collider)
+        {
+            MaxHealth = 30;
+            Health = MaxHealth;
+            strength = 5;
+        }
+    }
+    }
 }
