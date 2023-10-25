@@ -15,6 +15,9 @@ namespace Fall2020_CSC403_Project {
     private DateTime timeBegin;
     private FrmBattle frmBattle;
 
+        // initialize variables for animation
+        private int imgNum;
+        private bool dFlag = false;
     public FrmLevel() {
       InitializeComponent();
     }
@@ -28,7 +31,10 @@ namespace Fall2020_CSC403_Project {
       enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
       enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
 
-      bossKoolaid.Img = picBossKoolAid.BackgroundImage;
+            // sets player image at loadtime
+            picPlayer.Image = Properties.Resources.player;
+
+            bossKoolaid.Img = picBossKoolAid.BackgroundImage;
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
       enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
 
@@ -56,6 +62,11 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void FrmLevel_KeyUp(object sender, KeyEventArgs e) {
+            //shows that input has stopped for a particular direction
+            dFlag = false;
+            //stops animation timers
+            timer1.Stop();
+            timer2.Stop();
       player.ResetMoveSpeed();
     }
 
@@ -118,6 +129,9 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void Fight(Enemy enemy) {
+            //stops animation when entering a fight
+            timer1.Stop();
+            timer2.Stop();
       player.ResetMoveSpeed();
       player.MoveBack();
       frmBattle = FrmBattle.GetInstance(enemy);
@@ -129,23 +143,38 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
+            //deletes original background image and sets player image
+            picPlayer.BackgroundImage = null;
+            picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
       //check if the player is dead
       if (CheckForDeath()){ return; }
+      //check if the key has been pressed
+      if(dFlag == true) { return; }
+            dFlag = true;
+            // starts timers based on the direction pressed
       switch (e.KeyCode) {
         case Keys.Left:
+                    imgNum = 0;
+                    timer2.Start();
           player.GoLeft();
           break;
 
         case Keys.Right:
+                    imgNum = 0;
+                    timer1.Start();
           player.GoRight();
           break;
 
         case Keys.Up:
-          player.GoUp();
+                    imgNum = 0;
+                    timer1.Start();
+                    player.GoUp();
           break;
 
         case Keys.Down:
-          player.GoDown();
+                    imgNum = 0;
+                    timer1.Start();
+                    player.GoDown();
           break;
 
         default:
@@ -157,5 +186,34 @@ namespace Fall2020_CSC403_Project {
     private void lblInGameTime_Click(object sender, EventArgs e) {
 
     }
-  }
+        // timers for animation start
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            picPlayer.Image.Dispose();
+            picPlayer.Image = imageList1.Images[imgNum];
+            if (imgNum == imageList1.Images.Count - 1)
+            {
+                imgNum = 0;
+            }
+            else
+            {
+                imgNum++;
+
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            picPlayer.Image.Dispose();
+            picPlayer.Image = imageList2.Images[imgNum];
+            if (imgNum == imageList2.Images.Count - 1)
+            {
+                imgNum = 0;
+            }
+            else
+            {
+                imgNum++;
+            }
+        }
+    }
 }
