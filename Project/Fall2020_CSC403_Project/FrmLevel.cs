@@ -173,7 +173,7 @@ namespace Fall2020_CSC403_Project {
 
         case Keys.Down:
                     imgNum = 0;
-                    timer1.Start();
+                    timer2.Start();
                     player.GoDown();
           break;
 
