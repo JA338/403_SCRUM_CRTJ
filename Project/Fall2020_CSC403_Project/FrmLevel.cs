@@ -11,7 +11,7 @@ namespace Fall2020_CSC403_Project {
     private Enemy bossKoolaid;
     private Enemy enemyCheeto;
     private Character[] walls;
-
+    private Enemy enemyBowizard;
     private DateTime timeBegin;
     private FrmBattle frmBattle;
 
@@ -27,14 +27,17 @@ namespace Fall2020_CSC403_Project {
       bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
       enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
       enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
+      enemyBowizard = new Enemy(CreatePosition(picEnemyBowizard), CreateCollider(picEnemyBowizard, PADDING));
 
       bossKoolaid.Img = picBossKoolAid.BackgroundImage;
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
       enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
+      enemyBowizard.Img = picEnemyBowizard.BackgroundImage;
 
       bossKoolaid.Color = Color.Red;
       enemyPoisonPacket.Color = Color.Green;
       enemyCheeto.Color = Color.FromArgb(255, 245, 161);
+      enemyBowizard.Color = Color.Gray;
 
       walls = new Character[NUM_WALLS];
       for (int w = 0; w < NUM_WALLS; w++) {
@@ -84,9 +87,13 @@ namespace Fall2020_CSC403_Project {
       if (HitAChar(player, bossKoolaid)) {
         Fight(bossKoolaid);
       }
+      if (HitAChar(player, enemyBowizard))
+      {
+        Fight(enemyBowizard);
+      }
 
-      // update player's picture box
-      picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+            // update player's picture box
+            picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
     }
 
     private bool HitAWall(Character c) {
@@ -133,14 +140,25 @@ namespace Fall2020_CSC403_Project {
           player.GoDown();
           break;
 
+        case Keys.I:
+                    inventory.Visible = true;
+          
+          break;
+        case Keys.Escape: 
+                    inventory.Visible = false; 
+                    break;
+
         default:
           player.ResetMoveSpeed();
           break;
       }
     }
 
+     
+
     private void lblInGameTime_Click(object sender, EventArgs e) {
 
     }
+    
   }
 }
