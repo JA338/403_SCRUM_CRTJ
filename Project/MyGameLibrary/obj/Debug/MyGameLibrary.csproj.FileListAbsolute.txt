@@ -1,0 +1,12 @@
+C:\Users\dejat\Desktop\School stuff\CSC 403\project\Fall2020_CSC403_Project-main\Project\MyGameLibrary\bin\Debug\MyGameLibrary.dll
+C:\Users\dejat\Desktop\School stuff\CSC 403\project\Fall2020_CSC403_Project-main\Project\MyGameLibrary\bin\Debug\MyGameLibrary.pdb
+C:\Users\dejat\Desktop\School stuff\CSC 403\project\Fall2020_CSC403_Project-main\Project\MyGameLibrary\obj\Debug\MyGameLibrary.csproj.AssemblyReference.cache
+C:\Users\dejat\Desktop\School stuff\CSC 403\project\Fall2020_CSC403_Project-main\Project\MyGameLibrary\obj\Debug\MyGameLibrary.csproj.CoreCompileInputs.cache
+C:\Users\dejat\Desktop\School stuff\CSC 403\project\Fall2020_CSC403_Project-main\Project\MyGameLibrary\obj\Debug\MyGameLibrary.dll
+C:\Users\dejat\Desktop\School stuff\CSC 403\project\Fall2020_CSC403_Project-main\Project\MyGameLibrary\obj\Debug\MyGameLibrary.pdb
+C:\Users\dejat\Downloads\Fall2020_CSC403_Project-main\Fall2020_CSC403_Project-main\Project\MyGameLibrary\bin\Debug\MyGameLibrary.dll
+C:\Users\dejat\Downloads\Fall2020_CSC403_Project-main\Fall2020_CSC403_Project-main\Project\MyGameLibrary\bin\Debug\MyGameLibrary.pdb
+C:\Users\dejat\Downloads\Fall2020_CSC403_Project-main\Fall2020_CSC403_Project-main\Project\MyGameLibrary\obj\Debug\MyGameLibrary.csproj.AssemblyReference.cache
+C:\Users\dejat\Downloads\Fall2020_CSC403_Project-main\Fall2020_CSC403_Project-main\Project\MyGameLibrary\obj\Debug\MyGameLibrary.csproj.CoreCompileInputs.cache
+C:\Users\dejat\Downloads\Fall2020_CSC403_Project-main\Fall2020_CSC403_Project-main\Project\MyGameLibrary\obj\Debug\MyGameLibrary.dll
+C:\Users\dejat\Downloads\Fall2020_CSC403_Project-main\Fall2020_CSC403_Project-main\Project\MyGameLibrary\obj\Debug\MyGameLibrary.pdb

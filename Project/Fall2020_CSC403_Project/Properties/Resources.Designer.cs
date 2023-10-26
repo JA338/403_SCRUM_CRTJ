@@ -69,13 +69,25 @@ namespace Fall2020_CSC403_Project.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap deathscreen {
+        internal static System.Drawing.Bitmap inventory
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("inventory", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DrBowman {
             get {
-                object obj = ResourceManager.GetObject("deathscreen", resourceCulture);
+                object obj = ResourceManager.GetObject("DrBowman", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -99,7 +111,18 @@ namespace Fall2020_CSC403_Project.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap enemy_bowizard
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("enemy_bowizard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
