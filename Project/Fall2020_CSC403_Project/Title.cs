@@ -16,7 +16,7 @@ namespace Fall2020_CSC403_Project
         {
             InitializeComponent();
         }
-        private void FrmLevel_Load(object sender, EventArgs e)
+        private void Title_Load(object sender, EventArgs e)
         {
         }
         // closes the title winform when button is clicked

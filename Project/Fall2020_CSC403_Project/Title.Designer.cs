@@ -60,6 +60,7 @@ namespace Fall2020_CSC403_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2707, 1588);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
