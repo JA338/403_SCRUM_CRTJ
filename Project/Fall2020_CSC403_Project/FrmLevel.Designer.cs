@@ -33,7 +33,6 @@
             this.picWall3 = new System.Windows.Forms.PictureBox();
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picEnemyBowizard = new System.Windows.Forms.PictureBox();
-            this.inventory = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.picWall5 = new System.Windows.Forms.PictureBox();
             this.picWall4 = new System.Windows.Forms.PictureBox();
@@ -47,7 +46,6 @@
             this.picWall1 = new System.Windows.Forms.PictureBox();
             this.picWall2 = new System.Windows.Forms.PictureBox();
             this.picWall11 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.inventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
@@ -289,19 +287,6 @@
             this.picWall11.Size = new System.Drawing.Size(164, 232);
             this.picWall11.TabIndex = 17;
             this.picWall11.TabStop = false;
-            //
-            // Inventory
-            //
-            this.inventory.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.inventory.BackColor = System.Drawing.Color.Transparent;
-            this.inventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.inventory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.inventory.Image = global::Fall2020_CSC403_Project.Properties.Resources.inventory;
-            this.inventory.Location = new System.Drawing.Point(0, 0);
-            this.inventory.Name = "inventory";
-            this.inventory.Size = new System.Drawing.Size(100, 100);
-            this.inventory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Normal;
-            this.inventory.Visible = false;
             // 
             // FrmLevel
             // 
@@ -310,7 +295,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1176, 726);
-            this.Controls.Add(this.inventory);
             this.Controls.Add(this.picWall11);
             this.Controls.Add(this.picWall2);
             this.Controls.Add(this.picWall8);
@@ -330,6 +314,8 @@
             this.Controls.Add(this.picWall3);
             this.Controls.Add(this.picBossKoolAid);
             this.Controls.Add(this.picPlayer);
+            this.Controls.Add(this.picEnemyBowizard);
+
             this.DoubleBuffered = true;
             this.Name = "FrmLevel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -337,7 +323,8 @@
             this.Load += new System.EventHandler(this.FrmLevel_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.inventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).EndInit();
@@ -356,6 +343,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,7 +352,6 @@
     #endregion
 
     private System.Windows.Forms.PictureBox picPlayer;
-    private System.Windows.Forms.PictureBox inventory;
     private System.Windows.Forms.PictureBox picBossKoolAid;
     private System.Windows.Forms.Label lblInGameTime;
     private System.Windows.Forms.Timer tmrUpdateInGameTime;
@@ -385,6 +372,7 @@
     private System.Windows.Forms.PictureBox picWall1;
     private System.Windows.Forms.PictureBox picWall2;
     private System.Windows.Forms.PictureBox picWall11;
-  }
+    private System.Windows.Forms.PictureBox picEnemyBowizard;
+    }
 }
 
