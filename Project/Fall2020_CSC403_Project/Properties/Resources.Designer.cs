@@ -73,9 +73,9 @@ namespace Fall2020_CSC403_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap enemy_bowizard {
+        internal static System.Drawing.Bitmap deathscreen {
             get {
-                object obj = ResourceManager.GetObject("enemy_bowizard", resourceCulture);
+                object obj = ResourceManager.GetObject("deathscreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,26 +116,6 @@ namespace Fall2020_CSC403_Project.Properties {
         internal static System.IO.UnmanagedMemoryStream final_battle {
             get {
                 return ResourceManager.GetStream("final_battle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap InvBox {
-            get {
-                object obj = ResourceManager.GetObject("InvBox", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap inventory {
-            get {
-                object obj = ResourceManager.GetObject("inventory", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
