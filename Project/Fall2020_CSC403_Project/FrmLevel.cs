@@ -7,40 +7,38 @@ namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
     private Player player;
 
+        private FrmInv FrmInv;
     private Enemy enemyPoisonPacket;
     private Enemy bossKoolaid;
     private Enemy enemyCheeto;
     private Character[] walls;
-
+    private Enemy enemyBowizard;
     private DateTime timeBegin;
     private FrmBattle frmBattle;
 
-        // initialize variables for animation
-        private int imgNum;
-        private bool dFlag = false;
     public FrmLevel() {
       InitializeComponent();
     }
 
-        private void FrmLevel_Load(object sender, EventArgs e) {
+    private void FrmLevel_Load(object sender, EventArgs e) {
       const int PADDING = 7;
       const int NUM_WALLS = 13;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-        bossKoolaid = new Enemy.HighEnemySubclass(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
-        enemyPoisonPacket = new Enemy.MedEnemySubclass(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
-        enemyCheeto = new Enemy.LowEnemySubclass(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
+      bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
+      enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
+      enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
+      enemyBowizard = new Enemy(CreatePosition(picEnemyBowizard), CreateCollider(picEnemyBowizard, PADDING));
 
-            // sets player image at loadtime
-            picPlayer.Image = Properties.Resources.player;
-
-            bossKoolaid.Img = picBossKoolAid.BackgroundImage;
+      bossKoolaid.Img = picBossKoolAid.BackgroundImage;
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
       enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
+      enemyBowizard.Img = picEnemyBowizard.BackgroundImage;
 
       bossKoolaid.Color = Color.Red;
       enemyPoisonPacket.Color = Color.Green;
       enemyCheeto.Color = Color.FromArgb(255, 245, 161);
+      enemyBowizard.Color = Color.Gray;
 
       walls = new Character[NUM_WALLS];
       for (int w = 0; w < NUM_WALLS; w++) {
@@ -50,7 +48,7 @@ namespace Fall2020_CSC403_Project {
 
       Game.player = player;
       timeBegin = DateTime.Now;
-        }
+    }
 
     private Vector2 CreatePosition(PictureBox pic) {
       return new Vector2(pic.Location.X, pic.Location.Y);
@@ -62,11 +60,6 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void FrmLevel_KeyUp(object sender, KeyEventArgs e) {
-            //shows that input has stopped for a particular direction
-            dFlag = false;
-            //stops animation timers
-            timer1.Stop();
-            timer2.Stop();
       player.ResetMoveSpeed();
     }
 
@@ -95,22 +88,13 @@ namespace Fall2020_CSC403_Project {
       if (HitAChar(player, bossKoolaid)) {
         Fight(bossKoolaid);
       }
+      if (HitAChar(player, enemyBowizard))
+      {
+        Fight(enemyBowizard);
+      }
 
-      // update player's picture box
-      picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
-
-      // check for player death event
-      CheckForDeath();
-     }
-    
-    private bool CheckForDeath()
-    {
-        if (player.Health <= 0)
-        {
-            deathscreen.Visible = true;
-            return true;
-        }
-        else { return false; }
+            // update player's picture box
+            picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
     }
 
     private bool HitAWall(Character c) {
@@ -129,9 +113,6 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void Fight(Enemy enemy) {
-            //stops animation when entering a fight
-            timer1.Stop();
-            timer2.Stop();
       player.ResetMoveSpeed();
       player.MoveBack();
       frmBattle = FrmBattle.GetInstance(enemy);
@@ -143,38 +124,26 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
-            //deletes original background image and sets player image
-            picPlayer.BackgroundImage = null;
-            picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
-      //check if the player is dead
-      if (CheckForDeath()){ return; }
-      //check if the key has been pressed
-      if(dFlag == true) { return; }
-            dFlag = true;
-            // starts timers based on the direction pressed
       switch (e.KeyCode) {
         case Keys.Left:
-                    imgNum = 0;
-                    timer2.Start();
           player.GoLeft();
           break;
 
         case Keys.Right:
-                    imgNum = 0;
-                    timer1.Start();
           player.GoRight();
           break;
 
         case Keys.Up:
-                    imgNum = 0;
-                    timer1.Start();
-                    player.GoUp();
+          player.GoUp();
           break;
 
         case Keys.Down:
-                    imgNum = 0;
-                    timer2.Start();
-                    player.GoDown();
+          player.GoDown();
+          break;
+
+        case Keys.I:
+                    FrmInv = new FrmInv();
+                    FrmInv.Show(); 
           break;
 
         default:
@@ -183,37 +152,11 @@ namespace Fall2020_CSC403_Project {
       }
     }
 
+     
+
     private void lblInGameTime_Click(object sender, EventArgs e) {
 
     }
-        // timers for animation start
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            picPlayer.Image.Dispose();
-            picPlayer.Image = imageList1.Images[imgNum];
-            if (imgNum == imageList1.Images.Count - 1)
-            {
-                imgNum = 0;
-            }
-            else
-            {
-                imgNum++;
-
-            }
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            picPlayer.Image.Dispose();
-            picPlayer.Image = imageList2.Images[imgNum];
-            if (imgNum == imageList2.Images.Count - 1)
-            {
-                imgNum = 0;
-            }
-            else
-            {
-                imgNum++;
-            }
-        }
-    }
+    
+  }
 }
