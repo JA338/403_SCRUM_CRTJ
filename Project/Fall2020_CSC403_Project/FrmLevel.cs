@@ -7,6 +7,7 @@ namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
     private Player player;
 
+        private FrmInv FrmInv;
     private Enemy enemyPoisonPacket;
     private Enemy bossKoolaid;
     private Enemy enemyCheeto;
@@ -141,7 +142,7 @@ namespace Fall2020_CSC403_Project {
           break;
 
         case Keys.I:
-                    inventory.Visible = true;
+                    FrmInv.Show();
           
           break;
         case Keys.Escape: 
