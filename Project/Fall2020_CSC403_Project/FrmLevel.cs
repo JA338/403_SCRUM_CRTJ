@@ -34,7 +34,7 @@ namespace Fall2020_CSC403_Project {
             // sets player image at loadtime
             picPlayer.Image = Properties.Resources.player;
 
-            bossKoolaid.Img = picBossKoolaid.BackgroundImage;
+            bossKoolaid.Img = picBossKoolAid.BackgroundImage;
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
       enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
 
