@@ -16,10 +16,8 @@ namespace Fall2020_CSC403_Project
         {
             InitializeComponent();
         }
-
-        private void Title_Load(object sender, EventArgs e)
+        private void FrmLevel_Load(object sender, EventArgs e)
         {
-
         }
         // closes the title winform when button is clicked
         // opens FrmLevel winform upon closing
@@ -30,7 +28,6 @@ namespace Fall2020_CSC403_Project
             frmLevel.Closed += (s, args) => this.Close();
             frmLevel.Show();
         }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
