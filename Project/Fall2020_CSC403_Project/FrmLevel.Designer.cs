@@ -309,11 +309,13 @@
             this.Controls.Add(this.picWall4);
             this.Controls.Add(this.picWall5);
             this.Controls.Add(this.picEnemyCheeto);
+            this.Controls.Add(this.picEnemyBowizard);
             this.Controls.Add(this.picEnemyPoisonPacket);
             this.Controls.Add(this.picWall3);
             this.Controls.Add(this.picBossKoolAid);
             this.Controls.Add(this.picPlayer);
             this.Controls.Add(this.picEnemyBowizard);
+
             this.DoubleBuffered = true;
             this.Name = "FrmLevel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -323,6 +325,9 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
@@ -351,6 +356,7 @@
     private System.Windows.Forms.Label lblInGameTime;
     private System.Windows.Forms.Timer tmrUpdateInGameTime;
     private System.Windows.Forms.Timer tmrPlayerMove;
+    private System.Windows.Forms.PictureBox picEnemyBowizard;
     private System.Windows.Forms.PictureBox picWall3;
     private System.Windows.Forms.PictureBox picEnemyPoisonPacket;
     private System.Windows.Forms.PictureBox picEnemyCheeto;
