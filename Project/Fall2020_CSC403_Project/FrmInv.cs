@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fall2020_CSC403_Project.code;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,17 @@ namespace Fall2020_CSC403_Project
         public FrmInv()
         {
             InitializeComponent();
+        }
+
+
+        private void FrmInv_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmInv_MouseHover(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -142,12 +142,9 @@ namespace Fall2020_CSC403_Project {
           break;
 
         case Keys.I:
-                    FrmInv.Show();
-          
+                    FrmInv = new FrmInv();
+                    FrmInv.Show(); 
           break;
-        case Keys.Escape: 
-                    inventory.Visible = false; 
-                    break;
 
         default:
           player.ResetMoveSpeed();
