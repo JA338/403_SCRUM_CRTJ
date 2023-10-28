@@ -1,6 +1,8 @@
 ﻿using Fall2020_CSC403_Project.code;
+using Fall2020_CSC403_Project.Properties;
 using System;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
@@ -77,8 +79,10 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void tmrPlayerMove_Tick(object sender, EventArgs e) {
-      // move player
-      player.Move();
+        // check for player death event
+        CheckForDeath();
+        // move player
+        player.Move();
 
       // check collision with walls
       if (HitAWall(player)) {
@@ -99,18 +103,24 @@ namespace Fall2020_CSC403_Project {
       // update player's picture box
       picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
 
-      // check for player death event
-      CheckForDeath();
+      
      }
     
-    private bool CheckForDeath()
+    private void PlayDeathSound()
     {
-        if (player.Health <= 0)
-        {
-            deathscreen.Visible = true;
-            return true;
-        }
-        else { return false; }
+        SoundPlayer deathAudio = new SoundPlayer(Resources.deathsound);
+        deathAudio.Play();
+    }
+
+    private bool CheckForDeath() {
+
+    if (player.Health <= 0 && deathscreen.Visible == false)
+    {
+        deathscreen.Visible = true;
+        PlayDeathSound();            
+        return true;
+    }
+    else { return false; }
     }
 
     private bool HitAWall(Character c) {
@@ -143,9 +153,9 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
-            //deletes original background image and sets player image
-            picPlayer.BackgroundImage = null;
-            picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
+        //deletes original background image and sets player image
+        picPlayer.BackgroundImage = null;
+        picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
       //check if the player is dead
       if (CheckForDeath()){ return; }
       //check if the key has been pressed
