@@ -45,6 +45,7 @@
             this.picWall3 = new System.Windows.Forms.PictureBox();
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.picEnemyBowizard = new System.Windows.Forms.PictureBox();
             this.deathscreen = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -58,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall4)).BeginInit();
@@ -239,6 +241,16 @@
             this.picWall5.TabIndex = 6;
             this.picWall5.TabStop = false;
             // 
+            // picEnemyBowizard
+            // 
+            this.picEnemyBowizard.BackColor = System.Drawing.Color.Transparent;
+            this.picEnemyBowizard.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_bowizard;
+            this.picEnemyBowizard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picEnemyBowizard.Name = "picEnemyBowizard";
+            this.picEnemyBowizard.Size = new System.Drawing.Size(0, 0);
+            this.picEnemyBowizard.TabIndex = 18;
+            this.picEnemyBowizard.TabStop = false;
+            // 
             // picEnemyCheeto
             // 
             this.picEnemyCheeto.BackColor = System.Drawing.Color.Transparent;
@@ -365,6 +377,7 @@
             this.Controls.Add(this.picWall4);
             this.Controls.Add(this.picWall5);
             this.Controls.Add(this.picEnemyCheeto);
+            this.Controls.Add(this.picEnemyBowizard);            
             this.Controls.Add(this.picEnemyPoisonPacket);
             this.Controls.Add(this.picWall3);
             this.Controls.Add(this.picBossKoolAid);
@@ -393,6 +406,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).EndInit();            
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deathscreen)).EndInit();
             this.ResumeLayout(false);
@@ -407,6 +421,7 @@
     private System.Windows.Forms.Label lblInGameTime;
     private System.Windows.Forms.Timer tmrUpdateInGameTime;
     private System.Windows.Forms.Timer tmrPlayerMove;
+    private System.Windows.Forms.PictureBox picEnemyBowizard;
     private System.Windows.Forms.PictureBox picWall3;
     private System.Windows.Forms.PictureBox picEnemyPoisonPacket;
     private System.Windows.Forms.PictureBox picEnemyCheeto;

@@ -9,11 +9,12 @@ namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
     private Player player;
 
+        private FrmInv FrmInv;
     private Enemy enemyPoisonPacket;
     private Enemy bossKoolaid;
     private Enemy enemyCheeto;
     private Character[] walls;
-
+    private Enemy enemyBowizard;
     private DateTime timeBegin;
     private FrmBattle frmBattle;
 
@@ -35,14 +36,17 @@ namespace Fall2020_CSC403_Project {
 
             // sets player image at loadtime
             picPlayer.Image = Properties.Resources.player;
+      enemyBowizard = new Enemy.HighEnemySubclass(CreatePosition(picEnemyBowizard), CreateCollider(picEnemyBowizard, PADDING));
 
             bossKoolaid.Img = picBossKoolAid.BackgroundImage;
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
       enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
+      enemyBowizard.Img = picEnemyBowizard.BackgroundImage;
 
       bossKoolaid.Color = Color.Red;
       enemyPoisonPacket.Color = Color.Green;
       enemyCheeto.Color = Color.FromArgb(255, 245, 161);
+      enemyBowizard.Color = Color.Gray;
 
       walls = new Character[NUM_WALLS];
       for (int w = 0; w < NUM_WALLS; w++) {
@@ -99,9 +103,14 @@ namespace Fall2020_CSC403_Project {
       if (HitAChar(player, bossKoolaid)) {
         Fight(bossKoolaid);
       }
+      if (HitAChar(player, enemyBowizard))
+      {
+        // placeholder, will have to implement call upon death of all mobs
+        Fight(enemyBowizard);
+      }
 
-      // update player's picture box
-      picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+            // update player's picture box
+            picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
 
       
      }
@@ -187,11 +196,20 @@ namespace Fall2020_CSC403_Project {
                     player.GoDown();
           break;
 
+        case Keys.I:
+                    // display inventory upon pressing "I"
+                    FrmInv = new FrmInv();
+                    FrmInv.Show();
+          
+          break;
+
         default:
           player.ResetMoveSpeed();
           break;
       }
     }
+
+     
 
     private void lblInGameTime_Click(object sender, EventArgs e) {
 
