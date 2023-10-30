@@ -8,7 +8,6 @@ using System.Windows.Forms;
 namespace Fall2020_CSC403_Project {
   public partial class FrmBattle : Form {
     public static FrmBattle instance = null;
-    private string[] deadList;
     private Enemy enemy;
     private Player player;
 
@@ -89,10 +88,5 @@ namespace Fall2020_CSC403_Project {
       picBossBattle.Visible = false;
       tmrFinalBattle.Enabled = false;
     }
-
-        private void picEnemy_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
+  }
 }
