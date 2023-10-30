@@ -21,5 +21,18 @@ namespace Fall2020_CSC403_Project
         private void InvSlot1_MouseHover(object sender, EventArgs e)
         {
         }
+
+        private void FrmInv_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.I:
+                    this.Hide();
+                    break;
+
+                default:
+                    break;
+            }
+        }
     }
 }

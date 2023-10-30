@@ -222,6 +222,7 @@
             this.Controls.Add(this.Invslot1);
             this.Name = "FrmInv";
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmInv_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.Invslot1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvSlot5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvSlot2)).EndInit();

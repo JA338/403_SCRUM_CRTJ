@@ -103,11 +103,6 @@ namespace Fall2020_CSC403_Project {
       if (HitAChar(player, bossKoolaid)) {
         Fight(bossKoolaid);
       }
-      if (HitAChar(player, enemyBowizard))
-      {
-        // placeholder, will have to implement call upon death of all mobs
-        Fight(enemyBowizard);
-      }
 
             // update player's picture box
             picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
@@ -125,6 +120,8 @@ namespace Fall2020_CSC403_Project {
 
     if (player.Health <= 0 && deathscreen.Visible == false)
     {
+        // hide secret key 
+        secret.Visible = false;
         deathscreen.Visible = true;
         PlayDeathSound();            
         return true;
@@ -200,8 +197,13 @@ namespace Fall2020_CSC403_Project {
                     // display inventory upon pressing "I"
                     FrmInv = new FrmInv();
                     FrmInv.Show();
-          
           break;
+                case Keys.B:
+                    // call dr. bowman on key press
+                    SoundPlayer drbowman = new SoundPlayer(Resources.bowman);
+                    drbowman.Play();
+                    Fight(enemyBowizard);
+                    break;
 
         default:
           player.ResetMoveSpeed();
