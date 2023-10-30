@@ -18,6 +18,7 @@ namespace Fall2020_CSC403_Project {
     private Enemy enemyBowizard;
     private DateTime timeBegin;
     private FrmBattle frmBattle;
+        private Point offScreen = new Point(-100, -100);
 
         // initialize variables for animation
         private int imgNum;
@@ -105,6 +106,33 @@ namespace Fall2020_CSC403_Project {
         Fight(bossKoolaid);
       }
 
+        if (enemyPoisonPacket.Health <= 0) {
+        // Move the enemy's PictureBox off-screen
+        //enemyPoisonPacket.Img = null;
+        picEnemyPoisonPacket.Location = offScreen;
+
+        // Move the enemy's Collider off-screen
+        //collider.enemyPoisonPacket.Collider.Location = offScreen;
+        }
+
+        if (enemyCheeto.Health <= 0) {
+        // Move the enemy's PictureBox off-screen
+        //enemyCheeto.Img = null;
+        picEnemyCheeto.Location = offScreen;
+
+        // Move the enemy's Collider off-screen
+        //collider.enemyCheeto.Collider.Location = offScreen;
+        }
+
+        if (bossKoolaid.Health <= 0) {
+        // Move the enemy's PictureBox off-screen
+       // bossKoolaid.Img = null;
+        picBossKoolAid.Location = offScreen;
+
+        // Move the enemy's Collider off-screen
+        //collider.bossKoolaid.Collider.Location = offScreen;
+        }
+
             // update player's picture box
             picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
 
@@ -157,13 +185,10 @@ namespace Fall2020_CSC403_Project {
       if (enemy == bossKoolaid) {
         frmBattle.SetupForBossBattle();
       }
-      //
-      //if(enemy.Health <= 0) {
-       //         this.Controls.Remove(enemy.PicBox);
-         //       enemy.PicBox.Dispose();
-         //   }
       
     }
+
+
 
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
         //deletes original background image and sets player image
