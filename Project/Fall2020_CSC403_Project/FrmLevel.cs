@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
+
     private Player player;
 
         private FrmInv FrmInv;
@@ -156,6 +157,12 @@ namespace Fall2020_CSC403_Project {
       if (enemy == bossKoolaid) {
         frmBattle.SetupForBossBattle();
       }
+      //
+      //if(enemy.Health <= 0) {
+       //         this.Controls.Remove(enemy.PicBox);
+         //       enemy.PicBox.Dispose();
+         //   }
+      
     }
 
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {

@@ -33,6 +33,8 @@
             this.picEnemy = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.tmrFinalBattle = new System.Windows.Forms.Timer(this.components);
+            this.BtnFlee = new System.Windows.Forms.Button();
+            this.BtnDefend = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
@@ -127,6 +129,28 @@
             this.tmrFinalBattle.Interval = 5600;
             this.tmrFinalBattle.Tick += new System.EventHandler(this.tmrFinalBattle_Tick);
             // 
+            // BtnFlee
+            // 
+            this.BtnFlee.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.BtnFlee.Location = new System.Drawing.Point(127, 485);
+            this.BtnFlee.Name = "BtnFlee";
+            this.BtnFlee.Size = new System.Drawing.Size(128, 41);
+            this.BtnFlee.TabIndex = 8;
+            this.BtnFlee.Text = "Flee";
+            this.BtnFlee.UseVisualStyleBackColor = true;
+            this.BtnFlee.Click += new System.EventHandler(this.BtnFlee_Click);
+            // 
+            // BtnDefend
+            // 
+            this.BtnDefend.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.BtnDefend.Location = new System.Drawing.Point(127, 546);
+            this.BtnDefend.Name = "BtnDefend";
+            this.BtnDefend.Size = new System.Drawing.Size(128, 34);
+            this.BtnDefend.TabIndex = 9;
+            this.BtnDefend.Text = "Defend";
+            this.BtnDefend.UseVisualStyleBackColor = true;
+            this.BtnDefend.Click += new System.EventHandler(this.BtnDefend_Click);
+            // 
             // FrmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,6 +158,8 @@
             this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(822, 603);
+            this.Controls.Add(this.BtnDefend);
+            this.Controls.Add(this.BtnFlee);
             this.Controls.Add(this.picBossBattle);
             this.Controls.Add(this.lblEnemyHealthFull);
             this.Controls.Add(this.label2);
@@ -164,5 +190,7 @@
     private System.Windows.Forms.Label lblEnemyHealthFull;
     private System.Windows.Forms.PictureBox picBossBattle;
     private System.Windows.Forms.Timer tmrFinalBattle;
-  }
+        private System.Windows.Forms.Button BtnFlee;
+        private System.Windows.Forms.Button BtnDefend;
+    }
 }
