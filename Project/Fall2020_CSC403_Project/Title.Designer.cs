@@ -47,7 +47,7 @@ namespace Fall2020_CSC403_Project
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.battle_screen;
+            this.pictureBox1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.title_screen;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
