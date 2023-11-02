@@ -27,28 +27,28 @@ namespace Fall2020_CSC403_Project {
       InitializeComponent();
     }
 
-        private void FrmLevel_Load(object sender, EventArgs e) {
+    private void FrmLevel_Load(object sender, EventArgs e) {
       const int PADDING = 7;
       const int NUM_WALLS = 13;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-        bossKoolaid = new Enemy.HighEnemySubclass(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
-        enemyPoisonPacket = new Enemy.MedEnemySubclass(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
-        enemyCheeto = new Enemy.LowEnemySubclass(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
+      //  bossKoolaid = new Enemy.HighEnemySubclass(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
+      //  enemyPoisonPacket = new Enemy.MedEnemySubclass(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
+      //  enemyCheeto = new Enemy.LowEnemySubclass(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
 
-            // sets player image at loadtime
-            picPlayer.Image = Properties.Resources.player;
-      enemyBowizard = new Enemy.HighEnemySubclass(CreatePosition(picEnemyBowizard), CreateCollider(picEnemyBowizard, PADDING));
+      //      // sets player image at loadtime
+      picPlayer.Image = Properties.Resources.player;
+      //enemyBowizard = new Enemy.HighEnemySubclass(CreatePosition(picEnemyBowizard), CreateCollider(picEnemyBowizard, PADDING));
 
-            bossKoolaid.Img = picBossKoolAid.BackgroundImage;
-      enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
-      enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
-      enemyBowizard.Img = picEnemyBowizard.BackgroundImage;
+      //      bossKoolaid.Img = picBossKoolAid.BackgroundImage;
+      //enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
+      //enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
+      //enemyBowizard.Img = picEnemyBowizard.BackgroundImage;
 
-      bossKoolaid.Color = Color.Red;
-      enemyPoisonPacket.Color = Color.Green;
-      enemyCheeto.Color = Color.FromArgb(255, 245, 161);
-      enemyBowizard.Color = Color.Gray;
+      //bossKoolaid.Color = Color.Red;
+      //enemyPoisonPacket.Color = Color.Green;
+      //enemyCheeto.Color = Color.FromArgb(255, 245, 161);
+      //enemyBowizard.Color = Color.Gray;
 
       walls = new Character[NUM_WALLS];
       for (int w = 0; w < NUM_WALLS; w++) {
@@ -96,42 +96,42 @@ namespace Fall2020_CSC403_Project {
       }
 
       // check collision with enemies
-      if (HitAChar(player, enemyPoisonPacket)) {
-        Fight(enemyPoisonPacket);
-      }
-      else if (HitAChar(player, enemyCheeto)) {
-        Fight(enemyCheeto);
-      }
-      if (HitAChar(player, bossKoolaid)) {
-        Fight(bossKoolaid);
-      }
+      //if (HitAChar(player, enemyPoisonPacket)) {
+      //  Fight(enemyPoisonPacket);
+      //}
+      //else if (HitAChar(player, enemyCheeto)) {
+      //  Fight(enemyCheeto);
+      //}
+      //if (HitAChar(player, bossKoolaid)) {
+      //  Fight(bossKoolaid);
+      //}
 
-        if (enemyPoisonPacket.Health <= 0) {
-        // Move the enemy's PictureBox off-screen
-        //enemyPoisonPacket.Img = null;
-        picEnemyPoisonPacket.Location = offScreen;
+       // if (enemyPoisonPacket.Health <= 0) {
+       // // Move the enemy's PictureBox off-screen
+       // //enemyPoisonPacket.Img = null;
+       // picEnemyPoisonPacket.Location = offScreen;
 
-        // Move the enemy's Collider off-screen
-        //collider.enemyPoisonPacket.Collider.Location = offScreen;
-        }
+       // // Move the enemy's Collider off-screen
+       // //collider.enemyPoisonPacket.Collider.Location = offScreen;
+       // }
 
-        if (enemyCheeto.Health <= 0) {
-        // Move the enemy's PictureBox off-screen
-        //enemyCheeto.Img = null;
-        picEnemyCheeto.Location = offScreen;
+       // if (enemyCheeto.Health <= 0) {
+       // // Move the enemy's PictureBox off-screen
+       // //enemyCheeto.Img = null;
+       // picEnemyCheeto.Location = offScreen;
 
-        // Move the enemy's Collider off-screen
-        //collider.enemyCheeto.Collider.Location = offScreen;
-        }
+       // // Move the enemy's Collider off-screen
+       // //collider.enemyCheeto.Collider.Location = offScreen;
+       // }
 
-        if (bossKoolaid.Health <= 0) {
-        // Move the enemy's PictureBox off-screen
-       // bossKoolaid.Img = null;
-        picBossKoolAid.Location = offScreen;
+       // if (bossKoolaid.Health <= 0) {
+       // // Move the enemy's PictureBox off-screen
+       //// bossKoolaid.Img = null;
+       // picBossKoolAid.Location = offScreen;
 
-        // Move the enemy's Collider off-screen
-        //collider.bossKoolaid.Collider.Location = offScreen;
-        }
+       // // Move the enemy's Collider off-screen
+       // //collider.bossKoolaid.Collider.Location = offScreen;
+       // }
 
             // update player's picture box
             picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
