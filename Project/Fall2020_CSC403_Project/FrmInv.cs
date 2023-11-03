@@ -1,5 +1,4 @@
-﻿using Fall2020_CSC403_Project.code;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,14 +17,35 @@ namespace Fall2020_CSC403_Project
         {
             InitializeComponent();
         }
+        // will be used to display items names in game
+        private void InvSlot1_MouseHover(object sender, EventArgs e)
+        {
+        }
 
+        private void FrmInv_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.I:
+                    this.Hide();
+                    break;
 
-        private void FrmInv_Click(object sender, EventArgs e)
+                default:
+                    break;
+            }
+        }
+
+        private void equipToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void FrmInv_MouseHover(object sender, EventArgs e)
+        private void discardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

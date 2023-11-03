@@ -1,15 +1,18 @@
-﻿using Fall2020_CSC403_Project.code;
+using Fall2020_CSC403_Project.code;
 using Fall2020_CSC403_Project.Properties;
 using System;
 using System.Drawing;
 using System.Media;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
+
   public partial class FrmBattle : Form {
     public static FrmBattle instance = null;
     private Enemy enemy;
     private Player player;
+    private bool Blocking = false;
 
     private FrmBattle() {
       InitializeComponent();
@@ -77,16 +80,27 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void EnemyDamage(int amount) {
-      enemy.AlterHealth(amount);
-    }
+            enemy.AlterHealth(amount);
+        }
 
     private void PlayerDamage(int amount) {
-      player.AlterHealth(amount);
-    }
+            if (Blocking != true)
+            { player.AlterHealth(amount); }
+            else
+            { Blocking = false; }
+        }
 
     private void tmrFinalBattle_Tick(object sender, EventArgs e) {
       picBossBattle.Visible = false;
       tmrFinalBattle.Enabled = false;
     }
-  }
+
+        /// flee button click
+        private void BtnFlee_Click(object sender, EventArgs e){ 
+            instance = null;
+            this.Hide(); }
+
+        /// Defend Button click
+        private void BtnDefend_Click(object sender, EventArgs e){ Blocking = true;}
+    }
 }

@@ -47,7 +47,7 @@ namespace Fall2020_CSC403_Project
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.battle_screen;
+            this.pictureBox1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.title_screen;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -60,6 +60,7 @@ namespace Fall2020_CSC403_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2707, 1588);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);

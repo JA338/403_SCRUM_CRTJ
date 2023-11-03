@@ -1,10 +1,13 @@
 ﻿using Fall2020_CSC403_Project.code;
+using Fall2020_CSC403_Project.Properties;
 using System;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
+
     private Player player;
 
         private FrmInv FrmInv;
@@ -16,21 +19,27 @@ namespace Fall2020_CSC403_Project {
     private DateTime timeBegin;
     private FrmBattle frmBattle;
 
+        // initialize variables for animation
+        private int imgNum;
+        private bool dFlag = false;
     public FrmLevel() {
       InitializeComponent();
     }
 
-    private void FrmLevel_Load(object sender, EventArgs e) {
+        private void FrmLevel_Load(object sender, EventArgs e) {
       const int PADDING = 7;
       const int NUM_WALLS = 13;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-      bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
-      enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
-      enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
-      enemyBowizard = new Enemy(CreatePosition(picEnemyBowizard), CreateCollider(picEnemyBowizard, PADDING));
+        bossKoolaid = new Enemy.HighEnemySubclass(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
+        enemyPoisonPacket = new Enemy.MedEnemySubclass(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
+        enemyCheeto = new Enemy.LowEnemySubclass(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
 
-      bossKoolaid.Img = picBossKoolAid.BackgroundImage;
+            // sets player image at loadtime
+            picPlayer.Image = Properties.Resources.player;
+      enemyBowizard = new Enemy.HighEnemySubclass(CreatePosition(picEnemyBowizard), CreateCollider(picEnemyBowizard, PADDING));
+
+            bossKoolaid.Img = picBossKoolAid.BackgroundImage;
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
       enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
       enemyBowizard.Img = picEnemyBowizard.BackgroundImage;
@@ -48,7 +57,7 @@ namespace Fall2020_CSC403_Project {
 
       Game.player = player;
       timeBegin = DateTime.Now;
-    }
+        }
 
     private Vector2 CreatePosition(PictureBox pic) {
       return new Vector2(pic.Location.X, pic.Location.Y);
@@ -60,6 +69,11 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void FrmLevel_KeyUp(object sender, KeyEventArgs e) {
+            //shows that input has stopped for a particular direction
+            dFlag = false;
+            //stops animation timers
+            timer1.Stop();
+            timer2.Stop();
       player.ResetMoveSpeed();
     }
 
@@ -70,8 +84,10 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void tmrPlayerMove_Tick(object sender, EventArgs e) {
-      // move player
-      player.Move();
+        // check for player death event
+        CheckForDeath();
+        // move player
+        player.Move();
 
       // check collision with walls
       if (HitAWall(player)) {
@@ -88,13 +104,30 @@ namespace Fall2020_CSC403_Project {
       if (HitAChar(player, bossKoolaid)) {
         Fight(bossKoolaid);
       }
-      if (HitAChar(player, enemyBowizard))
-      {
-        Fight(enemyBowizard);
-      }
 
             // update player's picture box
             picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+
+      
+     }
+    
+    private void PlayDeathSound()
+    {
+        SoundPlayer deathAudio = new SoundPlayer(Resources.deathsound);
+        deathAudio.Play();
+    }
+
+    private bool CheckForDeath() {
+
+    if (player.Health <= 0 && deathscreen.Visible == false)
+    {
+        // hide secret key 
+        secret.Visible = false;
+        deathscreen.Visible = true;
+        PlayDeathSound();            
+        return true;
+    }
+    else { return false; }
     }
 
     private bool HitAWall(Character c) {
@@ -113,6 +146,9 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void Fight(Enemy enemy) {
+            //stops animation when entering a fight
+            timer1.Stop();
+            timer2.Stop();
       player.ResetMoveSpeed();
       player.MoveBack();
       frmBattle = FrmBattle.GetInstance(enemy);
@@ -121,30 +157,60 @@ namespace Fall2020_CSC403_Project {
       if (enemy == bossKoolaid) {
         frmBattle.SetupForBossBattle();
       }
+      //
+      //if(enemy.Health <= 0) {
+       //         this.Controls.Remove(enemy.PicBox);
+         //       enemy.PicBox.Dispose();
+         //   }
+      
     }
 
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
+        //deletes original background image and sets player image
+        picPlayer.BackgroundImage = null;
+        picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
+      //check if the player is dead
+      if (CheckForDeath()){ return; }
+      //check if the key has been pressed
+      if(dFlag == true) { return; }
+            dFlag = true;
+            // starts timers based on the direction pressed
       switch (e.KeyCode) {
         case Keys.Left:
+                    imgNum = 0;
+                    timer2.Start();
           player.GoLeft();
           break;
 
         case Keys.Right:
+                    imgNum = 0;
+                    timer1.Start();
           player.GoRight();
           break;
 
         case Keys.Up:
-          player.GoUp();
+                    imgNum = 0;
+                    timer1.Start();
+                    player.GoUp();
           break;
 
         case Keys.Down:
-          player.GoDown();
+                    imgNum = 0;
+                    timer2.Start();
+                    player.GoDown();
           break;
 
         case Keys.I:
+                    // display inventory upon pressing "I"
                     FrmInv = new FrmInv();
-                    FrmInv.Show(); 
+                    FrmInv.Show();
           break;
+                case Keys.B:
+                    // call dr. bowman on key press
+                    SoundPlayer drbowman = new SoundPlayer(Resources.bowman);
+                    drbowman.Play();
+                    Fight(enemyBowizard);
+                    break;
 
         default:
           player.ResetMoveSpeed();
@@ -157,6 +223,34 @@ namespace Fall2020_CSC403_Project {
     private void lblInGameTime_Click(object sender, EventArgs e) {
 
     }
-    
-  }
+        // timers for animation start
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            picPlayer.Image.Dispose();
+            picPlayer.Image = imageList1.Images[imgNum];
+            if (imgNum == imageList1.Images.Count - 1)
+            {
+                imgNum = 0;
+            }
+            else
+            {
+                imgNum++;
+
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            picPlayer.Image.Dispose();
+            picPlayer.Image = imageList2.Images[imgNum];
+            if (imgNum == imageList2.Images.Count - 1)
+            {
+                imgNum = 0;
+            }
+            else
+            {
+                imgNum++;
+            }
+        }
+    }
 }
