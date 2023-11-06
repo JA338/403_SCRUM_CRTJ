@@ -46,8 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs">
+    <Compile Include="FrmLevelForest.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLevelForest.Designer.cs">
+      <DependentUpon>FrmLevelForest.cs</DependentUpon>
     </Compile>
     <Compile Include="Title.cs">
       <SubType>Form</SubType>
@@ -75,8 +78,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Class1.resx">
-      <DependentUpon>Class1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmLevelForest.resx">
+      <DependentUpon>FrmLevelForest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Title.resx">
       <DependentUpon>Title.cs</DependentUpon>

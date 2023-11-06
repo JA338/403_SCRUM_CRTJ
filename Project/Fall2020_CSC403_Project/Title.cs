@@ -24,7 +24,7 @@ namespace Fall2020_CSC403_Project
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var frmLevel = new FrmLevel();
+            var frmLevel = new FrmLevelForest();
             frmLevel.Closed += (s, args) => this.Close();
             frmLevel.Show();
         }
