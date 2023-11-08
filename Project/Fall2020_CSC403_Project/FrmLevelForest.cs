@@ -12,9 +12,6 @@ namespace Fall2020_CSC403_Project {
     private Player player;
 
     private FrmInv FrmInv;
-    private Enemy enemyPoisonPacket;
-    private Enemy bossKoolaid;
-    private Enemy enemyCheeto;
     private Character[] walls;
     private Enemy enemyBowizard;
     private DateTime timeBegin;
@@ -30,18 +27,14 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void FrmLevelForest_Load(object sender, EventArgs e) {
-      const int PADDING = 7;
-      const int NUM_WALLS = 6;
-      //enemies = new Enemy[1];
+      const int PADDING = 5;
+      const int NUM_WALLS = 12;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
       
       picPlayer.Image = Properties.Resources.player;
 
-            //Enemy monster = new Enemy.LowEnemySubclass(CreatePosition(picEnemy1), CreateCollider(picEnemy1, PADDING));
-            //monster.Img = picEnemy1.Image;
-            //enemies[0] = monster;
-      GenerateEnemies(4);
+      GenerateEnemies(1, 3);
 
       walls = new Character[NUM_WALLS];
       for (int w = 0; w < NUM_WALLS; w++) {
@@ -53,14 +46,23 @@ namespace Fall2020_CSC403_Project {
       timeBegin = DateTime.Now;
       }
     
-    private void GenerateEnemies(int numEnemies)
+    private void GenerateEnemies(int numLowEnemies, int numMedEnemies)
         {
             const int PADDING = 7;
-            enemies = new Enemy[numEnemies];
-            for (int i = 0; i < numEnemies; i++)
+            enemies = new Enemy[numLowEnemies + numMedEnemies];
+            for (int i = 0; i < enemies.Length; i++)
             {
-                PictureBox pic = Controls.Find("picEnemy" + (i + 1).ToString(), true)[0] as PictureBox;
-                enemies[i] = new Enemy.LowEnemySubclass(CreatePosition(pic), CreateCollider(pic, PADDING)) { Img = pic.Image };
+                //if (i < numLowEnemies)
+                //{
+                //    PictureBox picLow = Controls.Find("picLowEnemy" + (i + 1).ToString(), true)[0] as PictureBox;
+                //    enemies[i] = new Enemy.LowEnemySubclass(CreatePosition(picLow), CreateCollider(picLow, PADDING)) { Img = picLow.Image };
+                //}
+                //else if (numLowEnemies <= i && i < numMedEnemies) {
+                //    PictureBox picLow = Controls.Find("picMedEnemy" + (i + 1 - numLowEnemies).ToString(), true)[0] as PictureBox;
+                //    enemies[i] = new Enemy.MedEnemySubclass(CreatePosition(picLow), CreateCollider(picLow, PADDING)) { Img = picLow.Image };
+                //}
+                PictureBox picLow = Controls.Find("picEnemy" + (i + 1).ToString(), true)[0] as PictureBox;
+                enemies[i] = new Enemy.LowEnemySubclass(CreatePosition(picLow), CreateCollider(picLow, PADDING)) { Img = picLow.Image };
             }
         }
     private Vector2 CreatePosition(PictureBox pic) {
