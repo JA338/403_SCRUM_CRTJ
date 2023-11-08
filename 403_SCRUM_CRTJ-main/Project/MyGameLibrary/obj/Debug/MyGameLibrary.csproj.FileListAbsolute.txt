@@ -1,6 +1,0 @@
-C:\Users\dejat\OneDrive\Desktop\! School Stuff\CSC Programs\403_SCRUM_CRTJ-main\Project\MyGameLibrary\bin\Debug\MyGameLibrary.dll
-C:\Users\dejat\OneDrive\Desktop\! School Stuff\CSC Programs\403_SCRUM_CRTJ-main\Project\MyGameLibrary\bin\Debug\MyGameLibrary.pdb
-C:\Users\dejat\OneDrive\Desktop\! School Stuff\CSC Programs\403_SCRUM_CRTJ-main\Project\MyGameLibrary\obj\Debug\MyGameLibrary.csproj.AssemblyReference.cache
-C:\Users\dejat\OneDrive\Desktop\! School Stuff\CSC Programs\403_SCRUM_CRTJ-main\Project\MyGameLibrary\obj\Debug\MyGameLibrary.csproj.CoreCompileInputs.cache
-C:\Users\dejat\OneDrive\Desktop\! School Stuff\CSC Programs\403_SCRUM_CRTJ-main\Project\MyGameLibrary\obj\Debug\MyGameLibrary.dll
-C:\Users\dejat\OneDrive\Desktop\! School Stuff\CSC Programs\403_SCRUM_CRTJ-main\Project\MyGameLibrary\obj\Debug\MyGameLibrary.pdb
