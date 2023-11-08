@@ -20,7 +20,7 @@ namespace Fall2020_CSC403_Project {
     private DateTime timeBegin;
     private FrmBattle frmBattle;
     private Point offScreen = new Point(-100, -100);
-    private Enemy[] enemies =  new Enemy[1]; 
+    private Enemy[] enemies; 
 
         // initialize variables for animation
     private int imgNum;
@@ -32,14 +32,16 @@ namespace Fall2020_CSC403_Project {
     private void FrmLevelForest_Load(object sender, EventArgs e) {
       const int PADDING = 7;
       const int NUM_WALLS = 6;
+      //enemies = new Enemy[1];
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
       
       picPlayer.Image = Properties.Resources.player;
 
-      Enemy monster = new Enemy.LowEnemySubclass(CreatePosition(picEnemy1), CreateCollider(picEnemy1, PADDING));
-      monster.Img = picEnemy1.Image;
-      enemies[0] = monster;
+            //Enemy monster = new Enemy.LowEnemySubclass(CreatePosition(picEnemy1), CreateCollider(picEnemy1, PADDING));
+            //monster.Img = picEnemy1.Image;
+            //enemies[0] = monster;
+      GenerateEnemies(4);
 
       walls = new Character[NUM_WALLS];
       for (int w = 0; w < NUM_WALLS; w++) {
@@ -50,7 +52,17 @@ namespace Fall2020_CSC403_Project {
       Game.player = player;
       timeBegin = DateTime.Now;
       }
-
+    
+    private void GenerateEnemies(int numEnemies)
+        {
+            const int PADDING = 7;
+            enemies = new Enemy[numEnemies];
+            for (int i = 0; i < numEnemies; i++)
+            {
+                PictureBox pic = Controls.Find("picEnemy" + (i + 1).ToString(), true)[0] as PictureBox;
+                enemies[i] = new Enemy.LowEnemySubclass(CreatePosition(pic), CreateCollider(pic, PADDING)) { Img = pic.Image };
+            }
+        }
     private Vector2 CreatePosition(PictureBox pic) {
       return new Vector2(pic.Location.X, pic.Location.Y);
     }
@@ -87,58 +99,23 @@ namespace Fall2020_CSC403_Project {
       }
 
       for (int enemy = 0; enemy < enemies.Length; enemy++)
+        {
+            if( HitAChar( player, enemies[enemy] ) && enemies[enemy].Health > 0)
             {
-                if( HitAChar( player, enemies[enemy] ))
-                {
-                    Fight(enemies[enemy]);
-                }
-
-                if (enemies[enemy].Health <= 0)
-                {
-                    enemies[enemy].Img = null; 
-                }
+                Fight(enemies[enemy]);
+                    
             }
 
-      // check collision with enemies
-      //if (HitAChar(player, enemyPoisonPacket)) {
-      //  Fight(enemyPoisonPacket);
-      //}
-      //else if (HitAChar(player, enemyCheeto)) {
-      //  Fight(enemyCheeto);
-      //}
-      //if (HitAChar(player, bossKoolaid)) {
-      //  Fight(bossKoolaid);
-      //}
+            if (enemies[enemy].Health <= 0)
+            {
+                PictureBox pic = Controls.Find("picEnemy" + (enemy + 1).ToString(), true)[0] as PictureBox;
+                pic.Location = offScreen;
+                    
+            }
+        }
 
-       // if (enemyPoisonPacket.Health <= 0) {
-       // // Move the enemy's PictureBox off-screen
-       // //enemyPoisonPacket.Img = null;
-       // picEnemyPoisonPacket.Location = offScreen;
-
-       // // Move the enemy's Collider off-screen
-       // //collider.enemyPoisonPacket.Collider.Location = offScreen;
-       // }
-
-       // if (enemyCheeto.Health <= 0) {
-       // // Move the enemy's PictureBox off-screen
-       // //enemyCheeto.Img = null;
-       // picEnemyCheeto.Location = offScreen;
-
-       // // Move the enemy's Collider off-screen
-       // //collider.enemyCheeto.Collider.Location = offScreen;
-       // }
-
-       // if (bossKoolaid.Health <= 0) {
-       // // Move the enemy's PictureBox off-screen
-       //// bossKoolaid.Img = null;
-       // picBossKoolAid.Location = offScreen;
-
-       // // Move the enemy's Collider off-screen
-       // //collider.bossKoolaid.Collider.Location = offScreen;
-       // }
-
-            // update player's picture box
-            picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+       // update player's picture box
+       picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
 
       
      }
@@ -278,5 +255,6 @@ namespace Fall2020_CSC403_Project {
                 imgNum++;
             }
         }
+
     }
 }
