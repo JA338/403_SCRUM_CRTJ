@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.Invslot1 = new System.Windows.Forms.PictureBox();
             this.InvSlot5 = new System.Windows.Forms.PictureBox();
             this.InvSlot2 = new System.Windows.Forms.PictureBox();
@@ -45,10 +44,6 @@
             this.InvLbl6 = new System.Windows.Forms.Label();
             this.InvLbl8 = new System.Windows.Forms.Label();
             this.InvLbl7 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.equipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.discardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.Invslot1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvSlot5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvSlot2)).BeginInit();
@@ -57,7 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.InvSlot6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvSlot7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvSlot8)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Invslot1
@@ -205,36 +199,6 @@
             this.InvLbl7.TabIndex = 15;
             this.InvLbl7.Text = "Empty";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.equipToolStripMenuItem,
-            this.discardToolStripMenuItem,
-            this.closeToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
-            // 
-            // equipToolStripMenuItem
-            // 
-            this.equipToolStripMenuItem.Name = "equipToolStripMenuItem";
-            this.equipToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.equipToolStripMenuItem.Text = "Equip";
-            this.equipToolStripMenuItem.Click += new System.EventHandler(this.equipToolStripMenuItem_Click);
-            // 
-            // discardToolStripMenuItem
-            // 
-            this.discardToolStripMenuItem.Name = "discardToolStripMenuItem";
-            this.discardToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.discardToolStripMenuItem.Text = "Discard";
-            this.discardToolStripMenuItem.Click += new System.EventHandler(this.discardToolStripMenuItem_Click);
-            // 
-            // closeToolStripMenuItem
-            // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.closeToolStripMenuItem.Text = "Close";
-            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
-            // 
             // FrmInv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,7 +221,7 @@
             this.Controls.Add(this.InvSlot5);
             this.Controls.Add(this.Invslot1);
             this.Name = "FrmInv";
-            this.Text = "Inventory";
+            this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmInv_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.Invslot1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvSlot5)).EndInit();
@@ -267,7 +231,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.InvSlot6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvSlot7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvSlot8)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,9 +254,5 @@
         private System.Windows.Forms.Label InvLbl6;
         private System.Windows.Forms.Label InvLbl8;
         private System.Windows.Forms.Label InvLbl7;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem equipToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem discardToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
     }
 }

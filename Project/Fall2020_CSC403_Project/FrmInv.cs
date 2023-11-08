@@ -34,20 +34,5 @@ namespace Fall2020_CSC403_Project
                     break;
             }
         }
-
-        private void equipToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void discardToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
