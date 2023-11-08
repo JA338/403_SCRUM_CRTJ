@@ -2,6 +2,7 @@
 using Fall2020_CSC403_Project.Properties;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Media;
 using System.Windows.Forms;
 
@@ -18,24 +19,27 @@ namespace Fall2020_CSC403_Project {
     private Enemy enemyBowizard;
     private DateTime timeBegin;
     private FrmBattle frmBattle;
-        private Point offScreen = new Point(-100, -100);
+    private Point offScreen = new Point(-100, -100);
+    private Enemy[] enemies =  new Enemy[1]; 
 
         // initialize variables for animation
-        private int imgNum;
-        private bool dFlag = false;
+    private int imgNum;
+    private bool dFlag = false;
     public FrmLevelForest() {
       InitializeComponent();
     }
 
     private void FrmLevelForest_Load(object sender, EventArgs e) {
       const int PADDING = 7;
-      const int NUM_WALLS = 1;
+      const int NUM_WALLS = 6;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
       
       picPlayer.Image = Properties.Resources.player;
 
-            Enemy witch = new Enemy(CreatePosition(picEnemy1), CreateCollider(picEnemy1, PADDING));
+      Enemy monster = new Enemy.LowEnemySubclass(CreatePosition(picEnemy1), CreateCollider(picEnemy1, PADDING));
+      monster.Img = picEnemy1.Image;
+      enemies[0] = monster;
 
       walls = new Character[NUM_WALLS];
       for (int w = 0; w < NUM_WALLS; w++) {
@@ -81,6 +85,19 @@ namespace Fall2020_CSC403_Project {
       if (HitAWall(player)) {
         player.MoveBack();
       }
+
+      for (int enemy = 0; enemy < enemies.Length; enemy++)
+            {
+                if( HitAChar( player, enemies[enemy] ))
+                {
+                    Fight(enemies[enemy]);
+                }
+
+                if (enemies[enemy].Health <= 0)
+                {
+                    enemies[enemy].Img = null; 
+                }
+            }
 
       // check collision with enemies
       //if (HitAChar(player, enemyPoisonPacket)) {
@@ -169,9 +186,6 @@ namespace Fall2020_CSC403_Project {
       frmBattle = FrmBattle.GetInstance(enemy);
       frmBattle.Show();
 
-      if (enemy == bossKoolaid) {
-        frmBattle.SetupForBossBattle();
-      }
       
     }
 
@@ -263,16 +277,6 @@ namespace Fall2020_CSC403_Project {
             {
                 imgNum++;
             }
-        }
-
-        private void deathscreen_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picWall0_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
