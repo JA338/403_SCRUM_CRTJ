@@ -148,6 +148,7 @@
   <ItemGroup>
     <Content Include="data\enemy_bowizard.jpg" />
     <Content Include="data\InvBox.png" />
+    <None Include="data\samehada.png" />
     <None Include="data\title_screen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

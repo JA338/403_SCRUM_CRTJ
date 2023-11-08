@@ -121,7 +121,7 @@ namespace Fall2020_CSC403_Project {
         picEnemyCheeto.Location = offScreen;
 
         // Move the enemy's Collider off-screen
-        //collider.enemyCheeto.Collider.Location = offScreen;
+        enemyCheeto = new Enemy.LowEnemySubclass(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, 7)); ;
         }
 
         if (bossKoolaid.Health <= 0) {
