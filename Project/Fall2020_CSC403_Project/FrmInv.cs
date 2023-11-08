@@ -34,5 +34,10 @@ namespace Fall2020_CSC403_Project
                     break;
             }
         }
+
+        private void Invslot1_BackgroundImageChanged(object sender, EventArgs e)
+        {
+            Invslot1.Image = global::Fall2020_CSC403_Project.Properties.Resources.samehada;
+        }
     }
 }
