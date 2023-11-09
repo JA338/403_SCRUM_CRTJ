@@ -28,7 +28,7 @@ namespace Fall2020_CSC403_Project {
 
     private void FrmLevelForest_Load(object sender, EventArgs e) {
       const int PADDING = 5;
-      const int NUM_WALLS = 12;
+      const int NUM_WALLS = 18;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
       
@@ -62,7 +62,7 @@ namespace Fall2020_CSC403_Project {
                 //    enemies[i] = new Enemy.MedEnemySubclass(CreatePosition(picLow), CreateCollider(picLow, PADDING)) { Img = picLow.Image };
                 //}
                 PictureBox picLow = Controls.Find("picEnemy" + (i + 1).ToString(), true)[0] as PictureBox;
-                enemies[i] = new Enemy.LowEnemySubclass(CreatePosition(picLow), CreateCollider(picLow, PADDING)) { Img = picLow.Image };
+                enemies[i] = new Enemy.MedEnemySubclass(CreatePosition(picLow), CreateCollider(picLow, PADDING)) { Img = picLow.Image };
             }
         }
     private Vector2 CreatePosition(PictureBox pic) {
