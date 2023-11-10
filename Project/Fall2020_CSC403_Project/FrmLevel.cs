@@ -100,7 +100,7 @@ namespace Fall2020_CSC403_Project {
       if (HitAChar(player, samehada)) {
                 picsamehada.Location = offScreen;
                 samehada = new Weapon(CreatePosition(picsamehada), CreateCollider(picsamehada, 7));
-                frmInv.AddItem(samehada);
+                frmInv.AddSamehada();
             }
 
       // check collision with enemies

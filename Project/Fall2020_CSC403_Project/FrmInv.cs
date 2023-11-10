@@ -37,10 +37,44 @@ namespace Fall2020_CSC403_Project
             }
         }
 
-        public void AddItem(Weapon weapon)
+        public void AddSamehada()
         {
-            Invslot1.BackgroundImage = weapon.Img;
-            Invslot1.Refresh();
+            Invslot1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.samehada;
         }
+        public void RemoveSamehada()
+        {
+
+        }
+
+        private void Invslot1_Click(object sender, EventArgs e)
+        {
+            Discard.Visible = true;
+            Equip.Visible = true;
+            Close.Visible = true;
+            Description.Visible = true;
+            DisplayWep.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.samehada;
+            DisplayWep.Visible = true;
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void EquipClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DiscClick(object sender, EventArgs e)
+        {
+            Invslot1.BackgroundImage = null;
+        }
+
+        private void Description_Click(object sender, EventArgs e)
+        {
+            SamehadaText.Visible = true;
+        }
+
     }
 }
