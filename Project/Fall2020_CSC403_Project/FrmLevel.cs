@@ -10,7 +10,7 @@ namespace Fall2020_CSC403_Project {
 
     private Player player;
 
-        private FrmInv FrmInv;
+        private FrmInv frmInv;
     private Enemy enemyPoisonPacket;
     private Enemy bossKoolaid;
     private Enemy enemyCheeto;
@@ -18,7 +18,7 @@ namespace Fall2020_CSC403_Project {
     private Enemy enemyBowizard;
     private DateTime timeBegin;
     private FrmBattle frmBattle; 
-        private Character samehada;
+        private Weapon samehada;
         private Point offScreen = new Point(-100, -100);
 
         // initialize variables for animation
@@ -36,15 +36,16 @@ namespace Fall2020_CSC403_Project {
         bossKoolaid = new Enemy.HighEnemySubclass(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
         enemyPoisonPacket = new Enemy.MedEnemySubclass(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
         enemyCheeto = new Enemy.LowEnemySubclass(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
-            samehada = new Enemy(CreatePosition(picsamehada), (CreateCollider(picsamehada, PADDING)));
+            samehada = new Weapon(CreatePosition(picsamehada), (CreateCollider(picsamehada, PADDING)));
             // sets player image at loadtime
             picPlayer.Image = Properties.Resources.player;
       enemyBowizard = new Enemy.HighEnemySubclass(CreatePosition(picEnemyBowizard), CreateCollider(picEnemyBowizard, PADDING));
-            FrmInv = new FrmInv();
+            frmInv = new FrmInv();
             bossKoolaid.Img = picBossKoolAid.BackgroundImage;
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
       enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
       enemyBowizard.Img = picEnemyBowizard.BackgroundImage;
+
 
       bossKoolaid.Color = Color.Red;
       enemyPoisonPacket.Color = Color.Green;
@@ -98,9 +99,10 @@ namespace Fall2020_CSC403_Project {
       // check collision with samehada
       if (HitAChar(player, samehada))
             {
-                player.MoveBack();
                 picsamehada.Location = offScreen;
-                samehada = new Character(CreatePosition(picsamehada), CreateCollider(picsamehada, 7));
+                samehada = new Weapon(CreatePosition(picsamehada), CreateCollider(picsamehada, 7));
+                frmInv.AddItem(samehada);
+                
             }
 
       // check collision with enemies
@@ -236,7 +238,7 @@ namespace Fall2020_CSC403_Project {
 
         case Keys.I:
                     // display inventory upon pressing "I"
-                    FrmInv.Show();
+                    frmInv.Show();
           break;
                 case Keys.B:
                     // call dr. bowman on key press

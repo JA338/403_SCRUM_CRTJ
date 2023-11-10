@@ -31,19 +31,15 @@ namespace Fall2020_CSC403_Project
                 case Keys.I:
                     this.Hide();
                     break;
-                case Keys.H:
-                    Invslot1.Image = global::Fall2020_CSC403_Project.Properties.Resources.samehada;
-                    break;
-
 
                 default:
                     break;
             }
         }
 
-        public void AddItem(Character item)
+        public void AddItem(Weapon weapon)
         {
-            
+            Invslot1.Image = global::Fall2020_CSC403_Project.Properties.Resources.samehada;
         }
     }
 }
