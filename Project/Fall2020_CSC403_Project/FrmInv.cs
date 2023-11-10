@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fall2020_CSC403_Project.code;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Fall2020_CSC403_Project
 {
     public partial class FrmInv : Form
     {
+        private Character item;
         public static FrmInv instance = null;
         public FrmInv()
         {
@@ -29,15 +31,19 @@ namespace Fall2020_CSC403_Project
                 case Keys.I:
                     this.Hide();
                     break;
+                case Keys.H:
+                    Invslot1.Image = global::Fall2020_CSC403_Project.Properties.Resources.samehada;
+                    break;
+
 
                 default:
                     break;
             }
         }
 
-        private void Invslot1_BackgroundImageChanged(object sender, EventArgs e)
+        public void AddItem(Character item)
         {
-            Invslot1.Image = global::Fall2020_CSC403_Project.Properties.Resources.samehada;
+            
         }
     }
 }

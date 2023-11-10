@@ -8,7 +8,7 @@ namespace Fall2020_CSC403_Project.code {
     public class Weapon { 
         public Weapon (Weapon weapon) { 
             if (this.weapon = samehada) {
-                
+                    
             }
         }
     }

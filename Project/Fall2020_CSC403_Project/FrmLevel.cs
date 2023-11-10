@@ -101,7 +101,6 @@ namespace Fall2020_CSC403_Project {
                 player.MoveBack();
                 picsamehada.Location = offScreen;
                 samehada = new Character(CreatePosition(picsamehada), CreateCollider(picsamehada, 7));
-
             }
 
       // check collision with enemies
@@ -119,7 +118,7 @@ namespace Fall2020_CSC403_Project {
         // Move the enemy's PictureBox off-screen
         //enemyPoisonPacket.Img = null;
         picEnemyPoisonPacket.Location = offScreen;
-
+        enemyPoisonPacket = new Enemy.LowEnemySubclass(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, 7));
         // Move the enemy's Collider off-screen
         //collider.enemyPoisonPacket.Collider.Location = offScreen;
         }
@@ -130,14 +129,14 @@ namespace Fall2020_CSC403_Project {
         picEnemyCheeto.Location = offScreen;
 
         // Move the enemy's Collider off-screen
-        enemyCheeto = new Enemy.LowEnemySubclass(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, 7)); ;
+        enemyCheeto = new Enemy.LowEnemySubclass(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, 7)); 
         }
 
         if (bossKoolaid.Health <= 0) {
         // Move the enemy's PictureBox off-screen
        // bossKoolaid.Img = null;
         picBossKoolAid.Location = offScreen;
-
+        bossKoolaid = new Enemy.HighEnemySubclass(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, 7));
         // Move the enemy's Collider off-screen
         //collider.bossKoolaid.Collider.Location = offScreen;
         }
@@ -167,10 +166,6 @@ namespace Fall2020_CSC403_Project {
     else { return false; }
     }
 
-    private void HitAWeapon(Character c)
-        {
-            
-        }
 
     private bool HitAWall(Character c) {
       bool hitAWall = false;
