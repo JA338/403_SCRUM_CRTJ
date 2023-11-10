@@ -30,7 +30,7 @@ namespace Fall2020_CSC403_Project {
 
     private void FrmLevelForest_Load(object sender, EventArgs e) {
       const int PADDING = 5;
-      const int NUM_WALLS = 20;
+      const int NUM_WALLS = 21;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
       picPlayer.Image = Properties.Resources.player;
@@ -131,9 +131,10 @@ namespace Fall2020_CSC403_Project {
                     {
                         exitCheck = true;
                         this.Hide();
-                        var frmLevel = new FrmLevelForest();
+                        var frmLevel = new FrmLevelGatefront();
                         frmLevel.Closed += (s, args) => this.Close();
                         frmLevel.Show();
+                        this.Close();
                     }
                 }
         }

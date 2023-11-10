@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmLevelGatefront.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLevelGatefront.Designer.cs">
+      <DependentUpon>FrmLevelGatefront.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLevelForest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmLevelGatefront.resx">
+      <DependentUpon>FrmLevelGatefront.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLevelForest.resx">
       <DependentUpon>FrmLevelForest.cs</DependentUpon>
     </EmbeddedResource>

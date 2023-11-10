@@ -66,6 +66,7 @@
             this.picEnemy4 = new System.Windows.Forms.PictureBox();
             this.picExitIndic = new System.Windows.Forms.PictureBox();
             this.picWall19 = new System.Windows.Forms.PictureBox();
+            this.picWall20 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deathscreen)).BeginInit();
@@ -95,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExitIndic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall20)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -213,7 +215,7 @@
             // 
             this.picEnemy2.BackColor = System.Drawing.Color.Transparent;
             this.picEnemy2.Image = ((System.Drawing.Image)(resources.GetObject("picEnemy2.Image")));
-            this.picEnemy2.Location = new System.Drawing.Point(511, 315);
+            this.picEnemy2.Location = new System.Drawing.Point(670, 605);
             this.picEnemy2.Name = "picEnemy2";
             this.picEnemy2.Size = new System.Drawing.Size(75, 112);
             this.picEnemy2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -480,6 +482,17 @@
             this.picWall19.TabIndex = 47;
             this.picWall19.TabStop = false;
             // 
+            // picWall20
+            // 
+            this.picWall20.BackColor = System.Drawing.Color.Transparent;
+            this.picWall20.Image = ((System.Drawing.Image)(resources.GetObject("picWall20.Image")));
+            this.picWall20.Location = new System.Drawing.Point(1139, 446);
+            this.picWall20.Name = "picWall20";
+            this.picWall20.Size = new System.Drawing.Size(286, 313);
+            this.picWall20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picWall20.TabIndex = 48;
+            this.picWall20.TabStop = false;
+            // 
             // FrmLevelForest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,6 +502,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.picWall20);
             this.Controls.Add(this.picWall19);
             this.Controls.Add(this.picPlayer);
             this.Controls.Add(this.picExitIndic);
@@ -558,6 +572,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExitIndic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall20)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,6 +616,7 @@
         private System.Windows.Forms.PictureBox picEnemy4;
         public System.Windows.Forms.PictureBox picExitIndic;
         private System.Windows.Forms.PictureBox picWall19;
+        private System.Windows.Forms.PictureBox picWall20;
     }
 }
 
