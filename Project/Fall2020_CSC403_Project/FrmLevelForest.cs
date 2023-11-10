@@ -133,8 +133,9 @@ namespace Fall2020_CSC403_Project {
                         this.Hide();
                         var frmLevel = new FrmLevelGatefront();
                         frmLevel.Closed += (s, args) => this.Close();
+                        //this.Dispose();
                         frmLevel.Show();
-                        this.Close();
+                        //this.Close();
                     }
                 }
         }

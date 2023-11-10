@@ -2,13 +2,11 @@
 using Fall2020_CSC403_Project.Properties;
 using System;
 using System.Drawing;
-using System.Linq;
 using System.Media;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
   public partial class FrmLevelGatefront : Form {
-
     private Player player;
 
     private FrmInv FrmInv;
@@ -21,23 +19,21 @@ namespace Fall2020_CSC403_Project {
     private bool exitCheck = false;
     private Enemy[] enemies;
 
-        // initialize variables for animation
+    // initialize variables for animation
     private int imgNum;
     private bool dFlag = false;
     public FrmLevelGatefront() {
       InitializeComponent();
     }
 
-    private void FrmLevelGatefront_Load(object sender, EventArgs e) {
+    private void FrmLevel_Load(object sender, EventArgs e) {
       const int PADDING = 7;
-      const int NUM_WALLS = 6;
+      const int NUM_WALLS = 0;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-      picPlayer.Image = Properties.Resources.player;
-        exitCollider = new Character(CreatePosition(picExitIndic), CreateCollider(picExitIndic, PADDING));
-
-
-      GenerateEnemies(1, 3, 0);
+            GenerateEnemies(0, 2, 0);
+            // sets player image at loadtime
+            picPlayer.Image = Properties.Resources.player;
 
       walls = new Character[NUM_WALLS];
       for (int w = 0; w < NUM_WALLS; w++) {
@@ -47,34 +43,8 @@ namespace Fall2020_CSC403_Project {
 
       Game.player = player;
       timeBegin = DateTime.Now;
-      }
-    
-    //method for generating enemies in the level
-    //WARNING: Enemy pictures have to be ordered in series based on their tiers, from low to high, based on this implementation
-    private void GenerateEnemies(int numLowEnemies, int numMedEnemies, int numHighEnemies)
-        {
-            const int PADDING = 7;
-            enemies = new Enemy[numLowEnemies + numMedEnemies + numHighEnemies];
-
-            for (int enemy = 0; enemy < enemies.Length; enemy++)
-            {
-                PictureBox pictureBox = Controls.Find("picEnemy" + (enemy).ToString(), true)[0] as PictureBox;
-
-                if (enemy < numLowEnemies)
-                {
-                    enemies[enemy] = new Enemy.LowEnemySubclass(CreatePosition(pictureBox), CreateCollider(pictureBox, PADDING)) { Img = pictureBox.Image };
-                }
-                else if (enemy < numLowEnemies + numMedEnemies)
-                {
-                    enemies[enemy] = new Enemy.MedEnemySubclass(CreatePosition(pictureBox), CreateCollider(pictureBox, PADDING)) { Img = pictureBox.Image };
-                }
-                else
-                {
-                    // Assuming the remaining enemies are HighEnemySubclass
-                    enemies[enemy] = new Enemy.HighEnemySubclass(CreatePosition(pictureBox), CreateCollider(pictureBox, PADDING)) { Img = pictureBox.Image };
-                }
-            }
         }
+
     private Vector2 CreatePosition(PictureBox pic) {
       return new Vector2(pic.Location.X, pic.Location.Y);
     }
@@ -99,53 +69,83 @@ namespace Fall2020_CSC403_Project {
       lblInGameTime.Text = "Time: " + time.ToString();
     }
 
-    private void tmrPlayerMove_Tick(object sender, EventArgs e) {
-        // check for player death event
-        CheckForDeath();
-        // move player
-        player.Move();
-
-      // check collision with walls
-      if (HitAWall(player)) {
-        player.MoveBack();
-      }
-
-      for (int enemy = 0; enemy < enemies.Length; enemy++)
+        //method for generating enemies in the level
+        //WARNING: Enemy pictures have to be ordered in series based on their tiers, from low to high, based on this implementation
+        private void GenerateEnemies(int numLowEnemies, int numMedEnemies, int numHighEnemies)
         {
-            if( HitAChar( player, enemies[enemy] ) && enemies[enemy].Health > 0)
-            {
-                Fight(enemies[enemy]);
-                    
-            }
+            const int PADDING = 7;
+            enemies = new Enemy[numLowEnemies + numMedEnemies + numHighEnemies];
 
-            if (enemies[enemy].Health <= 0)
+            for (int enemy = 0; enemy < enemies.Length; enemy++)
             {
-                PictureBox pic = Controls.Find("picEnemy" +  ( (enemy).ToString() ) , true)[0] as PictureBox;
-                pic.Location = offScreen;  
+                PictureBox pictureBox = Controls.Find("picEnemy" + (enemy).ToString(), true)[0] as PictureBox;
+
+                if (enemy <= numLowEnemies)
+                {
+                    enemies[enemy] = new Enemy.LowEnemySubclass(CreatePosition(pictureBox), CreateCollider(pictureBox, PADDING)) { Img = pictureBox.Image };
+                }
+                else if (enemy < numLowEnemies + numMedEnemies)
+                {
+                    enemies[enemy] = new Enemy.MedEnemySubclass(CreatePosition(pictureBox), CreateCollider(pictureBox, PADDING)) { Img = pictureBox.Image };
+                }
+                else
+                {
+                    // Assuming the remaining enemies are HighEnemySubclass
+                    enemies[enemy] = new Enemy.HighEnemySubclass(CreatePosition(pictureBox), CreateCollider(pictureBox, PADDING)) { Img = pictureBox.Image };
+                }
             }
-            // if the pig enemy is dead, enable the exit for the level and the arrow indicator
-            //if (enemy + 1 == enemies.Length && enemies[enemy].Health <= 0)
-            //    {
-            //        picExitIndic.Visible = true;
-            //        if (HitAChar(player, exitCollider) && exitCheck == false)
-            //        {
-            //            exitCheck = true;
-            //            this.Hide();
-            //            var frmLevel = new FrmLevelForest();
-            //            frmLevel.Closed += (s, args) => this.Close();
-            //            frmLevel.Show();
-            //        }
-            //    }
         }
-        
-        
-       // update player's picture box
-       picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+        private void tmrPlayerMove_Tick(object sender, EventArgs e)
+        {
+            // check for player death event
+            CheckForDeath();
+            // move player
+            player.Move();
 
-      
-     }
-    
-    private void PlayDeathSound()
+            // check collision with walls
+            if (HitAWall(player))
+            {
+                player.MoveBack();
+            }
+
+            for (int enemy = 0; enemy < enemies.Length; enemy++)
+            {
+                if (HitAChar(player, enemies[enemy]) && enemies[enemy].Health > 0)
+                {
+                    Fight(enemies[enemy]);
+
+                }
+
+                if (enemies[enemy].Health <= 0)
+                {
+                    PictureBox pic = Controls.Find("picEnemy" + ((enemy).ToString()), true)[0] as PictureBox;
+                    pic.Location = offScreen;
+                }
+                // if the pig enemy is dead, enable the exit for the level and the arrow indicator
+                //if (enemy + 1 == enemies.Length && enemies[enemy].Health <= 0)
+                //{
+                //    //picExitIndic.Visible = true;
+                //    if (HitAChar(player, exitCollider) && exitCheck == false)
+                //    {
+                //        exitCheck = true;
+                //        this.Hide();
+                //        var frmLevel = new FrmLevelGatefront();
+                //        frmLevel.Closed += (s, args) => this.Close();
+                //        //this.Dispose();
+                //        frmLevel.Show();
+                //        //this.Close();
+                //    }
+                //}
+            }
+
+
+            // update player's picture box
+            picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+
+
+        }
+
+        private void PlayDeathSound()
     {
         SoundPlayer deathAudio = new SoundPlayer(Resources.deathsound);
         deathAudio.Play();
@@ -156,12 +156,11 @@ namespace Fall2020_CSC403_Project {
     if (player.Health <= 0 && deathscreen.Visible == false)
     {
         // hide secret key 
-        //secret.Visible = false;
+        secret.Visible = false;
         deathscreen.Visible = true;
         PlayDeathSound();            
         return true;
     }
-    if (deathscreen.Visible == true) { return true; }
     else { return false; }
     }
 
@@ -188,7 +187,6 @@ namespace Fall2020_CSC403_Project {
       player.MoveBack();
       frmBattle = FrmBattle.GetInstance(enemy);
       frmBattle.Show();
-
       
     }
 
@@ -238,7 +236,7 @@ namespace Fall2020_CSC403_Project {
                     // call dr. bowman on key press
                     SoundPlayer drbowman = new SoundPlayer(Resources.bowman);
                     drbowman.Play();
-                    Fight(enemyBowizard);
+                    //Fight(enemyBowizard);
                     break;
 
         default:
@@ -281,6 +279,5 @@ namespace Fall2020_CSC403_Project {
                 imgNum++;
             }
         }
-
     }
 }
