@@ -18,22 +18,31 @@ namespace Fall2020_CSC403_Project {
     private Character exitCollider;
     private bool exitCheck = false;
     private Enemy[] enemies;
+    const int PADDING = 7;
 
-    // initialize variables for animation
-    private int imgNum;
+        // initialize variables for animation
+        private int imgNum;
     private bool dFlag = false;
     public FrmLevelGatefront() {
       InitializeComponent();
     }
 
-    private void FrmLevel_Load(object sender, EventArgs e) {
-      const int PADDING = 7;
-      const int NUM_WALLS = 0;
+    public FrmLevelGatefront(Player oldPlayer, FrmInv inventory) {
+            InitializeComponent();
+            player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING)) { Health = oldPlayer.Health };
+            FrmInv = inventory;
+            //this.player = player;
+            //this.FrmInv = inventory;
+        }
 
-      player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-            GenerateEnemies(0, 2, 0);
-            // sets player image at loadtime
-            picPlayer.Image = Properties.Resources.player;
+
+    private void FrmLevel_Load(object sender, EventArgs e) {
+       const int NUM_WALLS = 6;
+
+        
+        GenerateEnemies(0, 2, 0);
+        // sets player image at loadtime
+        picPlayer.Image = Properties.Resources.player;
 
       walls = new Character[NUM_WALLS];
       for (int w = 0; w < NUM_WALLS; w++) {
@@ -80,7 +89,7 @@ namespace Fall2020_CSC403_Project {
             {
                 PictureBox pictureBox = Controls.Find("picEnemy" + (enemy).ToString(), true)[0] as PictureBox;
 
-                if (enemy <= numLowEnemies)
+                if (enemy < numLowEnemies)
                 {
                     enemies[enemy] = new Enemy.LowEnemySubclass(CreatePosition(pictureBox), CreateCollider(pictureBox, PADDING)) { Img = pictureBox.Image };
                 }
