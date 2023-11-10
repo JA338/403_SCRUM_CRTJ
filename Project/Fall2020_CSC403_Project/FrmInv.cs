@@ -13,7 +13,7 @@ namespace Fall2020_CSC403_Project
 {
     public partial class FrmInv : Form
     {
-        private Character item;
+        private Weapon weapon;
         public static FrmInv instance = null;
         public FrmInv()
         {
@@ -39,7 +39,8 @@ namespace Fall2020_CSC403_Project
 
         public void AddItem(Weapon weapon)
         {
-            Invslot1.Image = global::Fall2020_CSC403_Project.Properties.Resources.samehada;
+            Invslot1.BackgroundImage = weapon.Img;
+            Invslot1.Refresh();
         }
     }
 }

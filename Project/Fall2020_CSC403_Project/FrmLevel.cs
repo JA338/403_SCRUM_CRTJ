@@ -45,7 +45,7 @@ namespace Fall2020_CSC403_Project {
       enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
       enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
       enemyBowizard.Img = picEnemyBowizard.BackgroundImage;
-
+            samehada.Img = picsamehada.BackgroundImage;
 
       bossKoolaid.Color = Color.Red;
       enemyPoisonPacket.Color = Color.Green;
@@ -97,12 +97,10 @@ namespace Fall2020_CSC403_Project {
         player.MoveBack();
       }
       // check collision with samehada
-      if (HitAChar(player, samehada))
-            {
+      if (HitAChar(player, samehada)) {
                 picsamehada.Location = offScreen;
                 samehada = new Weapon(CreatePosition(picsamehada), CreateCollider(picsamehada, 7));
                 frmInv.AddItem(samehada);
-                
             }
 
       // check collision with enemies
