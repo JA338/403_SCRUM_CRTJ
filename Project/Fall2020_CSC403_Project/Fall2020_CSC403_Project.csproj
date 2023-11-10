@@ -160,7 +160,6 @@
     <Content Include="data\InvBox.png" />
     <Content Include="data\tree-plan-27873.png" />
     <Content Include="data\tree-plan-alt.png" />
-    <None Include="data\title_screen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

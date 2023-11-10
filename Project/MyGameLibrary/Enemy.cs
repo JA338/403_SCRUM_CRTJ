@@ -29,7 +29,7 @@ namespace Fall2020_CSC403_Project.code {
         {
             MaxHealth = 10;
             Health = MaxHealth;
-            strength = 2;
+            strength = 1.2f;
         }
     }
 
@@ -39,7 +39,7 @@ namespace Fall2020_CSC403_Project.code {
         {
             MaxHealth = 20;
             Health = MaxHealth;
-            strength = 3;
+            strength = 1.8f;
         }
     }
     public class HighEnemySubclass : Enemy
@@ -48,7 +48,7 @@ namespace Fall2020_CSC403_Project.code {
         {
             MaxHealth = 30;
             Health = MaxHealth;
-            strength = 5;
+            strength = 2.5f;
         }
     }
     }

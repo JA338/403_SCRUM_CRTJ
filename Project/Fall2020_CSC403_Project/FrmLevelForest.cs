@@ -17,7 +17,9 @@ namespace Fall2020_CSC403_Project {
     private DateTime timeBegin;
     private FrmBattle frmBattle;
     private Point offScreen = new Point(-100, -100);
-    private Enemy[] enemies; 
+    private Character exitCollider;
+    private bool exitCheck = false;
+    private Enemy[] enemies;
 
         // initialize variables for animation
     private int imgNum;
@@ -28,13 +30,14 @@ namespace Fall2020_CSC403_Project {
 
     private void FrmLevelForest_Load(object sender, EventArgs e) {
       const int PADDING = 5;
-      const int NUM_WALLS = 18;
+      const int NUM_WALLS = 20;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-      
       picPlayer.Image = Properties.Resources.player;
+        exitCollider = new Character(CreatePosition(picExitIndic), CreateCollider(picExitIndic, PADDING));
 
-      GenerateEnemies(1, 3);
+
+        GenerateEnemies(1, 3, 1);
 
       walls = new Character[NUM_WALLS];
       for (int w = 0; w < NUM_WALLS; w++) {
@@ -46,23 +49,30 @@ namespace Fall2020_CSC403_Project {
       timeBegin = DateTime.Now;
       }
     
-    private void GenerateEnemies(int numLowEnemies, int numMedEnemies)
+    //method for generating enemies in the level
+    //WARNING: Enemy pictures have to be ordered in series based on their tiers, from low to high, based on this implementation
+    private void GenerateEnemies(int numLowEnemies, int numMedEnemies, int numHighEnemies)
         {
             const int PADDING = 7;
-            enemies = new Enemy[numLowEnemies + numMedEnemies];
-            for (int i = 0; i < enemies.Length; i++)
+            enemies = new Enemy[numLowEnemies + numMedEnemies + numHighEnemies];
+
+            for (int enemy = 0; enemy < enemies.Length; enemy++)
             {
-                //if (i < numLowEnemies)
-                //{
-                //    PictureBox picLow = Controls.Find("picLowEnemy" + (i + 1).ToString(), true)[0] as PictureBox;
-                //    enemies[i] = new Enemy.LowEnemySubclass(CreatePosition(picLow), CreateCollider(picLow, PADDING)) { Img = picLow.Image };
-                //}
-                //else if (numLowEnemies <= i && i < numMedEnemies) {
-                //    PictureBox picLow = Controls.Find("picMedEnemy" + (i + 1 - numLowEnemies).ToString(), true)[0] as PictureBox;
-                //    enemies[i] = new Enemy.MedEnemySubclass(CreatePosition(picLow), CreateCollider(picLow, PADDING)) { Img = picLow.Image };
-                //}
-                PictureBox picLow = Controls.Find("picEnemy" + (i + 1).ToString(), true)[0] as PictureBox;
-                enemies[i] = new Enemy.MedEnemySubclass(CreatePosition(picLow), CreateCollider(picLow, PADDING)) { Img = picLow.Image };
+                PictureBox pictureBox = Controls.Find("picEnemy" + (enemy).ToString(), true)[0] as PictureBox;
+
+                if (enemy < numLowEnemies)
+                {
+                    enemies[enemy] = new Enemy.LowEnemySubclass(CreatePosition(pictureBox), CreateCollider(pictureBox, PADDING)) { Img = pictureBox.Image };
+                }
+                else if (enemy < numLowEnemies + numMedEnemies)
+                {
+                    enemies[enemy] = new Enemy.MedEnemySubclass(CreatePosition(pictureBox), CreateCollider(pictureBox, PADDING)) { Img = pictureBox.Image };
+                }
+                else
+                {
+                    // Assuming the remaining enemies are HighEnemySubclass
+                    enemies[enemy] = new Enemy.HighEnemySubclass(CreatePosition(pictureBox), CreateCollider(pictureBox, PADDING)) { Img = pictureBox.Image };
+                }
             }
         }
     private Vector2 CreatePosition(PictureBox pic) {
@@ -110,12 +120,24 @@ namespace Fall2020_CSC403_Project {
 
             if (enemies[enemy].Health <= 0)
             {
-                PictureBox pic = Controls.Find("picEnemy" + (enemy + 1).ToString(), true)[0] as PictureBox;
-                pic.Location = offScreen;
-                    
+                PictureBox pic = Controls.Find("picEnemy" +  ( (enemy).ToString() ) , true)[0] as PictureBox;
+                pic.Location = offScreen;  
             }
+            // if the pig enemy is dead, enable the exit for the level and the arrow indicator
+            if (enemy + 1 == enemies.Length && enemies[enemy].Health <= 0)
+                {
+                    picExitIndic.Visible = true;
+                }
         }
-
+        
+        if ( HitAChar(player, exitCollider) && exitCheck == false)
+            {
+                exitCheck = true;
+                this.Hide();
+                var frmLevel = new FrmLevelForest();
+                frmLevel.Closed += (s, args) => this.Close();
+                frmLevel.Show();
+            }
        // update player's picture box
        picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
 
@@ -138,6 +160,7 @@ namespace Fall2020_CSC403_Project {
         PlayDeathSound();            
         return true;
     }
+    if (deathscreen.Visible == true) { return true; }
     else { return false; }
     }
 
