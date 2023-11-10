@@ -449,7 +449,7 @@
             // 
             this.picEnemy4.BackColor = System.Drawing.Color.Transparent;
             this.picEnemy4.Image = ((System.Drawing.Image)(resources.GetObject("picEnemy4.Image")));
-            this.picEnemy4.Location = new System.Drawing.Point(575, 81);
+            this.picEnemy4.Location = new System.Drawing.Point(569, 91);
             this.picEnemy4.Name = "picEnemy4";
             this.picEnemy4.Size = new System.Drawing.Size(75, 75);
             this.picEnemy4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

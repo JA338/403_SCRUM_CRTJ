@@ -127,17 +127,18 @@ namespace Fall2020_CSC403_Project {
             if (enemy + 1 == enemies.Length && enemies[enemy].Health <= 0)
                 {
                     picExitIndic.Visible = true;
+                    if (HitAChar(player, exitCollider) && exitCheck == false)
+                    {
+                        exitCheck = true;
+                        this.Hide();
+                        var frmLevel = new FrmLevelForest();
+                        frmLevel.Closed += (s, args) => this.Close();
+                        frmLevel.Show();
+                    }
                 }
         }
         
-        if ( HitAChar(player, exitCollider) && exitCheck == false)
-            {
-                exitCheck = true;
-                this.Hide();
-                var frmLevel = new FrmLevelForest();
-                frmLevel.Closed += (s, args) => this.Close();
-                frmLevel.Show();
-            }
+        
        // update player's picture box
        picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
 
