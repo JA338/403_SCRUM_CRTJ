@@ -37,8 +37,8 @@
             this.BtnDefend = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblPlayerStaminaFull = new System.Windows.Forms.Label();
+            this.lblPlayerManaFull = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
@@ -57,7 +57,7 @@
             // 
             // lblPlayerHealthFull
             // 
-            this.lblPlayerHealthFull.BackColor = System.Drawing.Color.Blue;
+            this.lblPlayerHealthFull.BackColor = System.Drawing.Color.Red;
             this.lblPlayerHealthFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerHealthFull.ForeColor = System.Drawing.Color.White;
             this.lblPlayerHealthFull.Location = new System.Drawing.Point(73, 60);
@@ -85,7 +85,7 @@
             // 
             // lblEnemyHealthFull
             // 
-            this.lblEnemyHealthFull.BackColor = System.Drawing.Color.Blue;
+            this.lblEnemyHealthFull.BackColor = System.Drawing.Color.Red;
             this.lblEnemyHealthFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnemyHealthFull.ForeColor = System.Drawing.Color.White;
             this.lblEnemyHealthFull.Location = new System.Drawing.Point(516, 60);
@@ -173,25 +173,25 @@
             this.label4.Size = new System.Drawing.Size(229, 23);
             this.label4.TabIndex = 11;
             // 
-            // label5
+            // lblPlayerStaminaFull
             // 
-            this.label5.BackColor = System.Drawing.Color.Blue;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(73, 387);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(226, 20);
-            this.label5.TabIndex = 12;
+            this.lblPlayerStaminaFull.BackColor = System.Drawing.Color.Gold;
+            this.lblPlayerStaminaFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerStaminaFull.ForeColor = System.Drawing.Color.White;
+            this.lblPlayerStaminaFull.Location = new System.Drawing.Point(73, 387);
+            this.lblPlayerStaminaFull.Name = "lblPlayerStaminaFull";
+            this.lblPlayerStaminaFull.Size = new System.Drawing.Size(226, 20);
+            this.lblPlayerStaminaFull.TabIndex = 12;
             // 
-            // label6
+            // lblPlayerManaFull
             // 
-            this.label6.BackColor = System.Drawing.Color.Blue;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(73, 430);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(226, 20);
-            this.label6.TabIndex = 13;
+            this.lblPlayerManaFull.BackColor = System.Drawing.Color.Blue;
+            this.lblPlayerManaFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerManaFull.ForeColor = System.Drawing.Color.White;
+            this.lblPlayerManaFull.Location = new System.Drawing.Point(73, 430);
+            this.lblPlayerManaFull.Name = "lblPlayerManaFull";
+            this.lblPlayerManaFull.Size = new System.Drawing.Size(226, 20);
+            this.lblPlayerManaFull.TabIndex = 13;
             // 
             // FrmBattle
             // 
@@ -200,13 +200,13 @@
             this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(822, 603);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.picBossBattle);
+            this.Controls.Add(this.lblPlayerManaFull);
+            this.Controls.Add(this.lblPlayerStaminaFull);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.BtnDefend);
             this.Controls.Add(this.BtnFlee);
-            this.Controls.Add(this.picBossBattle);
             this.Controls.Add(this.lblEnemyHealthFull);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblPlayerHealthFull);
@@ -240,7 +240,7 @@
         private System.Windows.Forms.Button BtnDefend;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblPlayerStaminaFull;
+        private System.Windows.Forms.Label lblPlayerManaFull;
     }
 }
