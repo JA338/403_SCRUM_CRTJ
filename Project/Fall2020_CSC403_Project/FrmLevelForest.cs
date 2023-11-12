@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
   public partial class FrmLevelForest : Form {
-
     private Player player;
-
+        public int score;
+        private Enemy[] defeated;
     private FrmInv FrmInv;
     private Character[] walls;
     private Enemy enemyBowizard;
@@ -27,6 +27,7 @@ namespace Fall2020_CSC403_Project {
     public FrmLevelForest() {
       InitializeComponent();
     }
+
 
     private void FrmLevelForest_Load(object sender, EventArgs e) {
       const int PADDING = 5;
@@ -97,7 +98,8 @@ namespace Fall2020_CSC403_Project {
       TimeSpan span = DateTime.Now - timeBegin;
       string time = span.ToString(@"hh\:mm\:ss");
       lblInGameTime.Text = "Time: " + time.ToString();
-    }
+            label1.Text = "Score " + Game.scoreData.ToString();
+        }
 
     private void tmrPlayerMove_Tick(object sender, EventArgs e) {
         // check for player death event
@@ -121,8 +123,11 @@ namespace Fall2020_CSC403_Project {
             if (enemies[enemy].Health <= 0)
             {
                 PictureBox pic = Controls.Find("picEnemy" +  ( (enemy).ToString() ) , true)[0] as PictureBox;
-                pic.Location = offScreen;  
-            }
+                    score = score + 10;
+                pic.Location = offScreen;
+                    
+                    
+                }
             // if the pig enemy is dead, enable the exit for the level and the arrow indicator
             if (enemy + 1 == enemies.Length && enemies[enemy].Health <= 0)
                 {
@@ -134,7 +139,7 @@ namespace Fall2020_CSC403_Project {
                         var frmLevel = new FrmLevelGatefront();
                         frmLevel.Closed += (s, args) => this.Close();
                         frmLevel.Show();
-                        this.Close();
+    
                     }
                 }
         }
@@ -283,5 +288,9 @@ namespace Fall2020_CSC403_Project {
             }
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
