@@ -51,6 +51,9 @@
             this.picWall5 = new System.Windows.Forms.PictureBox();
             this.picWall7 = new System.Windows.Forms.PictureBox();
             this.picWall8 = new System.Windows.Forms.PictureBox();
+            this.picOpenGate = new System.Windows.Forms.PictureBox();
+            this.picLever = new System.Windows.Forms.PictureBox();
+            this.picExitColl = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deathscreen)).BeginInit();
@@ -64,6 +67,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOpenGate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLever)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExitColl)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -190,16 +196,16 @@
             this.picWall0.BackColor = System.Drawing.Color.Transparent;
             this.picWall0.Location = new System.Drawing.Point(0, 30);
             this.picWall0.Name = "picWall0";
-            this.picWall0.Size = new System.Drawing.Size(622, 253);
+            this.picWall0.Size = new System.Drawing.Size(638, 253);
             this.picWall0.TabIndex = 23;
             this.picWall0.TabStop = false;
             // 
             // picWall1
             // 
             this.picWall1.BackColor = System.Drawing.Color.Transparent;
-            this.picWall1.Location = new System.Drawing.Point(785, 30);
+            this.picWall1.Location = new System.Drawing.Point(772, 30);
             this.picWall1.Name = "picWall1";
-            this.picWall1.Size = new System.Drawing.Size(622, 253);
+            this.picWall1.Size = new System.Drawing.Size(635, 253);
             this.picWall1.TabIndex = 24;
             this.picWall1.TabStop = false;
             // 
@@ -208,7 +214,7 @@
             this.picWall2.BackColor = System.Drawing.Color.Transparent;
             this.picWall2.Location = new System.Drawing.Point(400, 30);
             this.picWall2.Name = "picWall2";
-            this.picWall2.Size = new System.Drawing.Size(622, 47);
+            this.picWall2.Size = new System.Drawing.Size(622, 103);
             this.picWall2.TabIndex = 25;
             this.picWall2.TabStop = false;
             // 
@@ -263,6 +269,37 @@
             this.picWall8.TabIndex = 43;
             this.picWall8.TabStop = false;
             // 
+            // picOpenGate
+            // 
+            this.picOpenGate.Image = ((System.Drawing.Image)(resources.GetObject("picOpenGate.Image")));
+            this.picOpenGate.Location = new System.Drawing.Point(32, 9);
+            this.picOpenGate.Name = "picOpenGate";
+            this.picOpenGate.Size = new System.Drawing.Size(26, 18);
+            this.picOpenGate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picOpenGate.TabIndex = 45;
+            this.picOpenGate.TabStop = false;
+            // 
+            // picLever
+            // 
+            this.picLever.BackColor = System.Drawing.Color.Transparent;
+            this.picLever.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picLever.Image = ((System.Drawing.Image)(resources.GetObject("picLever.Image")));
+            this.picLever.Location = new System.Drawing.Point(475, 289);
+            this.picLever.Name = "picLever";
+            this.picLever.Size = new System.Drawing.Size(53, 54);
+            this.picLever.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLever.TabIndex = 46;
+            this.picLever.TabStop = false;
+            // 
+            // picExitColl
+            // 
+            this.picExitColl.BackColor = System.Drawing.Color.Transparent;
+            this.picExitColl.Location = new System.Drawing.Point(658, 127);
+            this.picExitColl.Name = "picExitColl";
+            this.picExitColl.Size = new System.Drawing.Size(97, 60);
+            this.picExitColl.TabIndex = 47;
+            this.picExitColl.TabStop = false;
+            // 
             // FrmLevelGatefront
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +309,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.picExitColl);
+            this.Controls.Add(this.picLever);
             this.Controls.Add(this.picWall8);
             this.Controls.Add(this.picWall7);
             this.Controls.Add(this.picWall5);
@@ -287,6 +326,7 @@
             this.Controls.Add(this.picEnemyBowizard);
             this.Controls.Add(this.picPlayer);
             this.Controls.Add(this.deathscreen);
+            this.Controls.Add(this.picOpenGate);
             this.DoubleBuffered = true;
             this.Name = "FrmLevelGatefront";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -307,6 +347,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOpenGate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLever)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExitColl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,6 +378,9 @@
         private System.Windows.Forms.PictureBox picWall5;
         private System.Windows.Forms.PictureBox picWall7;
         private System.Windows.Forms.PictureBox picWall8;
+        private System.Windows.Forms.PictureBox picOpenGate;
+        private System.Windows.Forms.PictureBox picLever;
+        private System.Windows.Forms.PictureBox picExitColl;
     }
 }
 
