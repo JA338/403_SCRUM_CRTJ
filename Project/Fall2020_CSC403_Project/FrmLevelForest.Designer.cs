@@ -489,12 +489,10 @@
             // picExitIndic
             // 
             this.picExitIndic.BackColor = System.Drawing.Color.Transparent;
-            this.picExitIndic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picExitIndic.BackgroundImage")));
             this.picExitIndic.Image = ((System.Drawing.Image)(resources.GetObject("picExitIndic.Image")));
-            this.picExitIndic.Location = new System.Drawing.Point(1707, 0);
-            this.picExitIndic.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.picExitIndic.Location = new System.Drawing.Point(621, 0);
             this.picExitIndic.Name = "picExitIndic";
-            this.picExitIndic.Size = new System.Drawing.Size(200, 179);
+            this.picExitIndic.Size = new System.Drawing.Size(94, 101);
             this.picExitIndic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picExitIndic.TabIndex = 46;
             this.picExitIndic.TabStop = false;
