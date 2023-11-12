@@ -6,7 +6,7 @@ using System.Media;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
-    public partial class FrmLevelGatefront : Form {
+    public partial class FrmLevelCastle : Form {
     private Player player;
 
     private FrmInv FrmInv;
@@ -26,13 +26,13 @@ namespace Fall2020_CSC403_Project {
     private bool dFlag = false;
 
 
-    public FrmLevelGatefront() {
+    public FrmLevelCastle() {
         InitializeComponent();
         player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
         //BackgroundImage = picOpenGate.Image;
     }
 
-    public FrmLevelGatefront(Player oldPlayer, FrmInv inventory) {
+    public FrmLevelCastle(Player oldPlayer, FrmInv inventory) {
         InitializeComponent();
         player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING)) { Health = oldPlayer.Health };
         FrmInv = inventory;
@@ -42,13 +42,12 @@ namespace Fall2020_CSC403_Project {
 
 
     private void FrmLevel_Load(object sender, EventArgs e) {
-        const int NUM_WALLS = 6;
+        const int NUM_WALLS = 8;
 
         
         GenerateEnemies(0, 2, 0);
         // sets player image at loadtime
         picPlayer.Image = Properties.Resources.player;
-        lever = new Character(CreatePosition(picLever), CreateCollider(picLever, PADDING));
         exitCollider = new Character(CreatePosition(picExitColl), CreateCollider(picExitColl, PADDING));
 
                 walls = new Character[NUM_WALLS];
@@ -137,18 +136,27 @@ namespace Fall2020_CSC403_Project {
                 PictureBox pic = Controls.Find("picEnemy" + ((enemy).ToString()), true)[0] as PictureBox;
                 pic.Location = offScreen;
             }
-            
+            // if the pig enemy is dead, enable the exit for the level and the arrow indicator
+            //if (enemy + 1 == enemies.Length && enemies[enemy].Health <= 0)
+            //{
+            //    //picExitIndic.Visible = true;
+            //    if (HitAChar(player, exitCollider) && exitCheck == false)
+            //    {
+            //        exitCheck = true;
+            //        this.Hide();
+            //        var frmLevel = new FrmLevelGatefront();
+            //        frmLevel.Closed += (s, args) => this.Close();
+            //        //this.Dispose();
+            //        frmLevel.Show();
+            //        //this.Close();
+            //    }
+            //}
         }
-        if( HitAChar(player, lever))
-            {
-                exitCheck = true;
-                BackgroundImage = picOpenGate.Image;
-            }
         if ( HitAChar(player, exitCollider) && exitCheck)
         {
             exitCheck = false;
             this.Hide();
-            var frmLevel = new FrmLevelCastle();
+            var frmLevel = new FrmLevel();
             frmLevel.Closed += (s, args) => this.Close();
             //this.Dispose();
             frmLevel.Show();

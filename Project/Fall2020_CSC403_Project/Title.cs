@@ -26,6 +26,7 @@ namespace Fall2020_CSC403_Project
             this.Hide();
             //var frmLevel = new FrmLevelGatefront();
             var frmLevel = new FrmLevelForest();
+            //var frmLevel = new FrmLevelCastle();
             frmLevel.Closed += (s, args) => this.Close();
             frmLevel.Show();
         }
