@@ -83,7 +83,7 @@ namespace Fall2020_CSC403_Project {
       TimeSpan span = DateTime.Now - timeBegin;
       string time = span.ToString(@"hh\:mm\:ss");
       lblInGameTime.Text = "Time: " + time.ToString();
-            label2.Text = "Score " + Game.scoreData.ToString();
+            //label2.Text = "Score " + Game.scoreData.ToString();
         }
 
     //method for generating enemies in the level

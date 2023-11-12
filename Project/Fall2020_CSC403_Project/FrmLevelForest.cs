@@ -10,7 +10,6 @@ namespace Fall2020_CSC403_Project {
   public partial class FrmLevelForest : Form {
     private Player player;
         public int score;
-        private Enemy[] defeated;
     private FrmInv FrmInv;
     private Character[] walls;
     private Enemy enemyBowizard;
