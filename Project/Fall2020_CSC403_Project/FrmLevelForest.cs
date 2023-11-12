@@ -237,6 +237,7 @@ namespace Fall2020_CSC403_Project {
 
         case Keys.I:
                     // display inventory upon pressing "I"
+                    Game.player = player;
                     FrmInv = new FrmInv();
                     FrmInv.Show();
           break;
