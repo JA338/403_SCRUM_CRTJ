@@ -490,7 +490,7 @@
             // 
             this.picExitIndic.BackColor = System.Drawing.Color.Transparent;
             this.picExitIndic.Image = ((System.Drawing.Image)(resources.GetObject("picExitIndic.Image")));
-            this.picExitIndic.Location = new System.Drawing.Point(621, 0);
+            this.picExitIndic.Location = new System.Drawing.Point(1571, 0);
             this.picExitIndic.Name = "picExitIndic";
             this.picExitIndic.Size = new System.Drawing.Size(94, 101);
             this.picExitIndic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

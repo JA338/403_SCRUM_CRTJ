@@ -129,7 +129,7 @@
             this.secret.BackColor = System.Drawing.Color.Transparent;
             this.secret.Location = new System.Drawing.Point(90, 372);
             this.secret.Name = "secret";
-            this.secret.Size = new System.Drawing.Size(14, 13);
+            this.secret.Size = new System.Drawing.Size(34, 32);
             this.secret.TabIndex = 19;
             this.secret.Text = "B";
             // 
@@ -301,10 +301,6 @@
             this.picExitColl.Size = new System.Drawing.Size(97, 60);
             this.picExitColl.TabIndex = 47;
             this.picExitColl.TabStop = false;
-            // 
-            // label2
-            // 
-            
             // 
             // FrmLevelGatefront
             // 

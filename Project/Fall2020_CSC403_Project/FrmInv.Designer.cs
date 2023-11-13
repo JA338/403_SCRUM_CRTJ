@@ -45,7 +45,6 @@
             this.InvLbl8 = new System.Windows.Forms.Label();
             this.InvLbl7 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
-            this.loadButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Invslot1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvSlot5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvSlot2)).BeginInit();
@@ -227,22 +226,11 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // button1
-            // 
-            this.loadButton.Location = new System.Drawing.Point(1222, 223);
-            this.loadButton.Name = "loadButton";
-            this.loadButton.Size = new System.Drawing.Size(222, 84);
-            this.loadButton.TabIndex = 17;
-            this.loadButton.Text = "Load";
-            this.loadButton.UseVisualStyleBackColor = true;
-            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
-            // 
             // FrmInv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1489, 525);
-            this.Controls.Add(this.loadButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.InvLbl7);
             this.Controls.Add(this.InvLbl8);
@@ -296,6 +284,5 @@
         private System.Windows.Forms.Label InvLbl8;
         private System.Windows.Forms.Label InvLbl7;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Button loadButton;
     }
 }

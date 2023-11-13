@@ -9,7 +9,6 @@ using System.Windows.Forms;
 namespace Fall2020_CSC403_Project {
   public partial class FrmLevelForest : Form {
     private Player player;
-        public int score;
     private FrmInv FrmInv;
     private Character[] walls;
     private Enemy enemyBowizard;
@@ -19,12 +18,14 @@ namespace Fall2020_CSC403_Project {
     private Character exitCollider;
     private bool exitCheck = false;
     private Enemy[] enemies;
+        
 
         // initialize variables for animation
     private int imgNum;
     private bool dFlag = false;
     public FrmLevelForest() {
       InitializeComponent();
+      Game.levelData = "Level 1";
     }
 
 
@@ -122,7 +123,6 @@ namespace Fall2020_CSC403_Project {
             if (enemies[enemy].Health <= 0)
             {
                 PictureBox pic = Controls.Find("picEnemy" +  ( (enemy).ToString() ) , true)[0] as PictureBox;
-                    score = score + 10;
                 pic.Location = offScreen;
                     
                     
