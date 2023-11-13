@@ -169,9 +169,12 @@
             this.Controls.Add(this.picEnemy);
             this.Controls.Add(this.picPlayer);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmBattle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Fight!";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
