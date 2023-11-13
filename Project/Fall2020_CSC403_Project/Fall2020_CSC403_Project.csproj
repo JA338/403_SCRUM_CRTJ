@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SaveGame.cs" />
     <Compile Include="FrmLevelCastle.cs">
       <SubType>Form</SubType>
     </Compile>
