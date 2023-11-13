@@ -337,7 +337,7 @@
             // 
             this.picWall6.BackColor = System.Drawing.Color.Transparent;
             this.picWall6.Image = ((System.Drawing.Image)(resources.GetObject("picWall6.Image")));
-            this.picWall6.Location = new System.Drawing.Point(300, 662);
+            this.picWall6.Location = new System.Drawing.Point(12, 405);
             this.picWall6.Name = "picWall6";
             this.picWall6.Size = new System.Drawing.Size(82, 75);
             this.picWall6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
