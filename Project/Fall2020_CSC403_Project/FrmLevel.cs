@@ -10,15 +10,14 @@ namespace Fall2020_CSC403_Project {
 
     private Player player;
 
-        private FrmInv frmInv;
+        private FrmInv FrmInv;
     private Enemy enemyPoisonPacket;
     private Enemy bossKoolaid;
     private Enemy enemyCheeto;
     private Character[] walls;
     private Enemy enemyBowizard;
     private DateTime timeBegin;
-    private FrmBattle frmBattle; 
-        private Weapon samehada;
+    private FrmBattle frmBattle;
         private Point offScreen = new Point(-100, -100);
 
         // initialize variables for animation
@@ -36,18 +35,15 @@ namespace Fall2020_CSC403_Project {
             bossKoolaid = new Enemy.HighEnemySubclass(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
             enemyPoisonPacket = new Enemy.MedEnemySubclass(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
             enemyCheeto = new Enemy.LowEnemySubclass(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
-            samehada = new Weapon(CreatePosition(picsamehada), (CreateCollider(picsamehada, PADDING)));
+
             // sets player image at loadtime
             picPlayer.Image = Properties.Resources.player;
             enemyBowizard = new Enemy.HighEnemySubclass(CreatePosition(picEnemyBowizard), CreateCollider(picEnemyBowizard, PADDING));
-            frmInv = new FrmInv();
+
             bossKoolaid.Img = picBossKoolAid.BackgroundImage;
             enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
             enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
             enemyBowizard.Img = picEnemyBowizard.BackgroundImage;
-
-            samehada.Img = picsamehada.BackgroundImage;
-
 
             bossKoolaid.Color = Color.Red;
             enemyPoisonPacket.Color = Color.Green;
@@ -118,8 +114,9 @@ namespace Fall2020_CSC403_Project {
                 // Move the enemy's PictureBox off-screen
                 //enemyPoisonPacket.Img = null;
                 picEnemyPoisonPacket.Location = offScreen;
-        enemyPoisonPacket = new Enemy.LowEnemySubclass(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, 7));
+
                 // Move the enemy's Collider off-screen
+                //collider.enemyPoisonPacket.Collider.Location = offScreen;
             }
 
             if (enemyCheeto.Health <= 0)
@@ -128,17 +125,19 @@ namespace Fall2020_CSC403_Project {
                 //enemyCheeto.Img = null;
                 picEnemyCheeto.Location = offScreen;
 
-        // Move the enemy's Collider off-screen
-        enemyCheeto = new Enemy.LowEnemySubclass(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, 7)); 
-        }
+                // Move the enemy's Collider off-screen
+                //collider.enemyCheeto.Collider.Location = offScreen;
+            }
 
-        if (bossKoolaid.Health <= 0) {
-        // Move the enemy's PictureBox off-screen
-       // bossKoolaid.Img = null;
-        picBossKoolAid.Location = offScreen;
-        bossKoolaid = new Enemy.HighEnemySubclass(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, 7));
-        // Move the enemy's Collider off-screen
-        }
+            if (bossKoolaid.Health <= 0)
+            {
+                // Move the enemy's PictureBox off-screen
+                // bossKoolaid.Img = null;
+                picBossKoolAid.Location = offScreen;
+
+                // Move the enemy's Collider off-screen
+                //collider.bossKoolaid.Collider.Location = offScreen;
+            }
 
             // update player's picture box
             picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
@@ -233,7 +232,8 @@ namespace Fall2020_CSC403_Project {
 
         case Keys.I:
                     // display inventory upon pressing "I"
-                    frmInv.Show();
+                    FrmInv = new FrmInv();
+                    FrmInv.Show();
           break;
                 case Keys.B:
                     // call dr. bowman on key press

@@ -30,7 +30,6 @@ namespace Fall2020_CSC403_Project
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Title));
-            this.button1 = new System.Windows.Forms.Button();
             this.TitleImage = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
