@@ -259,7 +259,7 @@
             this.picLever.BackColor = System.Drawing.Color.Transparent;
             this.picLever.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picLever.Image = ((System.Drawing.Image)(resources.GetObject("picLever.Image")));
-            this.picLever.Location = new System.Drawing.Point(475, 289);
+            this.picLever.Location = new System.Drawing.Point(475, 313);
             this.picLever.Name = "picLever";
             this.picLever.Size = new System.Drawing.Size(53, 54);
             this.picLever.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
