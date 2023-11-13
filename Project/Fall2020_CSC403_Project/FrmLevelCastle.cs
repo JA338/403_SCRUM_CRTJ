@@ -139,12 +139,14 @@ namespace Fall2020_CSC403_Project {
         }
 
             
-        //check if the final boss is dead, and allow win condition if true.
+        //check if the final boss is dead and if the player IS NOT colliding with the exit check, 
+        //and allow win condition if true.
         if (enemies[4].Health <= 0 && !HitAChar(player, exitCollider)) { exitCheck = true; }
 
         //if (HitAChar(player, enemyBowizard)) { Fight(enemyBowizard); }
         if ( HitAChar(player, exitCollider) && exitCheck)
         {
+            //win screen form can go here, just defaults to original level
             exitCheck = false;
             this.Hide();
             var frmLevel = new FrmLevel();
