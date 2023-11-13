@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SaveGame.cs" />
     <Compile Include="FrmLevelCastle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,7 +65,6 @@
     <Compile Include="FrmLevelForest.Designer.cs">
       <DependentUpon>FrmLevelForest.cs</DependentUpon>
     </Compile>
-    <Compile Include="SaveGame.cs" />
     <Compile Include="Title.cs">
       <SubType>Form</SubType>
     </Compile>
