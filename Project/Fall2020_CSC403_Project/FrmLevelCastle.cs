@@ -9,7 +9,7 @@ namespace Fall2020_CSC403_Project {
     public partial class FrmLevelCastle : Form {
     private Player player;
 
-    private FrmInv FrmInv;
+    private FrmInv frmInv;
     private Character[] walls;
     private Enemy enemyBowizard;
     private DateTime timeBegin;
@@ -34,7 +34,7 @@ namespace Fall2020_CSC403_Project {
     public FrmLevelCastle(Player oldPlayer, FrmInv inventory) {
         InitializeComponent();
         player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING)) { Health = oldPlayer.Health };
-        FrmInv = inventory;
+        frmInv = inventory;
         //this.player = player;
         //this.FrmInv = inventory;
     }
@@ -170,8 +170,6 @@ namespace Fall2020_CSC403_Project {
 
         if (player.Health <= 0 && deathscreen.Visible == false)
         {
-            // hide secret key 
-            secret.Visible = false;
             deathscreen.Visible = true;
             PlayDeathSound();            
             return true;
@@ -244,8 +242,8 @@ namespace Fall2020_CSC403_Project {
 
             case Keys.I:
                         // display inventory upon pressing "I"
-                        FrmInv = new FrmInv();
-                        FrmInv.Show();
+                        frmInv = new FrmInv();
+                        frmInv.Show();
                 break;
 
             default:
