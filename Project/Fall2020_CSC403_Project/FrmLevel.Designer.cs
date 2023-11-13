@@ -42,11 +42,11 @@
             this.picWall4 = new System.Windows.Forms.PictureBox();
             this.picWall5 = new System.Windows.Forms.PictureBox();
             this.picEnemyCheeto = new System.Windows.Forms.PictureBox();
+            this.picEnemyBowizard = new System.Windows.Forms.PictureBox();
             this.picEnemyPoisonPacket = new System.Windows.Forms.PictureBox();
             this.picWall3 = new System.Windows.Forms.PictureBox();
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
-            this.picEnemyBowizard = new System.Windows.Forms.PictureBox();
             this.deathscreen = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -67,11 +67,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deathscreen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,6 +98,42 @@
             this.tmrPlayerMove.Enabled = true;
             this.tmrPlayerMove.Interval = 10;
             this.tmrPlayerMove.Tick += new System.EventHandler(this.tmrPlayerMove_Tick);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "1.PNG");
+            this.imageList1.Images.SetKeyName(1, "2.PNG");
+            this.imageList1.Images.SetKeyName(2, "3.PNG");
+            this.imageList1.Images.SetKeyName(3, "4.PNG");
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "5.PNG");
+            this.imageList2.Images.SetKeyName(1, "6.PNG");
+            this.imageList2.Images.SetKeyName(2, "7.PNG");
+            this.imageList2.Images.SetKeyName(3, "8.PNG");
+            // 
+            // secret
+            // 
+            this.secret.AutoSize = true;
+            this.secret.BackColor = System.Drawing.Color.Transparent;
+            this.secret.Location = new System.Drawing.Point(90, 372);
+            this.secret.Name = "secret";
+            this.secret.Size = new System.Drawing.Size(14, 13);
+            this.secret.TabIndex = 19;
+            this.secret.Text = "B";
             // 
             // picsamehada
             // 
@@ -253,6 +289,18 @@
             this.picEnemyCheeto.TabIndex = 5;
             this.picEnemyCheeto.TabStop = false;
             // 
+            // picEnemyBowizard
+            // 
+            this.picEnemyBowizard.BackColor = System.Drawing.Color.Transparent;
+            this.picEnemyBowizard.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_bowizard;
+            this.picEnemyBowizard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picEnemyBowizard.Location = new System.Drawing.Point(0, 0);
+            this.picEnemyBowizard.Margin = new System.Windows.Forms.Padding(1);
+            this.picEnemyBowizard.Name = "picEnemyBowizard";
+            this.picEnemyBowizard.Size = new System.Drawing.Size(0, 0);
+            this.picEnemyBowizard.TabIndex = 18;
+            this.picEnemyBowizard.TabStop = false;
+            // 
             // picEnemyPoisonPacket
             // 
             this.picEnemyPoisonPacket.BackColor = System.Drawing.Color.Transparent;
@@ -313,10 +361,8 @@
             // 
             this.deathscreen.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
             this.deathscreen.BackColor = System.Drawing.Color.Transparent;
-            this.deathscreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.deathscreen.Cursor = System.Windows.Forms.Cursors.No;
             this.deathscreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.deathscreen.Image = global::Fall2020_CSC403_Project.Properties.Resources.deathscreen;
             this.deathscreen.Location = new System.Drawing.Point(0, 0);
             this.deathscreen.Name = "deathscreen";
             this.deathscreen.Size = new System.Drawing.Size(722, 445);
@@ -324,42 +370,6 @@
             this.deathscreen.TabIndex = 18;
             this.deathscreen.TabStop = false;
             this.deathscreen.Visible = false;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "1.PNG");
-            this.imageList1.Images.SetKeyName(1, "2.PNG");
-            this.imageList1.Images.SetKeyName(2, "3.PNG");
-            this.imageList1.Images.SetKeyName(3, "4.PNG");
-            // 
-            // timer2
-            // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // imageList2
-            // 
-            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
-            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList2.Images.SetKeyName(0, "5.PNG");
-            this.imageList2.Images.SetKeyName(1, "6.PNG");
-            this.imageList2.Images.SetKeyName(2, "7.PNG");
-            this.imageList2.Images.SetKeyName(3, "8.PNG");
-            // 
-            // secret
-            // 
-            this.secret.AutoSize = true;
-            this.secret.BackColor = System.Drawing.Color.Transparent;
-            this.secret.Location = new System.Drawing.Point(90, 372);
-            this.secret.Name = "secret";
-            this.secret.Size = new System.Drawing.Size(14, 13);
-            this.secret.TabIndex = 19;
-            this.secret.Text = "B";
             // 
             // FrmLevel
             // 
@@ -370,6 +380,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(722, 445);
             this.Controls.Add(this.deathscreen);
+            this.Controls.Add(this.secret);
             this.Controls.Add(this.picWall11);
             this.Controls.Add(this.picWall2);
             this.Controls.Add(this.picWall8);
@@ -389,7 +400,6 @@
             this.Controls.Add(this.picWall3);
             this.Controls.Add(this.picBossKoolAid);
             this.Controls.Add(this.picPlayer);
-            this.Controls.Add(this.secret);
             this.Controls.Add(this.picsamehada);
             this.DoubleBuffered = true;
             this.Name = "FrmLevel";
@@ -412,11 +422,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deathscreen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
