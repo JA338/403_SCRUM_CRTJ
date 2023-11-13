@@ -42,10 +42,5 @@ namespace Fall2020_CSC403_Project
         {
             SaveGame.Save(Game.player);
         }
-
-        private void loadButton_Click(object sender, EventArgs e)
-        {
-            SaveGame.Load(Game.player);
-        }
     }
 }
