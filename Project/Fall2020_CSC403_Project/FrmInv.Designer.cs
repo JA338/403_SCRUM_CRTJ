@@ -49,6 +49,7 @@
             this.four = new System.Windows.Forms.PictureBox();
             this.three = new System.Windows.Forms.PictureBox();
             this.two = new System.Windows.Forms.PictureBox();
+            this.saveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Invslot1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Invslot2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Invslot3)).BeginInit();
@@ -209,7 +210,7 @@
             this.Close.Location = new System.Drawing.Point(449, 142);
             this.Close.Margin = new System.Windows.Forms.Padding(2);
             this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(68, 26);
+            this.Close.Size = new System.Drawing.Size(73, 34);
             this.Close.TabIndex = 18;
             this.Close.Text = "Close";
             this.Close.UseVisualStyleBackColor = false;
@@ -333,12 +334,23 @@
             this.two.Visible = false;
             this.two.Click += new System.EventHandler(this.two_Click);
             // 
+            // button1
+            // 
+            this.saveButton.Location = new System.Drawing.Point(580, 27);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(216, 42);
+            this.saveButton.TabIndex = 31;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
             // FrmInv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(550, 208);
+            this.ClientSize = new System.Drawing.Size(827, 207);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.two);
             this.Controls.Add(this.three);
             this.Controls.Add(this.four);
@@ -382,7 +394,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.three)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.two)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -409,5 +420,6 @@
         private System.Windows.Forms.PictureBox four;
         private System.Windows.Forms.PictureBox three;
         private System.Windows.Forms.PictureBox two;
+        private System.Windows.Forms.Button saveButton;
     }
 }

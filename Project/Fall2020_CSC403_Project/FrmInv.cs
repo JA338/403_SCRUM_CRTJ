@@ -64,14 +64,6 @@ namespace Fall2020_CSC403_Project
                     //break;
             }
         
-        
-        
-    /*
-        private void saveButton_Click(object sender, EventArgs e)
-        {
-            SaveGame.Save(Game.player);
-        }
-    */
         private void DiscClick(object sender, EventArgs e)
         {
             PictureBox blankSlot = ConvertToPictureBox(invslot);
@@ -197,6 +189,9 @@ namespace Fall2020_CSC403_Project
             return null;
         }
 
-
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            SaveGame.Save(Game.player);
+        }
     }
 }
