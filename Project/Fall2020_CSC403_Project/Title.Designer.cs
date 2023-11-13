@@ -30,7 +30,8 @@ namespace Fall2020_CSC403_Project
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Title));
-            this.button1 = new System.Windows.Forms.Button();
+            this.newGameButton = new System.Windows.Forms.Button();
+            this.loadButton = new System.Windows.Forms.Button();
             this.TitleImage = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -38,17 +39,17 @@ namespace Fall2020_CSC403_Project
             ((System.ComponentModel.ISupportInitialize)(this.TitleImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // newGameButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(521, 643);
-            this.button1.Margin = new System.Windows.Forms.Padding(1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(314, 39);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "New Game";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.newGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newGameButton.Location = new System.Drawing.Point(923, 926);
+            this.newGameButton.Margin = new System.Windows.Forms.Padding(8, 5, 8, 5);
+            this.newGameButton.Name = "newGameButton";
+            this.newGameButton.Size = new System.Drawing.Size(711, 129);
+            this.newGameButton.TabIndex = 0;
+            this.newGameButton.Text = "New Game";
+            this.newGameButton.UseVisualStyleBackColor = true;
+            this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
             // 
             // TitleImage
             // 
@@ -104,9 +105,21 @@ namespace Fall2020_CSC403_Project
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // loadButton
+            // 
+            this.loadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadButton.Location = new System.Drawing.Point(923, 1067);
+            this.loadButton.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.loadButton.Name = "loadButton";
+            this.loadButton.Size = new System.Drawing.Size(711, 129);
+            this.loadButton.TabIndex = 2;
+            this.loadButton.Text = "Load Game";
+            this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click_1);
+            // 
             // Title
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
@@ -115,13 +128,14 @@ namespace Fall2020_CSC403_Project
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.TitleImage);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(1);
             this.MaximumSize = new System.Drawing.Size(1386, 788);
             this.MinimumSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.loadButton);
+            this.Controls.Add(this.newGameButton);
+            this.Margin = new System.Windows.Forms.Padding(8, 5, 8, 5);
             this.Name = "Title";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bowizard\'s Brawl";
@@ -133,10 +147,12 @@ namespace Fall2020_CSC403_Project
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox TitleImage;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button newGameButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button loadButton;
     }
 }

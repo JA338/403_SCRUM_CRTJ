@@ -28,8 +28,9 @@ namespace Fall2020_CSC403_Project {
     public FrmLevelCastle() {
         InitializeComponent();
         player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-        //BackgroundImage = picOpenGate.Image;
-    }
+            //BackgroundImage = picOpenGate.Image;
+            Game.levelData = "Level 3";
+        }
 
     public FrmLevelCastle(Player oldPlayer, FrmInv inventory) {
         InitializeComponent();

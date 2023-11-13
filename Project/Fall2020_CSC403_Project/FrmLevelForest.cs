@@ -11,10 +11,12 @@ namespace Fall2020_CSC403_Project {
 
     private Player player;
 
-    private FrmInv FrmInv;
+    private FrmInv frmInv;
     private Character[] walls;
+    private Enemy enemyBowizard;
     private DateTime timeBegin;
     private FrmBattle frmBattle;
+    private Weapon samehada;
     private Point offScreen = new Point(-100, -100);
     private Character exitCollider;
     private bool exitCheck = false;
@@ -25,13 +27,15 @@ namespace Fall2020_CSC403_Project {
     private bool dFlag = false;
     public FrmLevelForest() {
       InitializeComponent();
+      Game.levelData = "Level 1";
     }
 
     private void FrmLevelForest_Load(object sender, EventArgs e) {
       const int PADDING = 5;
       const int NUM_WALLS = 21;
-
+            frmInv = new FrmInv();
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
+      samehada = new Weapon(CreatePosition(picsamehada), (CreateCollider(picsamehada, PADDING)));
       picPlayer.Image = Properties.Resources.player;
         exitCollider = new Character(CreatePosition(picExitIndic), CreateCollider(picExitIndic, PADDING));
 
@@ -96,16 +100,23 @@ namespace Fall2020_CSC403_Project {
       TimeSpan span = DateTime.Now - timeBegin;
       string time = span.ToString(@"hh\:mm\:ss");
       lblInGameTime.Text = "Time: " + time.ToString();
-    }
+            //label1.Text = "Score " + Game.scoreData.ToString();
+        }
 
     private void tmrPlayerMove_Tick(object sender, EventArgs e) {
         // check for player death event
         CheckForDeath();
         // move player
         player.Move();
-
-      // check collision with walls
-      if (HitAWall(player)) {
+            // check collision with samehada
+            if (HitAChar(player, samehada))
+            {
+                picsamehada.Location = offScreen;
+                samehada = new Weapon(CreatePosition(picsamehada), CreateCollider(picsamehada, 7));
+                frmInv.AddSamehada();
+            }
+            // check collision with walls
+            if (HitAWall(player)) {
         player.MoveBack();
       }
 
@@ -130,7 +141,7 @@ namespace Fall2020_CSC403_Project {
                     {
                         exitCheck = true;
                         this.Hide();
-                        var frmLevel = new FrmLevelGatefront(player, FrmInv);
+                        var frmLevel = new FrmLevelGatefront(player, frmInv);
                         frmLevel.Closed += (s, args) => this.Close();
                         //this.Dispose();
                         frmLevel.Show();
@@ -231,9 +242,9 @@ namespace Fall2020_CSC403_Project {
           break;
 
         case Keys.I:
-            // display inventory upon pressing "I"
-            FrmInv = new FrmInv();
-            FrmInv.Show();
+                    // display inventory upon pressing "I"
+                    frmInv = new FrmInv();
+                    frmInv.Show();
             break;     
                     
         default:
@@ -247,35 +258,35 @@ namespace Fall2020_CSC403_Project {
     private void lblInGameTime_Click(object sender, EventArgs e) {
 
     }
-    // timers for animation start
-    private void timer1_Tick(object sender, EventArgs e)
-    {
-        picPlayer.Image.Dispose();
-        picPlayer.Image = imageList1.Images[imgNum];
-        if (imgNum == imageList1.Images.Count - 1)
+        // timers for animation start
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            imgNum = 0;
-        }
-        else
-        {
-            imgNum++;
+            picPlayer.Image.Dispose();
+            picPlayer.Image = imageList1.Images[imgNum];
+            if (imgNum == imageList1.Images.Count - 1)
+            {
+                imgNum = 0;
+            }
+            else
+            {
+                imgNum++;
 
+            }
         }
-    }
 
-    private void timer2_Tick(object sender, EventArgs e)
-    {
-        picPlayer.Image.Dispose();
-        picPlayer.Image = imageList2.Images[imgNum];
-        if (imgNum == imageList2.Images.Count - 1)
+        private void timer2_Tick(object sender, EventArgs e)
         {
-            imgNum = 0;
+            picPlayer.Image.Dispose();
+            picPlayer.Image = imageList2.Images[imgNum];
+            if (imgNum == imageList2.Images.Count - 1)
+            {
+                imgNum = 0;
+            }
+            else
+            {
+                imgNum++;
+            }
         }
-        else
-        {
-            imgNum++;
-        }
-    }
 
     }
 }
