@@ -38,7 +38,7 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.secret = new System.Windows.Forms.Label();
-            this.picEnemyBowizard = new System.Windows.Forms.PictureBox();
+            this.picEnemy4 = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.deathscreen = new System.Windows.Forms.PictureBox();
             this.picEnemy0 = new System.Windows.Forms.PictureBox();
@@ -57,7 +57,9 @@
             this.picWall7 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).BeginInit();
+            this.picEnemy2 = new System.Windows.Forms.PictureBox();
+            this.picEnemy3 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemy4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deathscreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy0)).BeginInit();
@@ -76,6 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemy2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemy3)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -138,24 +142,26 @@
             this.secret.TabIndex = 19;
             this.secret.Text = "B";
             // 
-            // picEnemyBowizard
+            // picEnemy4
             // 
-            this.picEnemyBowizard.BackColor = System.Drawing.Color.Transparent;
-            this.picEnemyBowizard.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_bowizard;
-            this.picEnemyBowizard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEnemyBowizard.Location = new System.Drawing.Point(0, 0);
-            this.picEnemyBowizard.Margin = new System.Windows.Forms.Padding(1);
-            this.picEnemyBowizard.Name = "picEnemyBowizard";
-            this.picEnemyBowizard.Size = new System.Drawing.Size(0, 0);
-            this.picEnemyBowizard.TabIndex = 18;
-            this.picEnemyBowizard.TabStop = false;
+            this.picEnemy4.BackColor = System.Drawing.Color.Transparent;
+            this.picEnemy4.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_bowizard;
+            this.picEnemy4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picEnemy4.Image = global::Fall2020_CSC403_Project.Properties.Resources.enemy_bowizard;
+            this.picEnemy4.Location = new System.Drawing.Point(635, 21);
+            this.picEnemy4.Margin = new System.Windows.Forms.Padding(1);
+            this.picEnemy4.Name = "picEnemy4";
+            this.picEnemy4.Size = new System.Drawing.Size(111, 139);
+            this.picEnemy4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEnemy4.TabIndex = 18;
+            this.picEnemy4.TabStop = false;
             // 
             // picPlayer
             // 
             this.picPlayer.BackColor = System.Drawing.Color.Transparent;
             this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.player;
             this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPlayer.Location = new System.Drawing.Point(614, 631);
+            this.picPlayer.Location = new System.Drawing.Point(653, 631);
             this.picPlayer.Name = "picPlayer";
             this.picPlayer.Size = new System.Drawing.Size(54, 106);
             this.picPlayer.TabIndex = 0;
@@ -179,7 +185,7 @@
             // 
             this.picEnemy0.BackColor = System.Drawing.Color.Transparent;
             this.picEnemy0.Image = ((System.Drawing.Image)(resources.GetObject("picEnemy0.Image")));
-            this.picEnemy0.Location = new System.Drawing.Point(560, 289);
+            this.picEnemy0.Location = new System.Drawing.Point(519, 289);
             this.picEnemy0.Name = "picEnemy0";
             this.picEnemy0.Size = new System.Drawing.Size(78, 125);
             this.picEnemy0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -268,7 +274,7 @@
             // picExitColl
             // 
             this.picExitColl.BackColor = System.Drawing.Color.Transparent;
-            this.picExitColl.Location = new System.Drawing.Point(637, 54);
+            this.picExitColl.Location = new System.Drawing.Point(635, 51);
             this.picExitColl.Name = "picExitColl";
             this.picExitColl.Size = new System.Drawing.Size(97, 60);
             this.picExitColl.TabIndex = 47;
@@ -344,6 +350,28 @@
             this.pictureBox6.TabIndex = 53;
             this.pictureBox6.TabStop = false;
             // 
+            // picEnemy2
+            // 
+            this.picEnemy2.BackColor = System.Drawing.Color.Transparent;
+            this.picEnemy2.Image = ((System.Drawing.Image)(resources.GetObject("picEnemy2.Image")));
+            this.picEnemy2.Location = new System.Drawing.Point(519, 461);
+            this.picEnemy2.Name = "picEnemy2";
+            this.picEnemy2.Size = new System.Drawing.Size(78, 125);
+            this.picEnemy2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEnemy2.TabIndex = 54;
+            this.picEnemy2.TabStop = false;
+            // 
+            // picEnemy3
+            // 
+            this.picEnemy3.BackColor = System.Drawing.Color.Transparent;
+            this.picEnemy3.Image = ((System.Drawing.Image)(resources.GetObject("picEnemy3.Image")));
+            this.picEnemy3.Location = new System.Drawing.Point(772, 461);
+            this.picEnemy3.Name = "picEnemy3";
+            this.picEnemy3.Size = new System.Drawing.Size(78, 125);
+            this.picEnemy3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEnemy3.TabIndex = 55;
+            this.picEnemy3.TabStop = false;
+            // 
             // FrmLevelCastle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,6 +381,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.picEnemy4);
+            this.Controls.Add(this.picEnemy3);
+            this.Controls.Add(this.picEnemy2);
+            this.Controls.Add(this.picPlayer);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.picWall7);
@@ -370,8 +402,6 @@
             this.Controls.Add(this.picEnemy0);
             this.Controls.Add(this.secret);
             this.Controls.Add(this.lblInGameTime);
-            this.Controls.Add(this.picEnemyBowizard);
-            this.Controls.Add(this.picPlayer);
             this.Controls.Add(this.deathscreen);
             this.Controls.Add(this.picOpenGate);
             this.DoubleBuffered = true;
@@ -381,7 +411,7 @@
             this.Load += new System.EventHandler(this.FrmLevel_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemy4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deathscreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy0)).EndInit();
@@ -400,6 +430,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemy2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemy3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,7 +443,7 @@
         private System.Windows.Forms.Label lblInGameTime;
         private System.Windows.Forms.Timer tmrUpdateInGameTime;
         private System.Windows.Forms.Timer tmrPlayerMove;
-        private System.Windows.Forms.PictureBox picEnemyBowizard;
+        private System.Windows.Forms.PictureBox picEnemy4;
         private System.Windows.Forms.PictureBox deathscreen;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ImageList imageList1;
@@ -434,6 +466,8 @@
         private System.Windows.Forms.PictureBox picWall7;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox picEnemy2;
+        private System.Windows.Forms.PictureBox picEnemy3;
     }
 }
 

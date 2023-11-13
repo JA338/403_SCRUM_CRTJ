@@ -288,7 +288,7 @@
             // 
             this.picEnemy0.BackColor = System.Drawing.Color.Transparent;
             this.picEnemy0.Image = ((System.Drawing.Image)(resources.GetObject("picEnemy0.Image")));
-            this.picEnemy0.Location = new System.Drawing.Point(1239, 251);
+            this.picEnemy0.Location = new System.Drawing.Point(1164, 306);
             this.picEnemy0.Name = "picEnemy0";
             this.picEnemy0.Size = new System.Drawing.Size(59, 76);
             this.picEnemy0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -485,7 +485,7 @@
             // 
             this.picWall20.BackColor = System.Drawing.Color.Transparent;
             this.picWall20.Image = ((System.Drawing.Image)(resources.GetObject("picWall20.Image")));
-            this.picWall20.Location = new System.Drawing.Point(1139, 446);
+            this.picWall20.Location = new System.Drawing.Point(1211, 446);
             this.picWall20.Name = "picWall20";
             this.picWall20.Size = new System.Drawing.Size(286, 313);
             this.picWall20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

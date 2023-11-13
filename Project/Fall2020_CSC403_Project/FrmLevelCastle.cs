@@ -19,7 +19,6 @@ namespace Fall2020_CSC403_Project {
     private bool exitCheck = false;
     private Enemy[] enemies;
     const int PADDING = 7;
-    private Character lever; 
 
         // initialize variables for animation
     private int imgNum;
@@ -43,9 +42,9 @@ namespace Fall2020_CSC403_Project {
 
     private void FrmLevel_Load(object sender, EventArgs e) {
         const int NUM_WALLS = 8;
-
+        //enemyBowizard = new Enemy.HighEnemySubclass(CreatePosition(picEnemy5), CreateCollider(picEnemy5, PADDING));
         
-        GenerateEnemies(0, 2, 0);
+        GenerateEnemies(0, 4, 1);
         // sets player image at loadtime
         picPlayer.Image = Properties.Resources.player;
         exitCollider = new Character(CreatePosition(picExitColl), CreateCollider(picExitColl, PADDING));
@@ -79,10 +78,10 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void tmrUpdateInGameTime_Tick(object sender, EventArgs e) {
-    TimeSpan span = DateTime.Now - timeBegin;
-    string time = span.ToString(@"hh\:mm\:ss");
-    lblInGameTime.Text = "Time: " + time.ToString();
-    }
+        TimeSpan span = DateTime.Now - timeBegin;
+        string time = span.ToString(@"hh\:mm\:ss");
+        lblInGameTime.Text = "Time: " + time.ToString();
+        }
 
     //method for generating enemies in the level
     //WARNING: Enemy pictures have to be ordered in series based on their tiers, from low to high, based on this implementation
@@ -122,7 +121,7 @@ namespace Fall2020_CSC403_Project {
         {
             player.MoveBack();
         }
-
+        // check for collision with enemies
         for (int enemy = 0; enemy < enemies.Length; enemy++)
         {
             if (HitAChar(player, enemies[enemy]) && enemies[enemy].Health > 0)
@@ -130,28 +129,20 @@ namespace Fall2020_CSC403_Project {
                 Fight(enemies[enemy]);
 
             }
-
+            // and remove any enemies that are dead
             if (enemies[enemy].Health <= 0)
             {
                 PictureBox pic = Controls.Find("picEnemy" + ((enemy).ToString()), true)[0] as PictureBox;
                 pic.Location = offScreen;
             }
-            // if the pig enemy is dead, enable the exit for the level and the arrow indicator
-            //if (enemy + 1 == enemies.Length && enemies[enemy].Health <= 0)
-            //{
-            //    //picExitIndic.Visible = true;
-            //    if (HitAChar(player, exitCollider) && exitCheck == false)
-            //    {
-            //        exitCheck = true;
-            //        this.Hide();
-            //        var frmLevel = new FrmLevelGatefront();
-            //        frmLevel.Closed += (s, args) => this.Close();
-            //        //this.Dispose();
-            //        frmLevel.Show();
-            //        //this.Close();
-            //    }
-            //}
+           
         }
+
+            
+        //check if the final boss is dead, and allow win condition if true.
+        if (enemies[4].Health <= 0 && !HitAChar(player, exitCollider)) { exitCheck = true; }
+
+        //if (HitAChar(player, enemyBowizard)) { Fight(enemyBowizard); }
         if ( HitAChar(player, exitCollider) && exitCheck)
         {
             exitCheck = false;
@@ -165,8 +156,6 @@ namespace Fall2020_CSC403_Project {
 
         // update player's picture box
         picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
-
-
     }
 
     private void PlayDeathSound()
@@ -213,61 +202,55 @@ namespace Fall2020_CSC403_Project {
         frmBattle.Show();
       
     }
-
-
-
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
+
         //deletes original background image and sets player image
         picPlayer.BackgroundImage = null;
         picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
+
         //check if the player is dead
         if (CheckForDeath()){ return; }
+
         //check if the key has been pressed
         if(dFlag == true) { return; }
-            dFlag = true;
-            // starts timers based on the direction pressed
+        dFlag = true;
+        // starts timers based on the direction pressed
         switch (e.KeyCode) {
-        case Keys.Left:
-                    imgNum = 0;
-                    timer2.Start();
-            player.GoLeft();
-            break;
+            case Keys.Left:
+                        imgNum = 0;
+                        timer2.Start();
+                player.GoLeft();
+                break;
 
-        case Keys.Right:
-                    imgNum = 0;
-                    timer1.Start();
-            player.GoRight();
-            break;
+            case Keys.Right:
+                        imgNum = 0;
+                        timer1.Start();
+                player.GoRight();
+                break;
 
-        case Keys.Up:
-                    imgNum = 0;
-                    timer1.Start();
-                    player.GoUp();
-            break;
+            case Keys.Up:
+                        imgNum = 0;
+                        timer1.Start();
+                        player.GoUp();
+                break;
 
-        case Keys.Down:
-                    imgNum = 0;
-                    timer2.Start();
-                    player.GoDown();
-            break;
+            case Keys.Down:
+                        imgNum = 0;
+                        timer2.Start();
+                        player.GoDown();
+                break;
 
-        case Keys.I:
-                    // display inventory upon pressing "I"
-                    FrmInv = new FrmInv();
-                    FrmInv.Show();
-            break;
-                case Keys.B:
-                    // call dr. bowman on key press
-                    SoundPlayer drbowman = new SoundPlayer(Resources.bowman);
-                    drbowman.Play();
-                    //Fight(enemyBowizard);
-                    break;
+            case Keys.I:
+                        // display inventory upon pressing "I"
+                        FrmInv = new FrmInv();
+                        FrmInv.Show();
+                break;
 
-        default:
-            player.ResetMoveSpeed();
-            break;
+            default:
+                player.ResetMoveSpeed();
+                break;
+            }
         }
-    }
 
      
 
