@@ -61,51 +61,52 @@
             this.lblInGameTime = new System.Windows.Forms.Label();
             this.tmrUpdateInGameTime = new System.Windows.Forms.Timer(this.components);
             this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
+            this.picsamehada = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.secret = new System.Windows.Forms.Label();
-            this.picWall11 = new System.Windows.Forms.PictureBox();
-            this.picWall2 = new System.Windows.Forms.PictureBox();
-            this.picWall8 = new System.Windows.Forms.PictureBox();
-            this.picWall7 = new System.Windows.Forms.PictureBox();
-            this.picWall1 = new System.Windows.Forms.PictureBox();
-            this.picWall0 = new System.Windows.Forms.PictureBox();
-            this.picWall10 = new System.Windows.Forms.PictureBox();
-            this.picWall9 = new System.Windows.Forms.PictureBox();
-            this.picWall6 = new System.Windows.Forms.PictureBox();
-            this.picWall12 = new System.Windows.Forms.PictureBox();
-            this.picWall4 = new System.Windows.Forms.PictureBox();
-            this.picWall5 = new System.Windows.Forms.PictureBox();
-            this.picsamehada = new System.Windows.Forms.PictureBox();
             this.picEnemyCheeto = new System.Windows.Forms.PictureBox();
-            this.picEnemyBowizard = new System.Windows.Forms.PictureBox();
             this.picEnemyPoisonPacket = new System.Windows.Forms.PictureBox();
             this.picWall3 = new System.Windows.Forms.PictureBox();
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
+            this.picEnemyBowizard = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
-            this.deathscreen = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWall5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picsamehada)).BeginInit();
+            this.picWall5 = new System.Windows.Forms.PictureBox();
+            this.picWall4 = new System.Windows.Forms.PictureBox();
+            this.picWall12 = new System.Windows.Forms.PictureBox();
+            this.picWall6 = new System.Windows.Forms.PictureBox();
+            this.picWall9 = new System.Windows.Forms.PictureBox();
+            this.picWall10 = new System.Windows.Forms.PictureBox();
+            this.picWall0 = new System.Windows.Forms.PictureBox();
+            this.picWall7 = new System.Windows.Forms.PictureBox();
+            this.picWall8 = new System.Windows.Forms.PictureBox();
+            this.picWall1 = new System.Windows.Forms.PictureBox();
+            this.picWall2 = new System.Windows.Forms.PictureBox();
+            this.picWall11 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picsamehada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deathscreen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall11)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -400,8 +401,10 @@
             // 
             this.deathscreen.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
             this.deathscreen.BackColor = System.Drawing.Color.Transparent;
+            this.deathscreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.deathscreen.Cursor = System.Windows.Forms.Cursors.No;
             this.deathscreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deathscreen.Image = global::Fall2020_CSC403_Project.Properties.Resources.deathscreen;
             this.deathscreen.Location = new System.Drawing.Point(0, 0);
             this.deathscreen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.deathscreen.Name = "deathscreen";
@@ -410,6 +413,42 @@
             this.deathscreen.TabIndex = 18;
             this.deathscreen.TabStop = false;
             this.deathscreen.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "1.PNG");
+            this.imageList1.Images.SetKeyName(1, "2.PNG");
+            this.imageList1.Images.SetKeyName(2, "3.PNG");
+            this.imageList1.Images.SetKeyName(3, "4.PNG");
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "5.PNG");
+            this.imageList2.Images.SetKeyName(1, "6.PNG");
+            this.imageList2.Images.SetKeyName(2, "7.PNG");
+            this.imageList2.Images.SetKeyName(3, "8.PNG");
+            // 
+            // secret
+            // 
+            this.secret.AutoSize = true;
+            this.secret.BackColor = System.Drawing.Color.Transparent;
+            this.secret.Location = new System.Drawing.Point(90, 372);
+            this.secret.Name = "secret";
+            this.secret.Size = new System.Drawing.Size(14, 13);
+            this.secret.TabIndex = 19;
+            this.secret.Text = "B";
             // 
             // FrmLevel
             // 
@@ -420,7 +459,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;  
             this.ClientSize = new System.Drawing.Size(963, 548);
             this.Controls.Add(this.picsamehada);
-
+            this.Controls.Add(this.deathscreen);
             this.Controls.Add(this.secret);
             this.Controls.Add(this.picWall11);
             this.Controls.Add(this.picWall2);
@@ -441,7 +480,7 @@
             this.Controls.Add(this.picWall3);
             this.Controls.Add(this.picBossKoolAid);
             this.Controls.Add(this.picPlayer);
-            this.Controls.Add(this.deathscreen);
+
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmLevel";
@@ -464,12 +503,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picsamehada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deathscreen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picsamehada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWall11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,10 +556,8 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.Label secret;
+
     }
 }
-
-
-
 
 

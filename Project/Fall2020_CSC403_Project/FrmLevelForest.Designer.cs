@@ -618,6 +618,7 @@
         public System.Windows.Forms.PictureBox picExitIndic;
         private System.Windows.Forms.PictureBox picWall19;
         private System.Windows.Forms.PictureBox picWall20;
+        private System.Windows.Forms.PictureBox picsamehada;
     }
 }
 

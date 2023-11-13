@@ -367,7 +367,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.deathscreen);
-
             this.Controls.Add(this.picWall12);
             this.Controls.Add(this.picWall6);
             this.Controls.Add(this.picWall11);
