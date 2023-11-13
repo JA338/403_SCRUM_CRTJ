@@ -10,14 +10,15 @@ namespace Fall2020_CSC403_Project {
 
     private Player player;
 
-        private FrmInv FrmInv;
+        private FrmInv frmInv;
     private Enemy enemyPoisonPacket;
     private Enemy bossKoolaid;
     private Enemy enemyCheeto;
     private Character[] walls;
     private Enemy enemyBowizard;
     private DateTime timeBegin;
-    private FrmBattle frmBattle;
+    private FrmBattle frmBattle; 
+        private Weapon samehada;
         private Point offScreen = new Point(-100, -100);
 
         // initialize variables for animation
@@ -32,25 +33,26 @@ namespace Fall2020_CSC403_Project {
       const int NUM_WALLS = 13;
 
       player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-        bossKoolaid = new Enemy.HighEnemySubclass(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
-        enemyPoisonPacket = new Enemy.MedEnemySubclass(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
-        enemyCheeto = new Enemy.LowEnemySubclass(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
-
+            bossKoolaid = new Enemy.HighEnemySubclass(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
+            enemyPoisonPacket = new Enemy.MedEnemySubclass(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
+            enemyCheeto = new Enemy.LowEnemySubclass(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
+            samehada = new Weapon(CreatePosition(picsamehada), (CreateCollider(picsamehada, PADDING)));
             // sets player image at loadtime
             picPlayer.Image = Properties.Resources.player;
-      enemyBowizard = new Enemy.HighEnemySubclass(CreatePosition(picEnemyBowizard), CreateCollider(picEnemyBowizard, PADDING));
-
+            enemyBowizard = new Enemy.HighEnemySubclass(CreatePosition(picEnemyBowizard), CreateCollider(picEnemyBowizard, PADDING));
+            frmInv = new FrmInv();
             bossKoolaid.Img = picBossKoolAid.BackgroundImage;
-      enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
-      enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
-      enemyBowizard.Img = picEnemyBowizard.BackgroundImage;
+            enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
+            enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
+            enemyBowizard.Img = picEnemyBowizard.BackgroundImage;
+            samehada.Img = picsamehada.BackgroundImage;
 
-      bossKoolaid.Color = Color.Red;
-      enemyPoisonPacket.Color = Color.Green;
-      enemyCheeto.Color = Color.FromArgb(255, 245, 161);
-      enemyBowizard.Color = Color.Gray;
+            bossKoolaid.Color = Color.Red;
+            enemyPoisonPacket.Color = Color.Green;
+            enemyCheeto.Color = Color.FromArgb(255, 245, 161);
+            enemyBowizard.Color = Color.Gray;
 
-      walls = new Character[NUM_WALLS];
+            walls = new Character[NUM_WALLS];
       for (int w = 0; w < NUM_WALLS; w++) {
         PictureBox pic = Controls.Find("picWall" + w.ToString(), true)[0] as PictureBox;
         walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
@@ -94,43 +96,52 @@ namespace Fall2020_CSC403_Project {
       if (HitAWall(player)) {
         player.MoveBack();
       }
-
-      // check collision with enemies
-      if (HitAChar(player, enemyPoisonPacket)) {
-        Fight(enemyPoisonPacket);
-      }
-      else if (HitAChar(player, enemyCheeto)) {
-        Fight(enemyCheeto);
-      }
-      if (HitAChar(player, bossKoolaid)) {
-        Fight(bossKoolaid);
-      }
-
-        if (enemyPoisonPacket.Health <= 0) {
-        // Move the enemy's PictureBox off-screen
-        //enemyPoisonPacket.Img = null;
-        picEnemyPoisonPacket.Location = offScreen;
-
-        // Move the enemy's Collider off-screen
-        //collider.enemyPoisonPacket.Collider.Location = offScreen;
+      // check collision with samehada
+      if (HitAChar(player, samehada)) {
+          picsamehada.Location = offScreen;
+          samehada = new Weapon(CreatePosition(picsamehada), CreateCollider(picsamehada, 7));
+          frmInv.AddSamehada();
         }
 
-        if (enemyCheeto.Health <= 0) {
-        // Move the enemy's PictureBox off-screen
-        //enemyCheeto.Img = null;
-        picEnemyCheeto.Location = offScreen;
+            //check collision with enemies
+      if (HitAChar(player, enemyPoisonPacket))
+            {
+                Fight(enemyPoisonPacket);
+            }
+            else if (HitAChar(player, enemyCheeto))
+            {
+                Fight(enemyCheeto);
+            }
+            if (HitAChar(player, bossKoolaid))
+            {
+                Fight(bossKoolaid);
+            }
+
+            if (enemyPoisonPacket.Health <= 0)
+            {
+                // Move the enemy's PictureBox off-screen
+                //enemyPoisonPacket.Img = null;
+                picEnemyPoisonPacket.Location = offScreen;
+        enemyPoisonPacket = new Enemy.LowEnemySubclass(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, 7));
+                // Move the enemy's Collider off-screen
+            }
+
+            if (enemyCheeto.Health <= 0)
+            {
+                // Move the enemy's PictureBox off-screen
+                //enemyCheeto.Img = null;
+                picEnemyCheeto.Location = offScreen;
 
         // Move the enemy's Collider off-screen
-        //collider.enemyCheeto.Collider.Location = offScreen;
+        enemyCheeto = new Enemy.LowEnemySubclass(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, 7)); 
         }
 
         if (bossKoolaid.Health <= 0) {
         // Move the enemy's PictureBox off-screen
        // bossKoolaid.Img = null;
         picBossKoolAid.Location = offScreen;
-
+        bossKoolaid = new Enemy.HighEnemySubclass(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, 7));
         // Move the enemy's Collider off-screen
-        //collider.bossKoolaid.Collider.Location = offScreen;
         }
 
             // update player's picture box
@@ -157,6 +168,7 @@ namespace Fall2020_CSC403_Project {
     }
     else { return false; }
     }
+
 
     private bool HitAWall(Character c) {
       bool hitAWall = false;
@@ -227,8 +239,7 @@ namespace Fall2020_CSC403_Project {
 
         case Keys.I:
                     // display inventory upon pressing "I"
-                    FrmInv = new FrmInv();
-                    FrmInv.Show();
+                    frmInv.Show();
           break;
                 case Keys.B:
                     // call dr. bowman on key press
