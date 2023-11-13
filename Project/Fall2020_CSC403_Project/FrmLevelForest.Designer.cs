@@ -67,7 +67,6 @@
             this.picExitIndic = new System.Windows.Forms.PictureBox();
             this.picWall19 = new System.Windows.Forms.PictureBox();
             this.picWall20 = new System.Windows.Forms.PictureBox();
-            this.picsamehada = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deathscreen)).BeginInit();
@@ -98,7 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picExitIndic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picsamehada)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -290,7 +288,7 @@
             // 
             this.picEnemy0.BackColor = System.Drawing.Color.Transparent;
             this.picEnemy0.Image = ((System.Drawing.Image)(resources.GetObject("picEnemy0.Image")));
-            this.picEnemy0.Location = new System.Drawing.Point(1239, 251);
+            this.picEnemy0.Location = new System.Drawing.Point(1164, 306);
             this.picEnemy0.Name = "picEnemy0";
             this.picEnemy0.Size = new System.Drawing.Size(59, 76);
             this.picEnemy0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -487,23 +485,12 @@
             // 
             this.picWall20.BackColor = System.Drawing.Color.Transparent;
             this.picWall20.Image = ((System.Drawing.Image)(resources.GetObject("picWall20.Image")));
-            this.picWall20.Location = new System.Drawing.Point(1139, 446);
+            this.picWall20.Location = new System.Drawing.Point(1211, 446);
             this.picWall20.Name = "picWall20";
             this.picWall20.Size = new System.Drawing.Size(286, 313);
             this.picWall20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWall20.TabIndex = 48;
             this.picWall20.TabStop = false;
-            // 
-            // picsamehada
-            // 
-            this.picsamehada.BackColor = System.Drawing.Color.Transparent;
-            this.picsamehada.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.samehada;
-            this.picsamehada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picsamehada.Location = new System.Drawing.Point(311, 174);
-            this.picsamehada.Name = "picsamehada";
-            this.picsamehada.Size = new System.Drawing.Size(72, 116);
-            this.picsamehada.TabIndex = 49;
-            this.picsamehada.TabStop = false;
             // 
             // FrmLevelForest
             // 
@@ -514,7 +501,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1350, 729);
-            this.Controls.Add(this.picsamehada);
             this.Controls.Add(this.picWall20);
             this.Controls.Add(this.picWall19);
             this.Controls.Add(this.picPlayer);
@@ -586,7 +572,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picExitIndic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picsamehada)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -631,7 +616,6 @@
         public System.Windows.Forms.PictureBox picExitIndic;
         private System.Windows.Forms.PictureBox picWall19;
         private System.Windows.Forms.PictureBox picWall20;
-        private System.Windows.Forms.PictureBox picsamehada;
     }
 }
 
