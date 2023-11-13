@@ -64,3 +64,22 @@ C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_
 C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\bin\Debug\MyGameLibrary.dll
 C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\bin\Debug\MyGameLibrary.pdb
 C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.csproj.CopyComplete
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.csproj.AssemblyReference.cache
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.exe
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.pdb
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.FrmLevelCastle.resources
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.FrmLevelGatefront.resources
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.FrmLevelForest.resources
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.Title.resources
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.FrmBattle.resources
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.FrmInv.resources
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.FrmLevel.resources
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.Properties.Resources.resources
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.csproj.GenerateResource.cache
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.csproj.CoreCompileInputs.cache
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\bin\Debug\Fall2020_CSC403_Project.exe.config
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\bin\Debug\Fall2020_CSC403_Project.exe
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\bin\Debug\Fall2020_CSC403_Project.pdb
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\bin\Debug\MyGameLibrary.dll
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\bin\Debug\MyGameLibrary.pdb
+G:\My Drive\Y4\Y4Q1\CSC 403-001 [SD]\Assignments\SCRUM\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.csproj.CopyComplete

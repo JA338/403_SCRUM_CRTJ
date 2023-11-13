@@ -38,9 +38,10 @@ namespace Fall2020_CSC403_Project {
         InitializeComponent();
         player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING)) { Health = oldPlayer.Health };
         FrmInv = inventory;
-        //this.player = player;
-        //this.FrmInv = inventory;
-    }
+            Game.levelData = "Level 2";
+            //this.player = player;
+            //this.FrmInv = inventory;
+        }
 
 
     private void FrmLevel_Load(object sender, EventArgs e) {
@@ -164,7 +165,7 @@ namespace Fall2020_CSC403_Project {
         {
             exitCheck = false;
             this.Hide();
-            var frmLevel = new FrmLevel();
+            var frmLevel = new FrmLevelCastle(player, FrmInv);
             frmLevel.Closed += (s, args) => this.Close();
             //this.Dispose();
             frmLevel.Show();
@@ -187,8 +188,6 @@ namespace Fall2020_CSC403_Project {
 
         if (player.Health <= 0 && deathscreen.Visible == false)
         {
-            // hide secret key 
-            secret.Visible = false;
             deathscreen.Visible = true;
             PlayDeathSound();            
             return true;

@@ -26,18 +26,13 @@ namespace Fall2020_CSC403_Project
             button3.Hide();
             button4.Hide();
         }
-<<<<<<< HEAD
-        // Hide the title screen and new game button
-        // Enable the level select buttons
-        private void button1_Click(object sender, EventArgs e)
-=======
         // closes the title winform when button is clicked
         // opens FrmLevel winform upon closing
         private void newGameButton_Click(object sender, EventArgs e)
->>>>>>> origin/ryanworking3
         {
             TitleImage.Hide();
-            button1.Hide();
+            newGameButton.Hide();
+            loadButton.Hide();
             button2.Show();
             button3.Show();
             button4.Show();

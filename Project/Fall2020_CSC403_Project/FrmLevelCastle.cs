@@ -36,14 +36,12 @@ namespace Fall2020_CSC403_Project {
         InitializeComponent();
         player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING)) { Health = oldPlayer.Health };
         FrmInv = inventory;
-        //this.player = player;
-        //this.FrmInv = inventory;
-    }
+        Game.levelData = "Level 3";
+        }
 
 
     private void FrmLevel_Load(object sender, EventArgs e) {
         const int NUM_WALLS = 8;
-        //enemyBowizard = new Enemy.HighEnemySubclass(CreatePosition(picEnemy5), CreateCollider(picEnemy5, PADDING));
         
         GenerateEnemies(0, 4, 1);
         // sets player image at loadtime
