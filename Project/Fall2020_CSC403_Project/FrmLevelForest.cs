@@ -11,7 +11,6 @@ namespace Fall2020_CSC403_Project {
     private Player player;
     private FrmInv FrmInv;
     private Character[] walls;
-    private Enemy enemyBowizard;
     private DateTime timeBegin;
     private FrmBattle frmBattle;
     private Point offScreen = new Point(-100, -100);
@@ -236,18 +235,11 @@ namespace Fall2020_CSC403_Project {
           break;
 
         case Keys.I:
-                    // display inventory upon pressing "I"
-                    Game.player = player;
-                    FrmInv = new FrmInv();
-                    FrmInv.Show();
-          break;
-                case Keys.B:
-                    // call dr. bowman on key press
-                    SoundPlayer drbowman = new SoundPlayer(Resources.bowman);
-                    drbowman.Play();
-                    Fight(enemyBowizard);
-                    break;
-
+            // display inventory upon pressing "I"
+            FrmInv = new FrmInv();
+            FrmInv.Show();
+            break;     
+                    
         default:
           player.ResetMoveSpeed();
           break;
@@ -259,35 +251,35 @@ namespace Fall2020_CSC403_Project {
     private void lblInGameTime_Click(object sender, EventArgs e) {
 
     }
-        // timers for animation start
-        private void timer1_Tick(object sender, EventArgs e)
+    // timers for animation start
+    private void timer1_Tick(object sender, EventArgs e)
+    {
+        picPlayer.Image.Dispose();
+        picPlayer.Image = imageList1.Images[imgNum];
+        if (imgNum == imageList1.Images.Count - 1)
         {
-            picPlayer.Image.Dispose();
-            picPlayer.Image = imageList1.Images[imgNum];
-            if (imgNum == imageList1.Images.Count - 1)
-            {
-                imgNum = 0;
-            }
-            else
-            {
-                imgNum++;
-
-            }
+            imgNum = 0;
         }
-
-        private void timer2_Tick(object sender, EventArgs e)
+        else
         {
-            picPlayer.Image.Dispose();
-            picPlayer.Image = imageList2.Images[imgNum];
-            if (imgNum == imageList2.Images.Count - 1)
-            {
-                imgNum = 0;
-            }
-            else
-            {
-                imgNum++;
-            }
+            imgNum++;
+
         }
+    }
+
+    private void timer2_Tick(object sender, EventArgs e)
+    {
+        picPlayer.Image.Dispose();
+        picPlayer.Image = imageList2.Images[imgNum];
+        if (imgNum == imageList2.Images.Count - 1)
+        {
+            imgNum = 0;
+        }
+        else
+        {
+            imgNum++;
+        }
+    }
 
         private void label1_Click(object sender, EventArgs e)
         {
