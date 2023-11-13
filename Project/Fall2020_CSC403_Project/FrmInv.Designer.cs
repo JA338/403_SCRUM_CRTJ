@@ -80,8 +80,6 @@
             this.Invslot1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Invslot1.TabIndex = 0;
             this.Invslot1.TabStop = false;
-            this.Invslot1.Click += new System.EventHandler(this.Invslot1_Click);
-            this.Invslot1.MouseHover += new System.EventHandler(this.InvSlot1_MouseHover);
             // 
             // Invslot2
             // 
@@ -255,6 +253,7 @@
             this.eight.TabIndex = 23;
             this.eight.TabStop = false;
             this.eight.Visible = false;
+            this.eight.Click += new System.EventHandler(this.eight_Click);
             // 
             // seven
             // 
@@ -267,6 +266,7 @@
             this.seven.TabIndex = 24;
             this.seven.TabStop = false;
             this.seven.Visible = false;
+            this.seven.Click += new System.EventHandler(this.seven_Click);
             // 
             // six
             // 
@@ -279,6 +279,7 @@
             this.six.TabIndex = 25;
             this.six.TabStop = false;
             this.six.Visible = false;
+            this.six.Click += new System.EventHandler(this.six_Click);
             // 
             // five
             // 
@@ -291,6 +292,7 @@
             this.five.TabIndex = 26;
             this.five.TabStop = false;
             this.five.Visible = false;
+            this.five.Click += new System.EventHandler(this.five_Click);
             // 
             // four
             // 
@@ -303,6 +305,7 @@
             this.four.TabIndex = 28;
             this.four.TabStop = false;
             this.four.Visible = false;
+            this.four.Click += new System.EventHandler(this.four_Click);
             // 
             // three
             // 
@@ -315,6 +318,7 @@
             this.three.TabIndex = 29;
             this.three.TabStop = false;
             this.three.Visible = false;
+            this.three.Click += new System.EventHandler(this.three_Click);
             // 
             // two
             // 
@@ -327,6 +331,7 @@
             this.two.TabIndex = 30;
             this.two.TabStop = false;
             this.two.Visible = false;
+            this.two.Click += new System.EventHandler(this.two_Click);
             // 
             // FrmInv
             // 

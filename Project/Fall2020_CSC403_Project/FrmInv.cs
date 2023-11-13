@@ -14,17 +14,14 @@ namespace Fall2020_CSC403_Project
 {
     public partial class FrmInv : Form
     {
-        private Weapon weapon;
         public static FrmInv instance = null;
         private bool showButtons = false;
-        private string[] slots = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
+        public string invslot;
+        string[] slots = { "one", "two", "three", "four", "five", "six", "seven", "eight" };
+
         public FrmInv()
         {
             InitializeComponent();
-        }
-        // will be used to display items names in game
-        private void InvSlot1_MouseHover(object sender, EventArgs e)
-        {
         }
 
         private void FrmInv_KeyDown(object sender, KeyEventArgs e)
@@ -42,17 +39,10 @@ namespace Fall2020_CSC403_Project
 
         public void AddSamehada()
         {
+
             PictureBox openslot = checkSpots(slots);
+            openslot.Visible = true;
             openslot.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.samehada;
-        }
-        public void RemoveSamehada()
-        {
-
-        }
-
-        private void Invslot1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Close_Click(object sender, EventArgs e)
@@ -62,14 +52,16 @@ namespace Fall2020_CSC403_Project
 
         private void EquipClick(object sender, EventArgs e)
         {
+            this.Hide();
 
         }
 
         private void DiscClick(object sender, EventArgs e)
         {
-            one.BackgroundImage = null;
+            PictureBox blankSlot = ConvertToPictureBox(invslot);
+            blankSlot.BackgroundImage = null;
             showButtons = false;
-            DisplayWep = null;
+            DisplayWep.Visible = false;
             DisplayButtons();
 
         }
@@ -81,11 +73,75 @@ namespace Fall2020_CSC403_Project
             showButtons = true;
             DisplayButtons();
             DisplayWep.BackgroundImage = one.BackgroundImage;
+            invslot = "one";
+        }
+        private void two_Click(object sender, EventArgs e)
+        {
+            DisplayWep.Visible = true;
+            showButtons = true;
+            DisplayButtons();
+            DisplayWep.BackgroundImage = two.BackgroundImage;
+            invslot = "two";
+        }
+        private void three_Click(object sender, EventArgs e)
+        {
+            DisplayWep.Visible = true;
+            showButtons = true;
+            DisplayButtons();
+            DisplayWep.BackgroundImage = three.BackgroundImage;
+            invslot = "three";
+
+        }
+
+        private void four_Click(object sender, EventArgs e)
+        {
+            DisplayWep.Visible = true;
+            showButtons = true;
+            DisplayButtons();
+            DisplayWep.BackgroundImage = four.BackgroundImage;
+            invslot = "four";
+        }
+
+        private void five_Click(object sender, EventArgs e)
+        {
+            DisplayWep.Visible = true;
+            showButtons = true;
+            DisplayButtons();
+            DisplayWep.BackgroundImage = five.BackgroundImage;
+            invslot = "five";
+        }
+
+        private void six_Click(object sender, EventArgs e)
+        {
+            DisplayWep.Visible = true;
+            showButtons = true;
+            DisplayButtons();
+            DisplayWep.BackgroundImage = six.BackgroundImage;
+            invslot = "six";
+        }
+
+        private void seven_Click(object sender, EventArgs e)
+        {
+            DisplayWep.Visible = true;
+            showButtons = true;
+            DisplayButtons();
+            DisplayWep.BackgroundImage = seven.BackgroundImage;
+            invslot = "seven";
+        }
+
+        private void eight_Click(object sender, EventArgs e)
+        {
+            DisplayWep.Visible = true;
+            showButtons = true;
+            DisplayButtons();
+            DisplayWep.BackgroundImage = eight.BackgroundImage;
+            invslot = "eight";
         }
 
         private void DisplayButtons()
         {
-            if (showButtons == true) {
+            if (showButtons == true)
+            {
                 Equip.Visible = true;
                 Discard.Visible = true;
                 Close.Visible = true;
@@ -98,7 +154,8 @@ namespace Fall2020_CSC403_Project
             }
         }
 
-        private PictureBox checkSpots(string[] slots) {
+        private PictureBox checkSpots(string[] slots)
+        {
             foreach (string slot in slots)
             {
                 PictureBox currslot = ConvertToPictureBox(slot);
@@ -106,7 +163,7 @@ namespace Fall2020_CSC403_Project
                 {
                     return (currslot);
                 }
-                
+
             }
             return null;
 
@@ -121,9 +178,9 @@ namespace Fall2020_CSC403_Project
                 }
             }
 
-            // PictureBox with the specified name was not found
             return null;
         }
+
+
     }
 }
-
