@@ -158,8 +158,10 @@
             // 
             this.deathscreen.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
             this.deathscreen.BackColor = System.Drawing.Color.Transparent;
+            this.deathscreen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deathscreen.BackgroundImage")));
             this.deathscreen.Cursor = System.Windows.Forms.Cursors.No;
             this.deathscreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deathscreen.Image = global::Fall2020_CSC403_Project.Properties.Resources.deathscreen;
             this.deathscreen.Location = new System.Drawing.Point(0, 0);
             this.deathscreen.Name = "deathscreen";
             this.deathscreen.Size = new System.Drawing.Size(1370, 749);
@@ -364,6 +366,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.deathscreen);
+
             this.Controls.Add(this.picWall12);
             this.Controls.Add(this.picWall6);
             this.Controls.Add(this.picWall11);
@@ -384,7 +388,6 @@
             this.Controls.Add(this.lblInGameTime);
             this.Controls.Add(this.picEnemyBowizard);
             this.Controls.Add(this.picPlayer);
-            this.Controls.Add(this.deathscreen);
             this.Controls.Add(this.picOpenGate);
             this.DoubleBuffered = true;
             this.Name = "FrmLevelGatefront";

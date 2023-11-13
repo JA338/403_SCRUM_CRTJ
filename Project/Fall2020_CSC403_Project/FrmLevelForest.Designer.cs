@@ -501,6 +501,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            
+            this.Controls.Add(this.deathscreen);
+            this.Controls.Add(this.picsamehada);
             this.Controls.Add(this.picWall20);
             this.Controls.Add(this.picWall19);
             this.Controls.Add(this.picPlayer);
@@ -531,7 +534,6 @@
             this.Controls.Add(this.picEnemy2);
             this.Controls.Add(this.picEnemy1);
             this.Controls.Add(this.picEnemyBowizard);
-            this.Controls.Add(this.deathscreen);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

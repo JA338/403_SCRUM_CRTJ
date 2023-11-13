@@ -35,9 +35,10 @@ namespace Fall2020_CSC403_Project {
         InitializeComponent();
         player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING)) { Health = oldPlayer.Health };
         FrmInv = inventory;
-        //this.player = player;
-        //this.FrmInv = inventory;
-    }
+            Game.levelData = "Level 2";
+            //this.player = player;
+            //this.FrmInv = inventory;
+        }
 
 
     private void FrmLevel_Load(object sender, EventArgs e) {
