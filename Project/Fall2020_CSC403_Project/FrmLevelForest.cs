@@ -100,7 +100,7 @@ namespace Fall2020_CSC403_Project {
       TimeSpan span = DateTime.Now - timeBegin;
       string time = span.ToString(@"hh\:mm\:ss");
       lblInGameTime.Text = "Time: " + time.ToString();
-            label1.Text = "Score " + Game.scoreData.ToString();
+            //label1.Text = "Score " + Game.scoreData.ToString();
         }
 
     private void tmrPlayerMove_Tick(object sender, EventArgs e) {
@@ -242,9 +242,9 @@ namespace Fall2020_CSC403_Project {
           break;
 
         case Keys.I:
-            // display inventory upon pressing "I"
-            FrmInv = new FrmInv();
-            FrmInv.Show();
+                    // display inventory upon pressing "I"
+                    frmInv = new FrmInv();
+                    frmInv.Show();
             break;     
                     
         default:

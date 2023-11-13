@@ -45,3 +45,22 @@ C:\Users\dejat\Downloads\403_SCRUM_CRTJ-trey (3)\403_SCRUM_CRTJ-trey\Project\Fal
 C:\Users\dejat\Downloads\403_SCRUM_CRTJ-trey (3)\403_SCRUM_CRTJ-trey\Project\Fall2020_CSC403_Project\bin\Debug\MyGameLibrary.dll
 C:\Users\dejat\Downloads\403_SCRUM_CRTJ-trey (3)\403_SCRUM_CRTJ-trey\Project\Fall2020_CSC403_Project\bin\Debug\MyGameLibrary.pdb
 C:\Users\dejat\Downloads\403_SCRUM_CRTJ-trey (3)\403_SCRUM_CRTJ-trey\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.csproj.CopyComplete
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.csproj.AssemblyReference.cache
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.FrmLevelCastle.resources
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.FrmLevelGatefront.resources
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.FrmLevelForest.resources
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.Title.resources
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.FrmBattle.resources
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.FrmInv.resources
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.FrmLevel.resources
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.Properties.Resources.resources
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.csproj.GenerateResource.cache
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.csproj.CoreCompileInputs.cache
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.exe
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.pdb
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\bin\Debug\Fall2020_CSC403_Project.exe.config
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\bin\Debug\Fall2020_CSC403_Project.exe
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\bin\Debug\Fall2020_CSC403_Project.pdb
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\bin\Debug\MyGameLibrary.dll
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\bin\Debug\MyGameLibrary.pdb
+C:\Users\r2d26\OneDrive\Documents\GitHub\403_SCRUM_CRTJ\Project\Fall2020_CSC403_Project\obj\Debug\Fall2020_CSC403_Project.csproj.CopyComplete

@@ -60,15 +60,18 @@ namespace Fall2020_CSC403_Project
         {
             this.Hide();
 
-                default:
-                    break;
+            //default:
+                    //break;
             }
-        }
-
+        
+        
+        
+    /*
         private void saveButton_Click(object sender, EventArgs e)
         {
             SaveGame.Save(Game.player);
         }
+    */
         private void DiscClick(object sender, EventArgs e)
         {
             PictureBox blankSlot = ConvertToPictureBox(invslot);
