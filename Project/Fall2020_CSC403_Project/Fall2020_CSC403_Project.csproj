@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmLevelCastle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLevelCastle.Designer.cs">
+      <DependentUpon>FrmLevelCastle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLevelGatefront.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLevelGatefront.Designer.cs">
+      <DependentUpon>FrmLevelGatefront.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLevelForest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLevelForest.Designer.cs">
+      <DependentUpon>FrmLevelForest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Title.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +90,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmLevelCastle.resx">
+      <DependentUpon>FrmLevelCastle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLevelGatefront.resx">
+      <DependentUpon>FrmLevelGatefront.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLevelForest.resx">
+      <DependentUpon>FrmLevelForest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Title.resx">
       <DependentUpon>Title.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,9 +173,11 @@
     <None Include="data\deathsound.wav" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\background.jpg" />
     <Content Include="data\enemy_bowizard.jpg" />
     <Content Include="data\InvBox.png" />
-    <None Include="data\title_screen.png" />
+    <Content Include="data\tree-plan-27873.png" />
+    <Content Include="data\tree-plan-alt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
