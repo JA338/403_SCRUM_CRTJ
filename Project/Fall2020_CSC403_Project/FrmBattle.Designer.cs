@@ -39,6 +39,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblPlayerStaminaFull = new System.Windows.Forms.Label();
             this.lblPlayerManaFull = new System.Windows.Forms.Label();
+            this.BtnFireball = new System.Windows.Forms.Button();
+            this.BtnHeal = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
@@ -49,7 +51,7 @@
             this.btnAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAttack.Location = new System.Drawing.Point(56, 467);
             this.btnAttack.Name = "btnAttack";
-            this.btnAttack.Size = new System.Drawing.Size(128, 43);
+            this.btnAttack.Size = new System.Drawing.Size(110, 43);
             this.btnAttack.TabIndex = 2;
             this.btnAttack.Text = "Attack";
             this.btnAttack.UseVisualStyleBackColor = true;
@@ -136,9 +138,9 @@
             // BtnFlee
             // 
             this.BtnFlee.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.BtnFlee.Location = new System.Drawing.Point(234, 467);
+            this.BtnFlee.Location = new System.Drawing.Point(172, 467);
             this.BtnFlee.Name = "BtnFlee";
-            this.BtnFlee.Size = new System.Drawing.Size(128, 41);
+            this.BtnFlee.Size = new System.Drawing.Size(110, 43);
             this.BtnFlee.TabIndex = 8;
             this.BtnFlee.Text = "Flee";
             this.BtnFlee.UseVisualStyleBackColor = true;
@@ -147,9 +149,9 @@
             // BtnDefend
             // 
             this.BtnDefend.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.BtnDefend.Location = new System.Drawing.Point(146, 530);
+            this.BtnDefend.Location = new System.Drawing.Point(172, 516);
             this.BtnDefend.Name = "BtnDefend";
-            this.BtnDefend.Size = new System.Drawing.Size(128, 43);
+            this.BtnDefend.Size = new System.Drawing.Size(110, 43);
             this.BtnDefend.TabIndex = 9;
             this.BtnDefend.Text = "Defend";
             this.BtnDefend.UseVisualStyleBackColor = true;
@@ -193,6 +195,28 @@
             this.lblPlayerManaFull.Size = new System.Drawing.Size(226, 20);
             this.lblPlayerManaFull.TabIndex = 13;
             // 
+            // BtnFireball
+            // 
+            this.BtnFireball.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.BtnFireball.Location = new System.Drawing.Point(56, 516);
+            this.BtnFireball.Name = "BtnFireball";
+            this.BtnFireball.Size = new System.Drawing.Size(110, 43);
+            this.BtnFireball.TabIndex = 14;
+            this.BtnFireball.Text = "Fire Ball";
+            this.BtnFireball.UseVisualStyleBackColor = true;
+            this.BtnFireball.Click += new System.EventHandler(this.BtnFireball_Click);
+            // 
+            // BtnHeal
+            // 
+            this.BtnHeal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.BtnHeal.Location = new System.Drawing.Point(288, 478);
+            this.BtnHeal.Name = "BtnHeal";
+            this.BtnHeal.Size = new System.Drawing.Size(80, 70);
+            this.BtnHeal.TabIndex = 15;
+            this.BtnHeal.Text = "Heal Spell";
+            this.BtnHeal.UseVisualStyleBackColor = true;
+            this.BtnHeal.Click += new System.EventHandler(this.BtnHeal_Click);
+            // 
             // FrmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,6 +224,8 @@
             this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(822, 603);
+            this.Controls.Add(this.BtnHeal);
+            this.Controls.Add(this.BtnFireball);
             this.Controls.Add(this.picBossBattle);
             this.Controls.Add(this.lblPlayerManaFull);
             this.Controls.Add(this.lblPlayerStaminaFull);
@@ -242,5 +268,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblPlayerStaminaFull;
         private System.Windows.Forms.Label lblPlayerManaFull;
+        private System.Windows.Forms.Button BtnFireball;
+        private System.Windows.Forms.Button BtnHeal;
     }
 }

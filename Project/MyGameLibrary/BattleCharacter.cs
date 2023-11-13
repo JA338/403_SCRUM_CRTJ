@@ -38,12 +38,19 @@ namespace Fall2020_CSC403_Project.code {
 
     public void AlterHealth(int amount) {
       Health += amount;
+      if (Health > MaxHealth) { Health = MaxHealth; }
     }
 
     public void AlterStamina(int amount) { 
       Stamina += (int)(amount);
       if (Stamina > MaxStamina) { Stamina = MaxStamina; }
       if (Stamina < 0) { Stamina = 0; }
-        }
+    }
+
+    public void AlterMana(int amount) { 
+      Mana += (int)(amount); 
+      if (Mana > MaxMana) { Mana = MaxMana; }
+      if (Mana < 0) { Mana = 0; }
+    }
   }
 }

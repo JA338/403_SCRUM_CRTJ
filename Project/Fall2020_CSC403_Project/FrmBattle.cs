@@ -99,6 +99,23 @@ namespace Fall2020_CSC403_Project {
       }
     }
 
+    private void BtnFireball_Click(object sender, EventArgs e){
+        if (player.Mana >= 5){
+            player.AlterMana(-5);
+            player.OnAttack(-6);
+            if (enemy.Health > 0){
+              enemy.OnAttack(-2);
+            }
+
+            UpdateManaBars();
+            UpdateHealthBars();
+            if (player.Health <= 0 || enemy.Health <= 0){
+              instance = null;
+              Close();
+            }
+        }
+    }
+
     private void EnemyDamage(int amount) {
             enemy.AlterHealth(amount);
             player.AlterStamina(2);
@@ -130,9 +147,17 @@ namespace Fall2020_CSC403_Project {
             if (player.Stamina < 4) { Blocking = false; }
             else { 
                 Blocking = true;
-               // player.AlterStamina(-2);
             }
             UpdateStaminaBars();
         }
-  }
+
+        private void BtnHeal_Click(object sender, EventArgs e){
+            if (player.Mana >= 5) {
+                player.AlterMana(-2);
+                UpdateManaBars();
+                player.AlterHealth(5);
+                UpdateHealthBars();
+            }
+        }
+    }
 }
