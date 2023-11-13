@@ -382,6 +382,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.three)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.two)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

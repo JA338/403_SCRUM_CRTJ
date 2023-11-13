@@ -161,7 +161,6 @@ namespace Fall2020_CSC403_Project {
     if (player.Health <= 0 && deathscreen.Visible == false)
     {
         // hide secret key 
-        secret.Visible = false;
         deathscreen.Visible = true;
         PlayDeathSound();            
         return true;

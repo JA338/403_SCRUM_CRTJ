@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmLevelCastle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLevelCastle.Designer.cs">
+      <DependentUpon>FrmLevelCastle.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLevelGatefront.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmLevelCastle.resx">
+      <DependentUpon>FrmLevelCastle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLevelGatefront.resx">
       <DependentUpon>FrmLevelGatefront.cs</DependentUpon>
       <SubType>Designer</SubType>

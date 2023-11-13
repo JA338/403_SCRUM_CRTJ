@@ -11,7 +11,6 @@ namespace Fall2020_CSC403_Project {
 
     private FrmInv FrmInv;
     private Character[] walls;
-    private Enemy enemyBowizard;
     private DateTime timeBegin;
     private FrmBattle frmBattle;
     private Point offScreen = new Point(-100, -100);
@@ -42,7 +41,7 @@ namespace Fall2020_CSC403_Project {
 
 
     private void FrmLevel_Load(object sender, EventArgs e) {
-        const int NUM_WALLS = 6;
+        const int NUM_WALLS = 13;
 
         
         GenerateEnemies(0, 2, 0);
@@ -51,7 +50,7 @@ namespace Fall2020_CSC403_Project {
         lever = new Character(CreatePosition(picLever), CreateCollider(picLever, PADDING));
         exitCollider = new Character(CreatePosition(picExitColl), CreateCollider(picExitColl, PADDING));
 
-                walls = new Character[NUM_WALLS];
+        walls = new Character[NUM_WALLS];
         for (int w = 0; w < NUM_WALLS; w++) {
             PictureBox pic = Controls.Find("picWall" + w.ToString(), true)[0] as PictureBox;
             walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
@@ -137,21 +136,7 @@ namespace Fall2020_CSC403_Project {
                 PictureBox pic = Controls.Find("picEnemy" + ((enemy).ToString()), true)[0] as PictureBox;
                 pic.Location = offScreen;
             }
-            // if the pig enemy is dead, enable the exit for the level and the arrow indicator
-            //if (enemy + 1 == enemies.Length && enemies[enemy].Health <= 0)
-            //{
-            //    //picExitIndic.Visible = true;
-            //    if (HitAChar(player, exitCollider) && exitCheck == false)
-            //    {
-            //        exitCheck = true;
-            //        this.Hide();
-            //        var frmLevel = new FrmLevelGatefront();
-            //        frmLevel.Closed += (s, args) => this.Close();
-            //        //this.Dispose();
-            //        frmLevel.Show();
-            //        //this.Close();
-            //    }
-            //}
+            
         }
         if( HitAChar(player, lever))
             {
@@ -162,7 +147,7 @@ namespace Fall2020_CSC403_Project {
         {
             exitCheck = false;
             this.Hide();
-            var frmLevel = new FrmLevel();
+            var frmLevel = new FrmLevelCastle(player, FrmInv);
             frmLevel.Closed += (s, args) => this.Close();
             //this.Dispose();
             frmLevel.Show();
@@ -185,8 +170,6 @@ namespace Fall2020_CSC403_Project {
 
         if (player.Health <= 0 && deathscreen.Visible == false)
         {
-            // hide secret key 
-            secret.Visible = false;
             deathscreen.Visible = true;
             PlayDeathSound();            
             return true;
@@ -226,54 +209,50 @@ namespace Fall2020_CSC403_Project {
         //deletes original background image and sets player image
         picPlayer.BackgroundImage = null;
         picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
+
         //check if the player is dead
         if (CheckForDeath()){ return; }
+
         //check if the key has been pressed
         if(dFlag == true) { return; }
             dFlag = true;
-            // starts timers based on the direction pressed
+        // starts timers based on the direction pressed
         switch (e.KeyCode) {
-        case Keys.Left:
-                    imgNum = 0;
-                    timer2.Start();
-            player.GoLeft();
-            break;
+            case Keys.Left:
+                imgNum = 0;
+                timer2.Start();
+                player.GoLeft();
+                break;
 
-        case Keys.Right:
-                    imgNum = 0;
-                    timer1.Start();
-            player.GoRight();
-            break;
+            case Keys.Right:
+                imgNum = 0;
+                timer1.Start();
+                player.GoRight();
+                break;
 
-        case Keys.Up:
-                    imgNum = 0;
-                    timer1.Start();
-                    player.GoUp();
-            break;
+            case Keys.Up:
+                imgNum = 0;
+                timer1.Start();
+                player.GoUp();
+                break;
 
-        case Keys.Down:
-                    imgNum = 0;
-                    timer2.Start();
-                    player.GoDown();
-            break;
+            case Keys.Down:
+                imgNum = 0;
+                timer2.Start();
+                player.GoDown();
+                break;
 
-        case Keys.I:
-                    // display inventory upon pressing "I"
-                    FrmInv = new FrmInv();
-                    FrmInv.Show();
-            break;
-                case Keys.B:
-                    // call dr. bowman on key press
-                    SoundPlayer drbowman = new SoundPlayer(Resources.bowman);
-                    drbowman.Play();
-                    //Fight(enemyBowizard);
-                    break;
+            case Keys.I:
+                // display inventory upon pressing "I"
+                FrmInv = new FrmInv();
+                FrmInv.Show();
+                break;
 
-        default:
-            player.ResetMoveSpeed();
-            break;
+            default:
+                player.ResetMoveSpeed();
+                break;
+            }
         }
-    }
 
      
 
