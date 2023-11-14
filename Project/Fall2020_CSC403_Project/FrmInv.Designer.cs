@@ -364,6 +364,7 @@
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmInv_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.Invslot1)).EndInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.Invslot2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Invslot3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Invslot4)).EndInit();
@@ -381,6 +382,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.four)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.three)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.two)).EndInit();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,6 +391,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox Invslot1;
+
         private System.Windows.Forms.PictureBox Invslot2;
         private System.Windows.Forms.PictureBox Invslot3;
         private System.Windows.Forms.PictureBox Invslot4;
@@ -409,5 +412,6 @@
         private System.Windows.Forms.PictureBox four;
         private System.Windows.Forms.PictureBox three;
         private System.Windows.Forms.PictureBox two;
+
     }
 }
