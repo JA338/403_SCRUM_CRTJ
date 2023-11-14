@@ -52,6 +52,11 @@ namespace Fall2020_CSC403_Project
             this.picWall1 = new System.Windows.Forms.PictureBox();
             this.picWall2 = new System.Windows.Forms.PictureBox();
             this.picWall11 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.secret = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picsamehada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).BeginInit();

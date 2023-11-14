@@ -196,7 +196,7 @@
             // picWall0
             // 
             this.picWall0.BackColor = System.Drawing.Color.Transparent;
-            this.picWall0.Location = new System.Drawing.Point(0, 30);
+            this.picWall0.Location = new System.Drawing.Point(-10, -10);
             this.picWall0.Name = "picWall0";
             this.picWall0.Size = new System.Drawing.Size(638, 253);
             this.picWall0.TabIndex = 23;
@@ -214,7 +214,7 @@
             // picWall2
             // 
             this.picWall2.BackColor = System.Drawing.Color.Transparent;
-            this.picWall2.Location = new System.Drawing.Point(400, 30);
+            this.picWall2.Location = new System.Drawing.Point(0, 30);
             this.picWall2.Name = "picWall2";
             this.picWall2.Size = new System.Drawing.Size(622, 103);
             this.picWall2.TabIndex = 25;
@@ -380,6 +380,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(722, 445);
+            this.Controls.Add(this.deathscreen);
             this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.picWall12);
             this.Controls.Add(this.picWall6);

@@ -38,6 +38,7 @@
             this.lblPlayerManaFull = new System.Windows.Forms.Label();
             this.BtnFireball = new System.Windows.Forms.Button();
             this.BtnHeal = new System.Windows.Forms.Button();
+            this.picholdSam = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picBossBattle = new System.Windows.Forms.PictureBox();
@@ -47,6 +48,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picholdSam)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAttack
@@ -97,6 +99,42 @@
             this.lblEnemyHealthFull.Name = "lblEnemyHealthFull";
             this.lblEnemyHealthFull.Size = new System.Drawing.Size(226, 20);
             this.lblEnemyHealthFull.TabIndex = 6;
+            // 
+            // picBossBattle
+            // 
+            this.picBossBattle.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.title_screen;
+            this.picBossBattle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBossBattle.Location = new System.Drawing.Point(780, 563);
+            this.picBossBattle.Name = "picBossBattle";
+            this.picBossBattle.Size = new System.Drawing.Size(30, 28);
+            this.picBossBattle.TabIndex = 7;
+            this.picBossBattle.TabStop = false;
+            this.picBossBattle.Visible = false;
+            // 
+            // picEnemy
+            // 
+            this.picEnemy.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.picEnemy.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_koolaid;
+            this.picEnemy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picEnemy.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picEnemy.Location = new System.Drawing.Point(515, 98);
+            this.picEnemy.Name = "picEnemy";
+            this.picEnemy.Size = new System.Drawing.Size(229, 267);
+            this.picEnemy.TabIndex = 1;
+            this.picEnemy.TabStop = false;
+            // 
+            // picPlayer
+            // 
+            this.picPlayer.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.player;
+            this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picPlayer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picPlayer.Location = new System.Drawing.Point(70, 98);
+            this.picPlayer.Name = "picPlayer";
+            this.picPlayer.Size = new System.Drawing.Size(229, 267);
+            this.picPlayer.TabIndex = 0;
+            this.picPlayer.TabStop = false;
+            this.picPlayer.Visible = false;
             // 
             // tmrFinalBattle
             // 
@@ -235,6 +273,18 @@
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
             // 
+            // picholdSam
+            // 
+            this.picholdSam.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.picholdSam.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.holdSamehada;
+            this.picholdSam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picholdSam.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picholdSam.Location = new System.Drawing.Point(70, 98);
+            this.picholdSam.Name = "picholdSam";
+            this.picholdSam.Size = new System.Drawing.Size(229, 267);
+            this.picholdSam.TabIndex = 0;
+            this.picholdSam.TabStop = false;
+            // 
             // FrmBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,6 +309,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAttack);
             this.Controls.Add(this.picEnemy);
+            this.Controls.Add(this.picholdSam);
             this.Controls.Add(this.picPlayer);
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
@@ -271,6 +322,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picholdSam)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -278,6 +330,7 @@
     #endregion
 
     private System.Windows.Forms.PictureBox picPlayer;
+        private System.Windows.Forms.PictureBox picholdSam;
     private System.Windows.Forms.PictureBox picEnemy;
     private System.Windows.Forms.Button btnAttack;
     private System.Windows.Forms.Label lblPlayerHealthFull;

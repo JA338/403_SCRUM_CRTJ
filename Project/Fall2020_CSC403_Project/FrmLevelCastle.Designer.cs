@@ -474,6 +474,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(3653, 1786);
             this.Controls.Add(this.scoreLabel);
+            this.Controls.Add(this.deathscreen);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox4);

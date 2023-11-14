@@ -9,7 +9,7 @@ namespace Fall2020_CSC403_Project {
     public partial class FrmLevelGatefront : Form {
     private Player player;
 
-    private FrmInv frmInv;
+    public FrmInv frmInv { get; set; }
     private Character[] walls;
     private DateTime timeBegin;
     private FrmBattle frmBattle;

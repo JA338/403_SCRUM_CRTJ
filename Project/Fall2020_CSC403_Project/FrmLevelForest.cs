@@ -13,7 +13,7 @@ namespace Fall2020_CSC403_Project
 
         private Player player;
 
-        private FrmInv frmInv;
+        public FrmInv frmInv;
         private Character[] walls;
         private Enemy enemyBowizard;
         private DateTime timeBegin;
@@ -23,7 +23,9 @@ namespace Fall2020_CSC403_Project
         private Character exitCollider;
         private bool exitCheck = false;
         private Enemy[] enemies;
+        private bool equipSamehada = false;
 
+       
         // initialize variables for animation
         private int imgNum;
         private bool dFlag = false;
@@ -283,7 +285,6 @@ namespace Fall2020_CSC403_Project
                     break;
             }
         }
-
 
 
         private void lblInGameTime_Click(object sender, EventArgs e)
