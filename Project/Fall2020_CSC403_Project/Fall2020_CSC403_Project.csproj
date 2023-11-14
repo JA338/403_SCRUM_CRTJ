@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WinCon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinCon.Designer.cs">
+      <DependentUpon>WinCon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,6 +102,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="WinCon.resx">
+      <DependentUpon>WinCon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLevelCastle.resx">
       <DependentUpon>FrmLevelCastle.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +185,8 @@
   <ItemGroup>
     <Content Include="data\background.jpg" />
     <Content Include="data\enemy_bowizard.jpg" />
+    <Content Include="data\epicwin.wav" />
+    <Content Include="data\Epic_Win.png" />
     <Content Include="data\InvBox.png" />
     <Content Include="data\tree-plan-27873.png" />
     <Content Include="data\tree-plan-alt.png" />
