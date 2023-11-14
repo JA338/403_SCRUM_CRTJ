@@ -83,7 +83,8 @@ namespace Fall2020_CSC403_Project {
     TimeSpan span = DateTime.Now - timeBegin;
     string time = span.ToString(@"hh\:mm\:ss");
     lblInGameTime.Text = "Time: " + time.ToString();
-    }
+            scoreLabel.Text = "Score: " + Game.scoreData;
+        }
 
     //method for generating enemies in the level
     //WARNING: Enemy pictures have to be ordered in series based on their tiers, from low to high, based on this implementation
