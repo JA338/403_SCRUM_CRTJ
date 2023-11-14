@@ -58,6 +58,7 @@
             this.picWall11 = new System.Windows.Forms.PictureBox();
             this.picWall6 = new System.Windows.Forms.PictureBox();
             this.picWall12 = new System.Windows.Forms.PictureBox();
+            this.scoreLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deathscreen)).BeginInit();
@@ -137,7 +138,7 @@
             this.picEnemyBowizard.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_bowizard;
             this.picEnemyBowizard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemyBowizard.Location = new System.Drawing.Point(0, 0);
-            this.picEnemyBowizard.Margin = new System.Windows.Forms.Padding(1);
+            this.picEnemyBowizard.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.picEnemyBowizard.Name = "picEnemyBowizard";
             this.picEnemyBowizard.Size = new System.Drawing.Size(0, 0);
             this.picEnemyBowizard.TabIndex = 18;
@@ -164,7 +165,7 @@
             this.deathscreen.Image = global::Fall2020_CSC403_Project.Properties.Resources.deathscreen;
             this.deathscreen.Location = new System.Drawing.Point(0, 0);
             this.deathscreen.Name = "deathscreen";
-            this.deathscreen.Size = new System.Drawing.Size(1370, 749);
+            this.deathscreen.Size = new System.Drawing.Size(722, 445);
             this.deathscreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.deathscreen.TabIndex = 18;
             this.deathscreen.TabStop = false;
@@ -195,7 +196,7 @@
             // picWall0
             // 
             this.picWall0.BackColor = System.Drawing.Color.Transparent;
-            this.picWall0.Location = new System.Drawing.Point(0, 30);
+            this.picWall0.Location = new System.Drawing.Point(-10, -10);
             this.picWall0.Name = "picWall0";
             this.picWall0.Size = new System.Drawing.Size(638, 253);
             this.picWall0.TabIndex = 23;
@@ -213,7 +214,7 @@
             // picWall2
             // 
             this.picWall2.BackColor = System.Drawing.Color.Transparent;
-            this.picWall2.Location = new System.Drawing.Point(400, 30);
+            this.picWall2.Location = new System.Drawing.Point(0, 30);
             this.picWall2.Name = "picWall2";
             this.picWall2.Size = new System.Drawing.Size(622, 103);
             this.picWall2.TabIndex = 25;
@@ -357,6 +358,18 @@
             this.picWall12.TabIndex = 54;
             this.picWall12.TabStop = false;
             // 
+            // scoreLabel
+            // 
+            this.scoreLabel.AutoSize = true;
+            this.scoreLabel.BackColor = System.Drawing.Color.Black;
+            this.scoreLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.scoreLabel.Location = new System.Drawing.Point(13, 36);
+            this.scoreLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(59, 13);
+            this.scoreLabel.TabIndex = 49;
+            this.scoreLabel.Text = "scoreLabel";
+            // 
             // FrmLevelGatefront
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,9 +378,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(722, 445);
             this.Controls.Add(this.deathscreen);
-
+            this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.picWall12);
             this.Controls.Add(this.picWall6);
             this.Controls.Add(this.picWall11);
@@ -452,6 +465,7 @@
         private System.Windows.Forms.PictureBox picWall11;
         private System.Windows.Forms.PictureBox picWall6;
         private System.Windows.Forms.PictureBox picWall12;
+        private System.Windows.Forms.Label scoreLabel;
     }
 }
 

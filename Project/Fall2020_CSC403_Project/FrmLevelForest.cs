@@ -13,7 +13,7 @@ namespace Fall2020_CSC403_Project
 
         private Player player;
 
-        private FrmInv frmInv;
+        public FrmInv frmInv;
         private Character[] walls;
         private Enemy enemyBowizard;
         private DateTime timeBegin;
@@ -23,7 +23,9 @@ namespace Fall2020_CSC403_Project
         private Character exitCollider;
         private bool exitCheck = false;
         private Enemy[] enemies;
+        private bool equipSamehada = false;
 
+       
         // initialize variables for animation
         private int imgNum;
         private bool dFlag = false;
@@ -103,31 +105,30 @@ namespace Fall2020_CSC403_Project
             player.ResetMoveSpeed();
         }
 
-        private void tmrUpdateInGameTime_Tick(object sender, EventArgs e)
-        {
-            TimeSpan span = DateTime.Now - timeBegin;
-            string time = span.ToString(@"hh\:mm\:ss");
-            lblInGameTime.Text = "Time: " + time.ToString();
-        }
+    private void tmrUpdateInGameTime_Tick(object sender, EventArgs e) {
+      TimeSpan span = DateTime.Now - timeBegin;
+      string time = span.ToString(@"hh\:mm\:ss");
+      lblInGameTime.Text = "Time: " + time.ToString();
+            scoreLabel.Text = "Score: " + Game.scoreData;
+    }
 
-        private void tmrPlayerMove_Tick(object sender, EventArgs e)
-        {
-            // check for player death event
-            CheckForDeath();
-            // move player
-            player.Move();
+    private void tmrPlayerMove_Tick(object sender, EventArgs e) {
+        // check for player death event
+        CheckForDeath();
+        // move player
+        player.Move();
             // check collision with samehada
             if (HitAChar(player, samehada))
             {
                 picsamehada.Location = offScreen;
                 samehada = new Weapon(CreatePosition(picsamehada), CreateCollider(picsamehada, 7));
                 frmInv.AddSamehada();
+                equipSamehada = true;
             }
             // check collision with walls
-            if (HitAWall(player))
-            {
-                player.MoveBack();
-            }
+            if (HitAWall(player)) {
+        player.MoveBack();
+      }
 
             for (int enemy = 0; enemy < enemies.Length; enemy++)
             {
@@ -276,40 +277,39 @@ namespace Fall2020_CSC403_Project
         }
 
 
-
         private void lblInGameTime_Click(object sender, EventArgs e)
         {
 
-        }
-        // timers for animation start
-        private void timer1_Tick(object sender, EventArgs e)
+    }
+    // timers for animation start
+    private void timer1_Tick(object sender, EventArgs e)
+    {
+        picPlayer.Image.Dispose();
+        picPlayer.Image = imageList1.Images[imgNum];
+        if (imgNum == imageList1.Images.Count - 1)
         {
-            picPlayer.Image.Dispose();
-            picPlayer.Image = imageList1.Images[imgNum];
-            if (imgNum == imageList1.Images.Count - 1)
-            {
-                imgNum = 0;
-            }
-            else
-            {
-                imgNum++;
-
-            }
+            imgNum = 0;
         }
-
-        private void timer2_Tick(object sender, EventArgs e)
+        else
         {
-            picPlayer.Image.Dispose();
-            picPlayer.Image = imageList2.Images[imgNum];
-            if (imgNum == imageList2.Images.Count - 1)
-            {
-                imgNum = 0;
-            }
-            else
-            {
-                imgNum++;
-            }
+            imgNum++;
+
         }
+    }
+
+    private void timer2_Tick(object sender, EventArgs e)
+    {
+        picPlayer.Image.Dispose();
+        picPlayer.Image = imageList2.Images[imgNum];
+        if (imgNum == imageList2.Images.Count - 1)
+        {
+            imgNum = 0;
+        }
+        else
+        {
+            imgNum++;
+        }
+    }
 
     }
 }

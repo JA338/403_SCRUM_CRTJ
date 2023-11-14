@@ -13,6 +13,7 @@ namespace Fall2020_CSC403_Project {
     private Enemy enemy;
     private Player player;
     private bool Blocking = false;
+        private static bool equipSamehada = false;
 
     private FrmBattle() {
       InitializeComponent();
@@ -24,8 +25,6 @@ namespace Fall2020_CSC403_Project {
       picEnemy.BackgroundImage = enemy.Img;
       picEnemy.Refresh();
       BackColor = enemy.Color;
-      picBossBattle.Visible = false;
-
       // Observer pattern
       enemy.AttackEvent += PlayerDamage;
       player.AttackEvent += EnemyDamage;
@@ -87,13 +86,16 @@ namespace Fall2020_CSC403_Project {
         }
 
     private void btnAttack_Click(object sender, EventArgs e) {
-      player.OnAttack(-4);
+      player.OnAttack(-8);
+            player.AlterHealth(2);
       if (enemy.Health > 0) {
         enemy.OnAttack(-2);
       }
 
       UpdateHealthBars();
       if (player.Health <= 0 || enemy.Health <= 0) {
+                Game.scoreData = Game.scoreData + 100;
+                Console.WriteLine(Game.scoreData);
         instance = null;
         Close();
       }

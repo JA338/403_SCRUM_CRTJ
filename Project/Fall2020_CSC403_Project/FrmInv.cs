@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fall2020_CSC403_Project.code;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace Fall2020_CSC403_Project
 {
@@ -135,6 +135,16 @@ namespace Fall2020_CSC403_Project
             DisplayButtons();
             DisplayWep.BackgroundImage = eight.BackgroundImage;
             invslot = "eight";
+        }
+
+        public bool checkForSamehada()
+        {
+            if (one.BackgroundImage == global::Fall2020_CSC403_Project.Properties.Resources.samehada)
+            {
+                return true;
+            }
+            return false;
+
         }
 
         private void DisplayButtons()

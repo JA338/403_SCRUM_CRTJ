@@ -63,6 +63,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.scoreLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemy4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deathscreen)).BeginInit();
@@ -157,7 +158,7 @@
             this.picEnemy4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemy4.Image = global::Fall2020_CSC403_Project.Properties.Resources.enemy_bowizard;
             this.picEnemy4.Location = new System.Drawing.Point(635, 21);
-            this.picEnemy4.Margin = new System.Windows.Forms.Padding(1);
+            this.picEnemy4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.picEnemy4.Name = "picEnemy4";
             this.picEnemy4.Size = new System.Drawing.Size(111, 139);
             this.picEnemy4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -185,7 +186,7 @@
             this.deathscreen.Image = global::Fall2020_CSC403_Project.Properties.Resources.deathscreen;
             this.deathscreen.Location = new System.Drawing.Point(0, 0);
             this.deathscreen.Name = "deathscreen";
-            this.deathscreen.Size = new System.Drawing.Size(1370, 749);
+            this.deathscreen.Size = new System.Drawing.Size(722, 445);
             this.deathscreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.deathscreen.TabIndex = 18;
             this.deathscreen.TabStop = false;
@@ -426,6 +427,18 @@
             this.pictureBox8.TabIndex = 59;
             this.pictureBox8.TabStop = false;
             // 
+            // scoreLabel
+            // 
+            this.scoreLabel.AutoSize = true;
+            this.scoreLabel.BackColor = System.Drawing.Color.Black;
+            this.scoreLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.scoreLabel.Location = new System.Drawing.Point(13, 36);
+            this.scoreLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(59, 13);
+            this.scoreLabel.TabIndex = 49;
+            this.scoreLabel.Text = "scoreLabel";
+            // 
             // FrmLevelCastle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,8 +447,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(722, 445);
             this.Controls.Add(this.deathscreen);
+            this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox4);
@@ -534,6 +548,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label scoreLabel;
     }
 }
 

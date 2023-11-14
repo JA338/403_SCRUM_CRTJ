@@ -52,6 +52,11 @@ namespace Fall2020_CSC403_Project
             this.picWall1 = new System.Windows.Forms.PictureBox();
             this.picWall2 = new System.Windows.Forms.PictureBox();
             this.picWall11 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.secret = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picsamehada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).BeginInit();
@@ -359,9 +364,11 @@ namespace Fall2020_CSC403_Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(722, 445);
-            this.Controls.Add(this.deathscreen);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;  
+            this.ClientSize = new System.Drawing.Size(963, 548);
+            this.Controls.Add(this.picsamehada);
+
+            this.Controls.Add(this.secret);
             this.Controls.Add(this.picWall11);
             this.Controls.Add(this.picWall2);
             this.Controls.Add(this.picWall8);
@@ -411,9 +418,9 @@ namespace Fall2020_CSC403_Project
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
+    }
 
-        #endregion
+    #endregion
 
         private System.Windows.Forms.PictureBox picPlayer;
         private System.Windows.Forms.PictureBox picBossKoolAid;
@@ -442,7 +449,7 @@ namespace Fall2020_CSC403_Project
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.ImageList imageList2;
-
+        private System.Windows.Forms.Label secret;
     }
 }
 

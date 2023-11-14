@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WinCon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinCon.Designer.cs">
+      <DependentUpon>WinCon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,6 +102,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="WinCon.resx">
+      <DependentUpon>WinCon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLevelCastle.resx">
       <DependentUpon>FrmLevelCastle.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,7 +168,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="code\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyGameLibrary\MyGameLibrary.csproj">
@@ -176,10 +184,12 @@
   <ItemGroup>
     <Content Include="data\background.jpg" />
     <Content Include="data\enemy_bowizard.jpg" />
+    <Content Include="data\epicwin.wav" />
+    <Content Include="data\Epic_Win.png" />
     <Content Include="data\InvBox.png" />
-    <None Include="data\samehada.png" />
     <Content Include="data\tree-plan-27873.png" />
     <Content Include="data\tree-plan-alt.png" />
+    <None Include="Resources\walk3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

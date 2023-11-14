@@ -67,7 +67,10 @@
             this.picExitIndic = new System.Windows.Forms.PictureBox();
             this.picWall19 = new System.Windows.Forms.PictureBox();
             this.picWall20 = new System.Windows.Forms.PictureBox();
+            this.scoreLabel = new System.Windows.Forms.Label();
             this.picsamehada = new System.Windows.Forms.PictureBox();
+            this.imageList3 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList4 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyBowizard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deathscreen)).BeginInit();
@@ -185,7 +188,7 @@
             this.deathscreen.InitialImage = null;
             this.deathscreen.Location = new System.Drawing.Point(0, 0);
             this.deathscreen.Name = "deathscreen";
-            this.deathscreen.Size = new System.Drawing.Size(1350, 729);
+            this.deathscreen.Size = new System.Drawing.Size(722, 445);
             this.deathscreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.deathscreen.TabIndex = 18;
             this.deathscreen.TabStop = false;
@@ -290,7 +293,7 @@
             // 
             this.picEnemy0.BackColor = System.Drawing.Color.Transparent;
             this.picEnemy0.Image = ((System.Drawing.Image)(resources.GetObject("picEnemy0.Image")));
-            this.picEnemy0.Location = new System.Drawing.Point(1239, 251);
+            this.picEnemy0.Location = new System.Drawing.Point(1164, 306);
             this.picEnemy0.Name = "picEnemy0";
             this.picEnemy0.Size = new System.Drawing.Size(59, 76);
             this.picEnemy0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -487,23 +490,54 @@
             // 
             this.picWall20.BackColor = System.Drawing.Color.Transparent;
             this.picWall20.Image = ((System.Drawing.Image)(resources.GetObject("picWall20.Image")));
-            this.picWall20.Location = new System.Drawing.Point(1139, 446);
+            this.picWall20.Location = new System.Drawing.Point(1211, 446);
             this.picWall20.Name = "picWall20";
             this.picWall20.Size = new System.Drawing.Size(286, 313);
             this.picWall20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWall20.TabIndex = 48;
             this.picWall20.TabStop = false;
             // 
+            // scoreLabel
+            // 
+            this.scoreLabel.AutoSize = true;
+            this.scoreLabel.BackColor = System.Drawing.Color.Black;
+            this.scoreLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.scoreLabel.Location = new System.Drawing.Point(13, 36);
+            this.scoreLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(59, 13);
+            this.scoreLabel.TabIndex = 49;
+            this.scoreLabel.Text = "scoreLabel";
+            // 
             // picsamehada
             // 
             this.picsamehada.BackColor = System.Drawing.Color.Transparent;
             this.picsamehada.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.samehada;
             this.picsamehada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picsamehada.Location = new System.Drawing.Point(311, 174);
+            this.picsamehada.Location = new System.Drawing.Point(157, 523);
+            this.picsamehada.Margin = new System.Windows.Forms.Padding(1);
             this.picsamehada.Name = "picsamehada";
-            this.picsamehada.Size = new System.Drawing.Size(72, 116);
+            this.picsamehada.Size = new System.Drawing.Size(55, 87);
             this.picsamehada.TabIndex = 49;
             this.picsamehada.TabStop = false;
+            // 
+            // imageList3
+            // 
+            this.imageList3.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList3.ImageStream")));
+            this.imageList3.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList3.Images.SetKeyName(0, "walk1.png");
+            this.imageList3.Images.SetKeyName(1, "walk3.png");
+            this.imageList3.Images.SetKeyName(2, "walk2.png");
+            this.imageList3.Images.SetKeyName(3, "walk4.png");
+            // 
+            // imageList4
+            // 
+            this.imageList4.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList4.ImageStream")));
+            this.imageList4.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList4.Images.SetKeyName(0, "walk5.png");
+            this.imageList4.Images.SetKeyName(1, "walk6.png");
+            this.imageList4.Images.SetKeyName(2, "walk8.png");
+            this.imageList4.Images.SetKeyName(3, "walk7.png");
             // 
             // FrmLevelForest
             // 
@@ -513,8 +547,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(722, 445);
+            this.Controls.Add(this.deathscreen);
             this.Controls.Add(this.picsamehada);
+            this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.picWall20);
             this.Controls.Add(this.picWall19);
             this.Controls.Add(this.picPlayer);
@@ -545,7 +581,6 @@
             this.Controls.Add(this.picEnemy2);
             this.Controls.Add(this.picEnemy1);
             this.Controls.Add(this.picEnemyBowizard);
-            this.Controls.Add(this.deathscreen);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -631,7 +666,9 @@
         public System.Windows.Forms.PictureBox picExitIndic;
         private System.Windows.Forms.PictureBox picWall19;
         private System.Windows.Forms.PictureBox picWall20;
+        private System.Windows.Forms.Label scoreLabel;
         private System.Windows.Forms.PictureBox picsamehada;
+        private System.Windows.Forms.ImageList imageList3;
+        private System.Windows.Forms.ImageList imageList4;
     }
 }
-
