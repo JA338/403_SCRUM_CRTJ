@@ -158,7 +158,7 @@
             this.picEnemyBowizard.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_bowizard;
             this.picEnemyBowizard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picEnemyBowizard.Location = new System.Drawing.Point(0, 0);
-            this.picEnemyBowizard.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.picEnemyBowizard.Margin = new System.Windows.Forms.Padding(1);
             this.picEnemyBowizard.Name = "picEnemyBowizard";
             this.picEnemyBowizard.Size = new System.Drawing.Size(0, 0);
             this.picEnemyBowizard.TabIndex = 18;
@@ -483,6 +483,7 @@
             this.picWall19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWall19.TabIndex = 47;
             this.picWall19.TabStop = false;
+            this.picWall19.Click += new System.EventHandler(this.picWall19_Click);
             // 
             // picWall20
             // 
@@ -513,7 +514,7 @@
             this.picsamehada.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.samehada;
             this.picsamehada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picsamehada.Location = new System.Drawing.Point(266, 254);
-            this.picsamehada.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.picsamehada.Margin = new System.Windows.Forms.Padding(1);
             this.picsamehada.Name = "picsamehada";
             this.picsamehada.Size = new System.Drawing.Size(55, 87);
             this.picsamehada.TabIndex = 49;
