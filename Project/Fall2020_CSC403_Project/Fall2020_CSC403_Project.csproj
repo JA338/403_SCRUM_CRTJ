@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmFireplace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFireplace.Designer.cs">
+      <DependentUpon>FrmFireplace.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinCon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmFireplace.resx">
+      <DependentUpon>FrmFireplace.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WinCon.resx">
       <DependentUpon>WinCon.cs</DependentUpon>
     </EmbeddedResource>
