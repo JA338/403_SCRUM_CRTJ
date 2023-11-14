@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Fall2020_CSC403_Project.code;
 
 namespace Fall2020_CSC403_Project
 {
     public partial class FrmInv : Form
     {
         public static FrmInv instance = null;
+        private bool showButtons = false;
+        public string invslot;
+        string[] slots = { "one", "two", "three", "four", "five", "six", "seven", "eight" };
+
         public FrmInv()
         {
             InitializeComponent();
