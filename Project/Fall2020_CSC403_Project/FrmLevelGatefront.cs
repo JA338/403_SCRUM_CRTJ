@@ -290,5 +290,11 @@ namespace Fall2020_CSC403_Project {
                 imgNum++;
             }
         }
+
+        private void picWall6_Click(object sender, EventArgs e)
+        {
+            FrmFireplace frmFireplace = new FrmFireplace();
+            frmFireplace.Show();
+        }
     }
 }
