@@ -30,6 +30,7 @@ namespace Fall2020_CSC403_Project
         public FrmLevelForest()
         {
             InitializeComponent();
+            Game.levelData = "Level 1";
         }
 
         private void FrmLevelForest_Load(object sender, EventArgs e)
@@ -41,7 +42,6 @@ namespace Fall2020_CSC403_Project
             samehada = new Weapon(CreatePosition(picsamehada), (CreateCollider(picsamehada, PADDING)));
             picPlayer.Image = Properties.Resources.player;
             exitCollider = new Character(CreatePosition(picExitIndic), CreateCollider(picExitIndic, PADDING));
-
 
             GenerateEnemies(1, 3, 1);
 

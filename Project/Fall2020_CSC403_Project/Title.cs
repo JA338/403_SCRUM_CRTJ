@@ -14,7 +14,8 @@ namespace Fall2020_CSC403_Project
 {
     public partial class Title : Form
     {
-        
+        private FrmInv frmInv;
+
         public Title()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace Fall2020_CSC403_Project
         //Hide the level select buttons on load
         private void Title_Load(object sender, EventArgs e)
         {
+            frmInv = new FrmInv();
             button2.Hide();
             button3.Hide();
             button4.Hide();

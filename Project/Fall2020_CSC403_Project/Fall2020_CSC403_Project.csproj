@@ -188,6 +188,7 @@
     <Content Include="data\epicwin.wav" />
     <Content Include="data\Epic_Win.png" />
     <Content Include="data\InvBox.png" />
+    <Content Include="data\poisoned.png" />
     <Content Include="data\tree-plan-27873.png" />
     <Content Include="data\tree-plan-alt.png" />
   </ItemGroup>

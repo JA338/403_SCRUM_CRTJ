@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Fall2020_CSC403_Project.code;
 
 namespace Fall2020_CSC403_Project
 {
@@ -179,7 +180,10 @@ namespace Fall2020_CSC403_Project
             return null;
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveGame.Save(Game.player);
+        }
     }
 }
 
