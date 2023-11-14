@@ -150,7 +150,7 @@ namespace Fall2020_CSC403_Project {
             //win screen form can go here, just defaults to original level
             exitCheck = false;
             this.Hide();
-            var frmLevel = new WinCon();
+            var frmLevel = new FrmLevel();
             frmLevel.Closed += (s, args) => this.Close();
             //this.Dispose();
             frmLevel.Show();
