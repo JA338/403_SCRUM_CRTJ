@@ -30,6 +30,7 @@ namespace Fall2020_CSC403_Project
         public FrmLevelForest()
         {
             InitializeComponent();
+            Game.levelData = "Level 1";
         }
 
         private void FrmLevelForest_Load(object sender, EventArgs e)
@@ -42,7 +43,6 @@ namespace Fall2020_CSC403_Project
             picPlayer.Image = Properties.Resources.player;
             exitCollider = new Character(CreatePosition(picExitIndic), CreateCollider(picExitIndic, PADDING));
 
-
             GenerateEnemies(1, 3, 1);
 
             walls = new Character[NUM_WALLS];
@@ -54,6 +54,14 @@ namespace Fall2020_CSC403_Project
 
             Game.player = player;
             timeBegin = DateTime.Now;
+            //Console.WriteLine("from forest "+Game.samehada);
+            if(Game.samehada == true)
+            {
+                picsamehada.Location = offScreen;
+                samehada = new Weapon(CreatePosition(picsamehada), CreateCollider(picsamehada, 7));
+                frmInv.AddSamehada();
+            }
+            //Console.WriteLine("from forest2 " + Game.samehada);
         }
 
         //method for generating enemies in the level
@@ -121,6 +129,9 @@ namespace Fall2020_CSC403_Project
                 picsamehada.Location = offScreen;
                 samehada = new Weapon(CreatePosition(picsamehada), CreateCollider(picsamehada, 7));
                 frmInv.AddSamehada();
+                Game.samehada = true;
+                //Console.WriteLine("grabbed");
+                //Console.WriteLine(Game.samehada);
             }
             // check collision with walls
             if (HitAWall(player)) {
@@ -148,7 +159,7 @@ namespace Fall2020_CSC403_Project
                     {
                         exitCheck = true;
                         this.Hide();
-                        var frmLevel = new FrmLevelGatefront(player, FrmInv);
+                        var frmLevel = new FrmLevelGatefront(player, frmInv);
                         frmLevel.Closed += (s, args) => this.Close();
                         //this.Dispose();
                         frmLevel.Show();
@@ -309,6 +320,11 @@ namespace Fall2020_CSC403_Project
         }
     }
 
+        private void picWall19_Click(object sender, EventArgs e)
+        {
+            FrmFireplace frmFireplace = new FrmFireplace();
+            frmFireplace.Show();
+        }
     }
 }
 

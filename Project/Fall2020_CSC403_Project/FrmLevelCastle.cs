@@ -145,12 +145,12 @@ namespace Fall2020_CSC403_Project {
         if (enemies[4].Health <= 0 && !HitAChar(player, exitCollider)) { exitCheck = true; }
 
         //if (HitAChar(player, enemyBowizard)) { Fight(enemyBowizard); }
-        if ( HitAChar(player, exitCollider) && exitCheck)
+        if (exitCheck)
         {
             //win screen form can go here, just defaults to original level
             exitCheck = false;
             this.Hide();
-            var frmLevel = new FrmLevel();
+            var frmLevel = new WinCon();
             frmLevel.Closed += (s, args) => this.Close();
             //this.Dispose();
             frmLevel.Show();

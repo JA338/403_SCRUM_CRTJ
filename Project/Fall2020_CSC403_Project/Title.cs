@@ -1,5 +1,6 @@
 ﻿using System;
 using Fall2020_CSC403_Project.code;
+using Fall2020_CSC403_Project;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,8 @@ namespace Fall2020_CSC403_Project
 {
     public partial class Title : Form
     {
-        
+        private FrmInv frmInv;
+
         public Title()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace Fall2020_CSC403_Project
         //Hide the level select buttons on load
         private void Title_Load(object sender, EventArgs e)
         {
+            frmInv = new FrmInv();
             button2.Hide();
             button3.Hide();
             button4.Hide();
@@ -69,8 +72,9 @@ namespace Fall2020_CSC403_Project
         {
             using (var sr = new StreamReader("SaveFile.txt"))
             {
+                Game.samehada = Convert.ToBoolean(sr.ReadLine());
                 string levelID = sr.ReadLine();
-                Console.WriteLine(levelID);
+                //Console.WriteLine(levelID);
                 if(levelID == "Level 1")
                 {
                     this.Hide();
@@ -104,6 +108,8 @@ namespace Fall2020_CSC403_Project
                 Game.player.Health = Int32.Parse(sr.ReadLine());
                 Game.player.Position = new Vector2(Int32.Parse(sr.ReadLine()), Int32.Parse(sr.ReadLine()));
                 Game.scoreData = Int32.Parse(sr.ReadLine());
+                //Console.WriteLine(sr.ReadLine());
+                
             }
         }
     }

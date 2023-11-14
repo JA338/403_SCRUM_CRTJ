@@ -19,12 +19,15 @@ namespace Fall2020_CSC403_Project.code
             string docPath = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             using (StreamWriter saveFile = new StreamWriter(Path.Combine(docPath, "SaveFile.txt")))
             {
-                Console.WriteLine(docPath);
+                //Console.WriteLine(docPath);
+                saveFile.WriteLine(Game.samehada);
                 saveFile.WriteLine(Game.levelData);
                 saveFile.WriteLine(player.Health);
                 saveFile.WriteLine(player.Position.x);
                 saveFile.WriteLine(player.Position.y);
                 saveFile.WriteLine(Game.scoreData);
+                
+                
             }
         }
 

@@ -4,6 +4,7 @@ using System;
 using System.Drawing;
 using System.Media;
 using System.Security.Cryptography;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
@@ -13,8 +14,9 @@ namespace Fall2020_CSC403_Project {
     private Enemy enemy;
     private Player player;
     private bool Blocking = false;
+        private int counter = 0;
 
-    private FrmBattle() {
+        private FrmBattle() {
       InitializeComponent();
       player = Game.player;
     }
@@ -30,6 +32,7 @@ namespace Fall2020_CSC403_Project {
       enemy.AttackEvent += PlayerDamage;
       player.AttackEvent += EnemyDamage;
 
+            pictureBox1.Hide();
       // show health, stamina, mana
       UpdateHealthBars();
       UpdateStaminaBars();
@@ -87,15 +90,26 @@ namespace Fall2020_CSC403_Project {
         }
 
     private void btnAttack_Click(object sender, EventArgs e) {
-      player.OnAttack(-4);
-      if (enemy.Health > 0) {
-        enemy.OnAttack(-2);
-      }
+             player.OnAttack(-4);
+            if (enemy.MaxHealth == 20)
+            {
+                pictureBox1.Show();
+                timer1.Start();
+                
+            }
+            else
+            {
+                if (enemy.Health > 0)
+                {
+                    enemy.OnAttack(-2);
+                }
+
+            }
 
       UpdateHealthBars();
       if (player.Health <= 0 || enemy.Health <= 0) {
                 Game.scoreData = Game.scoreData + 100;
-                Console.WriteLine(Game.scoreData);
+                //Console.WriteLine(Game.scoreData);
         instance = null;
         Close();
       }
@@ -159,6 +173,19 @@ namespace Fall2020_CSC403_Project {
                 UpdateManaBars();
                 player.AlterHealth(5);
                 UpdateHealthBars();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            counter++;
+            player.AlterHealth(-1);
+            UpdateHealthBars();
+            if (counter == 5)
+            {
+                timer1.Stop();
+                pictureBox1.Hide();
+                counter = 0;
             }
         }
     }
