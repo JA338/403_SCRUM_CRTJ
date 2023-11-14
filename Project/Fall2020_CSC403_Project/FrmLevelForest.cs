@@ -148,7 +148,7 @@ namespace Fall2020_CSC403_Project
                     {
                         exitCheck = true;
                         this.Hide();
-                        var frmLevel = new FrmLevelGatefront(player, FrmInv);
+                        var frmLevel = new FrmLevelGatefront(player, frmInv);
                         frmLevel.Closed += (s, args) => this.Close();
                         //this.Dispose();
                         frmLevel.Show();
