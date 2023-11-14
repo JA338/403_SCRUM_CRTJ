@@ -9,6 +9,6 @@ namespace Fall2020_CSC403_Project.code {
     public static Player player = null;
         public static int scoreData;
         public static string levelData;
-
+        public static bool samehada;
   }
 }

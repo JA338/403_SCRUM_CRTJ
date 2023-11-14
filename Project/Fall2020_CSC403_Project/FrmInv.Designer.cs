@@ -49,7 +49,7 @@
             this.four = new System.Windows.Forms.PictureBox();
             this.three = new System.Windows.Forms.PictureBox();
             this.two = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Invslot1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Invslot2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Invslot3)).BeginInit();
@@ -178,7 +178,7 @@
             // 
             this.Discard.BackColor = System.Drawing.Color.Red;
             this.Discard.Location = new System.Drawing.Point(1291, 267);
-            this.Discard.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Discard.Margin = new System.Windows.Forms.Padding(5);
             this.Discard.Name = "Discard";
             this.Discard.Size = new System.Drawing.Size(181, 62);
             this.Discard.TabIndex = 15;
@@ -191,7 +191,7 @@
             // 
             this.Equip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.Equip.Location = new System.Drawing.Point(1115, 267);
-            this.Equip.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Equip.Margin = new System.Windows.Forms.Padding(5);
             this.Equip.Name = "Equip";
             this.Equip.Size = new System.Drawing.Size(181, 62);
             this.Equip.TabIndex = 16;
@@ -217,7 +217,7 @@
             // 
             this.Close.BackColor = System.Drawing.Color.Lavender;
             this.Close.Location = new System.Drawing.Point(1197, 339);
-            this.Close.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Close.Margin = new System.Windows.Forms.Padding(5);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(181, 62);
             this.Close.TabIndex = 18;
@@ -352,23 +352,25 @@
             this.two.Visible = false;
             this.two.Click += new System.EventHandler(this.two_Click);
             // 
-            // button1
+            // saveButton
             // 
-            this.button1.Location = new System.Drawing.Point(1513, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(280, 92);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.saveButton.Font = new System.Drawing.Font("Old English Text MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.Location = new System.Drawing.Point(1513, 51);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(280, 92);
+            this.saveButton.TabIndex = 31;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmInv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1833, 496);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.two);
             this.Controls.Add(this.three);
             this.Controls.Add(this.four);
@@ -391,6 +393,7 @@
             this.Controls.Add(this.DisplayWep);
             this.Controls.Add(this.MainScreen);
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.MinimizeBox = false;
             this.Name = "FrmInv";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmInv_KeyDown);
@@ -440,6 +443,6 @@
         private System.Windows.Forms.PictureBox four;
         private System.Windows.Forms.PictureBox three;
         private System.Windows.Forms.PictureBox two;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button saveButton;
     }
 }
