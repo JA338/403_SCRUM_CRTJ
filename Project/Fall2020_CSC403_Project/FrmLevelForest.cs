@@ -54,6 +54,14 @@ namespace Fall2020_CSC403_Project
 
             Game.player = player;
             timeBegin = DateTime.Now;
+            //Console.WriteLine("from forest "+Game.samehada);
+            if(Game.samehada == true)
+            {
+                picsamehada.Location = offScreen;
+                samehada = new Weapon(CreatePosition(picsamehada), CreateCollider(picsamehada, 7));
+                frmInv.AddSamehada();
+            }
+            //Console.WriteLine("from forest2 " + Game.samehada);
         }
 
         //method for generating enemies in the level
@@ -121,6 +129,9 @@ namespace Fall2020_CSC403_Project
                 picsamehada.Location = offScreen;
                 samehada = new Weapon(CreatePosition(picsamehada), CreateCollider(picsamehada, 7));
                 frmInv.AddSamehada();
+                Game.samehada = true;
+                //Console.WriteLine("grabbed");
+                //Console.WriteLine(Game.samehada);
             }
             // check collision with walls
             if (HitAWall(player)) {
