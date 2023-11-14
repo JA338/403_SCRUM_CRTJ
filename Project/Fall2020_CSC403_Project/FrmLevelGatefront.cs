@@ -9,7 +9,7 @@ namespace Fall2020_CSC403_Project {
     public partial class FrmLevelGatefront : Form {
     private Player player;
 
-    private FrmInv FrmInv;
+    private FrmInv frmInv;
     private Character[] walls;
     private DateTime timeBegin;
     private FrmBattle frmBattle;
@@ -34,7 +34,7 @@ namespace Fall2020_CSC403_Project {
     public FrmLevelGatefront(Player oldPlayer, FrmInv inventory) {
         InitializeComponent();
         player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING)) { Health = oldPlayer.Health };
-        FrmInv = inventory;
+        frmInv = inventory;
             Game.levelData = "Level 2";
             //this.player = player;
             //this.FrmInv = inventory;
@@ -149,7 +149,7 @@ namespace Fall2020_CSC403_Project {
         {
             exitCheck = false;
             this.Hide();
-            var frmLevel = new FrmLevelCastle(player, FrmInv);
+            var frmLevel = new FrmLevelCastle(player, frmInv);
             frmLevel.Closed += (s, args) => this.Close();
             //this.Dispose();
             frmLevel.Show();
@@ -246,8 +246,8 @@ namespace Fall2020_CSC403_Project {
 
             case Keys.I:
                 // display inventory upon pressing "I"
-                FrmInv = new FrmInv();
-                FrmInv.Show();
+                frmInv = new FrmInv();
+                frmInv.Show();
                 break;
 
             default:
